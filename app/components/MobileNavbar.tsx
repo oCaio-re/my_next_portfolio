@@ -11,7 +11,6 @@ export function MobileNavbar() {
     const [activeSection, setActiveSection] = useState("home");
     const menuRef = useRef<HTMLDivElement>(null);
 
-    // Calculate menu height when opened
     useEffect(() => {
         if (isOpen && menuRef.current) {
             setHeight(menuRef.current.scrollHeight);
@@ -20,11 +19,10 @@ export function MobileNavbar() {
         }
     }, [isOpen]);
 
-    // Set up scroll listener to detect active section
     useEffect(() => {
         const handleScroll = () => {
             const sections = ["home", "about", "services", "projects", "contact"];
-            const scrollPosition = window.scrollY + 100; // Adding offset for fixed header
+            const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -44,7 +42,6 @@ export function MobileNavbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Function to handle smooth scrolling to sections
     const scrollToSection = (sectionId: string) => {
         setIsOpen(false);
         const element = document.getElementById(sectionId);
@@ -54,10 +51,8 @@ export function MobileNavbar() {
     };
 
     return (
-        <div className="md:hidden fixed top-3 left-auto right-auto z-50 w-[95vw]">
-            {/* Fixed Top Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-white rounded-md">
-                {/* Animated Burger/X Button */}
+        <div className="md:hidden fixed top-3 m-auto left-0 right-0 z-50 w-[95vw]">
+            <div className="flex items-center justify-between px-4 py-3 bg-white rounded-md h-[5rem]">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="p-2 rounded-md"
@@ -79,7 +74,6 @@ export function MobileNavbar() {
                     </div>
                 </button>
 
-                {/* Logo Text - Center aligned */}
                 <div
                     className="text-3xl font-semibold mx-auto cursor-pointer"
                     onClick={() => scrollToSection('home')}
@@ -87,7 +81,6 @@ export function MobileNavbar() {
                     Caio
                 </div>
 
-                {/* Phone Info - Right aligned */}
                 <div className="flex items-center gap-4">
                     <FiPhone className="w-8 h-8 bg-[#C9AA71] rounded-full p-2 text-white" />
                     <a href="tel:+351916248973" className="text-sm font-medium border-2 text-[#C9AA71] rounded-full p-2 border-[#C9AA71]">
@@ -96,7 +89,6 @@ export function MobileNavbar() {
                 </div>
             </div>
 
-            {/* Expanding Menu */}
             <div
                 ref={menuRef}
                 className={cn(

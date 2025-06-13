@@ -1,14 +1,13 @@
 import React from 'react';
 import {MobileNavbar} from "@/app/components/MobileNavbar";
+import {Home} from "@/app/components/Home";
 
 function Page() {
     return (
-        <div className="bg-black overflow-x-hidden h-full text-black text-4xl text-center flex flex-col items-center justify-center w-full">
+        <div className="overflow-x-hidden h-full text-4xl text-center flex flex-col">
             <MobileNavbar />
-            <section id="home" className="h-[150rem]">
-                sadlgfmksdgf
-            </section>
-            <section id="about" className="h-[150rem]">
+            <Home/>
+            <section id="about" className="h-[100vh]">
                 sadlgfmksdgf
             </section>
         </div>
