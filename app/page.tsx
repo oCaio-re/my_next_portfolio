@@ -4,6 +4,8 @@ import {Home} from "@/app/components/Home";
 import {About} from "@/app/components/About";
 import {Services} from "@/app/components/Services";
 import Projects from "@/app/Projects";
+import {ContactMe} from "@/app/components/Contact";
+import Footer from "@/app/components/Footer";
 
 function Page() {
     return (
@@ -13,9 +15,8 @@ function Page() {
             <About/>
             <Services/>
             <Projects/>
-            <section className="h-[100vh]">
-                sadlgfmksdgf
-            </section>
+            <ContactMe/>
+            <Footer />
         </div>
     );
 }
