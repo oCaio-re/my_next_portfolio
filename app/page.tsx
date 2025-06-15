@@ -3,6 +3,7 @@ import {MobileNavbar} from "@/app/components/MobileNavbar";
 import {Home} from "@/app/components/Home";
 import {About} from "@/app/components/About";
 import {Services} from "@/app/components/Services";
+import Projects from "@/app/Projects";
 
 function Page() {
     return (
@@ -11,6 +12,7 @@ function Page() {
             <Home/>
             <About/>
             <Services/>
+            <Projects/>
             <section className="h-[100vh]">
                 sadlgfmksdgf
             </section>
