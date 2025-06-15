@@ -2,6 +2,7 @@ import React from 'react';
 import {MobileNavbar} from "@/app/components/MobileNavbar";
 import {Home} from "@/app/components/Home";
 import {About} from "@/app/components/About";
+import {Services} from "@/app/components/Services";
 
 function Page() {
     return (
@@ -9,6 +10,7 @@ function Page() {
             <MobileNavbar />
             <Home/>
             <About/>
+            <Services/>
             <section className="h-[100vh]">
                 sadlgfmksdgf
             </section>
