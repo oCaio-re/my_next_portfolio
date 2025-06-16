@@ -1,5 +1,4 @@
 import React from 'react';
-import PaginatedModalButton from "@/app/test/PaginatedModalButton";
 
 interface Props {
     category: string;
@@ -24,10 +23,7 @@ function ProjectsItem(props: Props) {
             </div>
             <div className="img-item-project relative w-[90%] -ml-[1rem] rotate-10 mt-[5rem] hover:rotate-0 hover:mt-0 hover:ml-[1rem] transition-all ease-in-out duration-600 lg:w-[60%] ">
                 <div className={`opacity-50 bg-[${props.colorFilter}] w-[100%] h-[100%] z-30 absolute rounded-md`}/>
-                <img src={props.src} className="w-[100%] rounded-md"/>
-                {/*<button className="button-call opacity-0 absolute top-0 left-0 right-0 bottom-0 discover-projects m-auto p-2 w-[50%] h-[15%] px-3 text-white text-[1rem] rounded-2xl transition-all duration-500 bg-[#609BE3] hover:bg-gradient-to-r hover:from-[#665dcd] hover:via-[#5fa4e6] hover:to-[#d2ab67] z-40">*/}
-                {/*    Discover More*/}
-                {/*</button>*/}
+                <img alt="filter" src={props.src} className="w-[100%] rounded-md"/>
                 {props.children}
             </div>
         </div>

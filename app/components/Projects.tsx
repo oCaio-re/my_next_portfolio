@@ -12,7 +12,7 @@ import {SiFastapi} from "react-icons/si";
 import {RiNextjsFill} from "react-icons/ri";
 import {RiTailwindCssFill} from "react-icons/ri";
 import {SiVite} from "react-icons/si";
-import PaginatedModalButton from "@/app/test/PaginatedModalButton";
+import PaginatedModalButton from "@/app/components/PaginatedModalButton";
 
 function Projects() {
     const images = [

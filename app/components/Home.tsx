@@ -34,7 +34,7 @@ export function Home() {
                     </button>
                     <div className="mt-[5rem] h-[25rem] relative flex">
                         <div className="absolute m-auto left-0 right-0 bg-white rounded-full h-[20rem] w-[20rem] z-1"/>
-                        <img  src="../../images/smiling-man.png "
+                        <img alt="smiling-man" src="../../images/smiling-man.png "
                               className="z-50 relative w-[80vw] m-auto"/>
                     </div>
             </div>
