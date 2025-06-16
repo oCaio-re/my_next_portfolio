@@ -2,7 +2,8 @@ import React from 'react';
 
 function Footer() {
     return (
-        <section id="footer" className="relative text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem]">
+        <section id="footer" className="relative text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem]
+         md:mt-[20rem] md:text-[1.5rem]">
             <img alt="bg-img-1" src="../../images/background/blue_s.png"
                  className="absolute -z-5 -mt-[4rem] scale-130 opacity-90"
             />
@@ -14,13 +15,13 @@ function Footer() {
             </p>
             <p>
                 Built with
-                <a href="" target="_blank" className="hover:text-blue-500"> React</a>,
-                <a href="" target="_blank" className="hover:text-gray-600"> NextJs</a> and
-                <a href="" target="_blank" className="hover:text-sky-300"> Tailwind CSS</a>.
+                <a href="https://react.dev/" target="_blank" className="hover:text-blue-500"> React</a>,
+                <a href="https://nextjs.org/" target="_blank" className="hover:text-gray-600"> NextJs</a> and
+                <a href="https://tailwindcss.com/" target="_blank" className="hover:text-sky-300"> Tailwind CSS</a>.
                 Deployed with DigitalOcean
             </p>
             <p>
-                All text is set in the DM sans typeface.
+                All text is set in the DM Sans typeface.
             </p>
         </section>
     );
