@@ -14,18 +14,18 @@ function ContactDetails() {
                             <p className="border-2 border-white rounded-3xl px-3 py-2">
                                 Websites
                             </p>
-                            <p className="border-2 border-white rounded-3xl px-3 py-2">
+                            <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 Branding
                             </p>
                         </div>
                         <div className="flex text-[1.2rem] gap-3 mt-3">
-                            <p className="border-2 border-white rounded-3xl px-3 py-2">
+                            <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 Ecommerce
                             </p>
-                            <p className="border-2 border-white rounded-3xl px-3 py-2">
+                            <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 SEO
                             </p>
-                            <p className="border-2 border-white rounded-3xl px-3 py-2">
+                            <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 Hire Me
                             </p>
                         </div>

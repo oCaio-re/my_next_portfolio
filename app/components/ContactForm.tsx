@@ -25,7 +25,7 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="flex justify-center items-center border-3 border-white p-4 text-[1rem] rounded-md">
+        <div className="flex justify-center items-center border-4 border-white p-4 text-[1rem] rounded-md">
             <form onSubmit={handleSubmit} className="p-3 rounded-lg shadow-lg w-full max-w-2xl">
 
                 <div className="mb-6 text-white">
