@@ -5,9 +5,9 @@ import ContactDetails from "@/app/components/ContactDetails";
 export function ContactMe() {
     return (
         <section id="contact" className="relative w-[90vw] mt-[8rem] mx-auto">
-            <img alt="bg-img-1" src="../../images/background/blue_s.png"
-                 className="absolute -z-5 top-0 left-0  -mt-[12rem] -ml-[4rem]"
-            />
+            {/*<img alt="bg-img-1" src="../../images/background/blue_s.png"*/}
+            {/*     className="absolute -z-5 top-0 left-0  -mt-[12rem] -ml-[4rem]"*/}
+            {/*/>*/}
             <img alt="bg-img-1" src="../../images/background/purple_s.png"
                  className="absolute -z-5 top-0 left-0  mt-[4rem] ml-[5rem]"
             />
