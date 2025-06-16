@@ -58,16 +58,16 @@ export function MobileNavbar() {
                     className="p-2 rounded-md"
                     aria-label="Toggle menu"
                 >
-                    <div className="relative w-5 h-5 m-auto">
+                    <div className="relative w-8 h-8 m-auto ">
                         <RxHamburgerMenu
                             className={cn(
-                                "absolute w-7 h-7 transition-all duration-300",
+                                "absolute w-8 h-8 transition-all duration-300 ",
                                 isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
                             )}
                         />
                         <FiX
                             className={cn(
-                                "absolute w-7 h-7 transition-all duration-300",
+                                "absolute w-8 h-8 transition-all duration-300",
                                 isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
                             )}
                         />
@@ -82,8 +82,8 @@ export function MobileNavbar() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <FiPhone className="w-8 h-8 bg-[#C9AA71] rounded-full p-2 text-white" />
-                    <a href="tel:+351916248973" className="text-sm font-medium border-2 text-[#C9AA71] rounded-full p-2 border-[#C9AA71]">
+                    <FiPhone className="w-8 h-8 bg-[#C9AA71] rounded-full px-2  py-1 text-white" />
+                    <a href="tel:+351916248973" className="text-sm font-medium border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]">
                         916-248-973
                     </a>
                 </div>
