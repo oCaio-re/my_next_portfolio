@@ -16,7 +16,7 @@ export function Home() {
                  className="-scale-y-100 overflow-hidden absolute
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
             <div className="top-0 -scale-y-100 object-cover w-[200rem] overflow-hidden "/>
-            <div className="relative grid-cols-1 md:grid-cols-2 w-[95vw] mt-[13rem] mx-auto flex flex-col z-50">
+            <div className="relative grid-cols-1 md:grid-cols-2 w-[95vw] mt-[10rem] mx-auto flex flex-col z-50">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                         <div className="font-bold bg-white rounded-full py-3 px-3">

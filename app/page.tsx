@@ -9,7 +9,7 @@ import Footer from "@/app/components/Footer";
 
 function Page() {
     return (
-        <div className="overflow-x-hidden h-full text-4xl text-center flex flex-col">
+        <div className="overflow-x-hidden overflow-y-hidden h-full text-4xl text-center flex flex-col">
             <MobileNavbar />
             <Home/>
             <About/>

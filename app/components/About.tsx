@@ -24,11 +24,11 @@ export function About() {
                         a <i>full-stack</i> Developer with solid experience in front-end development (React, JavaScript) and back-end (Python/Django).
                     </p>
                     <p className="mt-2 mb-2">
-                        Proficient in developing responsive and modern web applications. Seeking challenging roles
+                        Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles
                         in innovative projects and a collaborative work environment.
                     </p>
                     <p className="">
-                        Weather you seek a service or a problem solver employer,
+                        Weather you look for a service or a problem solver employer,
                         <b className="text-[#C9AA71]"> I am the solution.</b>
                     </p>
                 </div>

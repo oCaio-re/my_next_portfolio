@@ -134,3 +134,9 @@ body {
   color: #646DD2;
   width: 2rem;
 }
+
+.img-item-project:hover .button-call{
+  opacity: 100;
+  color: white;
+  background-color: #609BE3;
+}
