@@ -2,12 +2,16 @@ import { TbWorld } from "react-icons/tb";
 import { PiLightbulbBold } from "react-icons/pi";
 import { LuSmartphone } from "react-icons/lu";
 import { FaGoogle } from "react-icons/fa";
+import React from "react";
 
 export default function ServicesGrid() {
     return (
         <div className="flex flex-col px-4">
 
-            <div className="grid-cols-1 flex flex-col gap-7">
+            <div className="relative grid-cols-1 flex flex-col gap-7">
+                <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
+                     className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-150 -mt-[8rem] "
+                />
                 <ServiceCard
                     title="Website"
                     description="Building custom websites with a focus on user experience, responsive design, and modern technologies."
