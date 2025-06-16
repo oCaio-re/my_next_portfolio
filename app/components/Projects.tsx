@@ -14,7 +14,10 @@ import { SiVite } from "react-icons/si";
 
 function Projects() {
     return (
-        <section id="projects" className="w-[90vw] mt-[8rem] m-auto">
+        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10">
+            <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
+                 className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-140 -mt-[2rem] opacity-80"
+            />
             <div className="flex bg-[#646DD2] rounded-md items-center px-4 py-2 mb-[1em] m-auto">
                 <p className="text-[1.5rem] text-white font-bold ml-auto mr-5">
                     Projects
