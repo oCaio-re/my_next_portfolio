@@ -34,7 +34,10 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
         <>
             <button
                 onClick={openModal}
-                className="button-call py-3 shadow hover:bg-blue-600 opacity-0 absolute top-0 left-0 right-0 bottom-0 discover-projects m-auto p-2 w-[50%] h-[15%] px-3 text-white text-[1rem] rounded-2xl transition-all duration-500 bg-[#609BE3] hover:bg-gradient-to-r hover:from-[#665dcd] hover:via-[#5fa4e6] hover:to-[#d2ab67] z-40"
+                className="button-call py-3 shadow opacity-0 absolute top-0 left-0 right-0 bottom-0
+                md:p-1 md:items-center cursor-pointer
+                discover-projects m-auto p-2 w-[50%] h-[15%] px-3 text-white text-[1rem] rounded-2xl transition-all
+                duration-500 bg-[#609BE3]  hover:bg-[#665dcd] z-40"
             >
                 Discover More
             </button>

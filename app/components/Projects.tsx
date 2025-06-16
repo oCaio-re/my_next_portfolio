@@ -57,24 +57,24 @@ function Projects() {
         "SECOND TEXT THREE",
     ];
     return (
-        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10">
+        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:w-[70vw]">
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                  className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-140 -mt-[2rem] opacity-80"
             />
-            <div className="flex bg-[#646DD2] rounded-md items-center px-4 py-2 mb-[1em] m-auto">
-                <p className="text-[1.5rem] text-white font-bold ml-auto mr-5">
+            <div className="flex bg-[#646DD2] rounded-md items-center px-4 py-2 mb-[1em] m-auto md:rounded-4xl md:w-[70%] md:mr-0 md:ml-auto md:mt-[15rem]">
+                <p className="text-[1.5rem] text-white font-bold ml-auto mr-5 md:text-[4rem] md:mr-[3rem] md:ml-auto">
                     Projects
                 </p>
-                <img className="w-40 h-40 object-cover rounded-full"
+                <img className="w-40 h-40 object-cover rounded-full md:mr-auto"
                      src="../images/white-desk-work-study-aesthetics.jpg" alt="profile-picture"/>
             </div>
-            <div className="flex flex-col gap-8">
-                <div>
+            <div className="flex flex-col gap-8 md:grid md:grid-cols-3">
+                <div className="">
                     <ProjectsItem category="WEBSITE" title="Hope Connections" src="../../images/HC-image.png"
                                   colorFilter="#646DD2">
                         <PaginatedModalButton images={images} texts={text1}/>
                     </ProjectsItem>
-                    <div className="flex justify-around mt-3">
+                    <div className="flex justify-around mt-3 md:mt-5">
                         <FaReact color="#FFFFFF"/><SiVite color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/> <FaHtml5
                         color="#FFFFFF"/><SiChakraui color="#FFFFFF"/>
                     </div>
@@ -84,7 +84,7 @@ function Projects() {
                                   colorFilter="#C9AA71">
                         <PaginatedModalButton images={images2} texts={text2}/>
                     </ProjectsItem>
-                    <div className="flex justify-around mt-3">
+                    <div className="flex justify-around mt-3 md:mt-5">
                         <FaPython color="#FFFFFF"/> <SiSelenium color="#FFFFFF"/> <SiMysql color="#FFFFFF"/><SiFastapi
                         color="#FFFFFF"/>
                     </div>
@@ -94,7 +94,7 @@ function Projects() {
                                   colorFilter="#646DD2">
                         <PaginatedModalButton images={images3} texts={text3}/>
                     </ProjectsItem>
-                    <div className="flex justify-around mt-3">
+                    <div className="flex justify-around mt-3 md:mt-5">
                         <FaReact color="#FFFFFF"/><SiVite color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/> <FaHtml5
                         color="#FFFFFF"/><SiChakraui color="#FFFFFF"/>
                     </div>
@@ -104,7 +104,7 @@ function Projects() {
                                   colorFilter="#C9AA71">
                         <PaginatedModalButton images={images4} texts={text4}/>
                     </ProjectsItem>
-                    <div className="flex justify-around mt-3">
+                    <div className="flex justify-around mt-3 md:mt-5">
                         <FaReact color="#FFFFFF"/><RiNextjsFill color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/>
                         <FaHtml5 color="#FFFFFF"/><RiTailwindCssFill color="#FFFFFF"/>
                     </div>
