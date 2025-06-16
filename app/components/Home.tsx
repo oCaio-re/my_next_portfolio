@@ -11,11 +11,12 @@ export function Home() {
         }
     };
     return (
-        <section id="home" className="bg-[#646DD2] h-[100vh] relative">
-            {/*<img src="../../images/wave%20(2).svg" alt="wave-svg"*/}
-            {/*     className="top-0 -scale-y-100 object-cover w-[200rem] overflow-hidden " />*/}
+        <section id="home" className="relative bg-[#646DD2] h-[100vh]">
+            <img src="../../images/wave%20(2).svg" alt="wave-svg"
+                 className="-scale-y-100 overflow-hidden absolute
+                  z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
             <div className="top-0 -scale-y-100 object-cover w-[200rem] overflow-hidden "/>
-            <div className="grid-cols-1 md:grid-cols-2 w-[95vw] mt-[13rem] mx-auto flex flex-col">
+            <div className="relative grid-cols-1 md:grid-cols-2 w-[95vw] mt-[13rem] mx-auto flex flex-col z-50">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                         <div className="font-bold bg-white rounded-full py-3 px-3">
