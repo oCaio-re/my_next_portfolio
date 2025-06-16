@@ -2,7 +2,10 @@ import React from 'react';
 
 function Footer() {
     return (
-        <section id="footer" className="text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem]">
+        <section id="footer" className="relative text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem]">
+            <img alt="bg-img-1" src="../../images/background/blue_s.png"
+                 className="absolute -z-5 -mt-[4rem] scale-130 opacity-90"
+            />
             <p>
                 Loosely designed in
                 <a href="https://www.figma.com/" target= "_blank" className="hover:text-[#646DD2]"> Figma </a>
