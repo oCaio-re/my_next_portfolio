@@ -2,7 +2,7 @@ import React from 'react';
 
 export function About() {
     return (
-        <section id="about" className="grid-cols-1 md:grid-cols-2 w-[90vw] mt-[5rem] m-auto">
+        <section id="about" className="relative grid-cols-1 md:grid-cols-2 w-[90vw] mt-[5rem] m-auto">
             <img alt-="about-me-img" src="../../images/about-me-image.png" className="mb-[1em]"/>
             <div className="gap-[4rem]">
                 <div className="flex bg-[#646DD2] rounded-md items-center px-4 py-2 mb-[1em]">
@@ -12,6 +12,9 @@ export function About() {
                         <img className="w-40 h-40 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                 </div>
                 <div className="text-white text-[1.3rem] text-justify">
+                    <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
+                         className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-125 mt-[5rem] "
+                    />
                     <p className="text-left font-bold mb-2 text-[2rem]">
                         A little bit about me
                     </p>
