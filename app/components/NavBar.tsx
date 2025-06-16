@@ -52,7 +52,7 @@ export const NavBar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
-                        h-20 items-center flex px-5
+                        h-20 items-center hidden px-5 md:flex 
              ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
             `}
         >
