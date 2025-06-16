@@ -1,14 +1,16 @@
 import React from 'react';
-import PaginatedModal from "@/app/test/PaginatedModal";
+import PaginatedModalButton from "@/app/test/PaginatedModalButton";
 
 interface Props {
     category: string;
     title: string;
     src: string;
     colorFilter?: string;
+    children?: React.ReactNode;
 }
 
 function ProjectsItem(props: Props) {
+
     return (
         <div className="relative z-50 border-3 border-white hover:border-[#646DD2] rounded-2xl flex flex-col h-[25rem] overflow-hidden transition-all duration:600 ease-in-out lg:h-[60rem]">
             <div className="p-5">
@@ -26,7 +28,7 @@ function ProjectsItem(props: Props) {
                 {/*<button className="button-call opacity-0 absolute top-0 left-0 right-0 bottom-0 discover-projects m-auto p-2 w-[50%] h-[15%] px-3 text-white text-[1rem] rounded-2xl transition-all duration-500 bg-[#609BE3] hover:bg-gradient-to-r hover:from-[#665dcd] hover:via-[#5fa4e6] hover:to-[#d2ab67] z-40">*/}
                 {/*    Discover More*/}
                 {/*</button>*/}
-                <PaginatedModal/>
+                {props.children}
             </div>
         </div>
     );
