@@ -128,3 +128,9 @@ body {
 /*bege #C9AA71 */
 /*azul #609BE3*/
 /*roxo #646DD2*/
+
+.icon-form{
+  margin: auto auto 10px auto;
+  color: #646DD2;
+  width: 2rem;
+}

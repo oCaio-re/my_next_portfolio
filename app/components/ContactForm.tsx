@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from "react";
+import { IoIosGlobe } from "react-icons/io";
+import { FaRegLightbulb } from "react-icons/fa";
+import { FiSmartphone } from "react-icons/fi";
+import { FaGoogle } from "react-icons/fa";
+import { FaHandshakeSimple } from "react-icons/fa6";
 
 export default function ContactForm() {
     const [services, setServices] = useState<string[]>([]);
@@ -45,18 +50,22 @@ export default function ContactForm() {
 
                 <div className="mb-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        {["Websites", "Branding", "Ecommerce", "SEO", "Hire Me"].map(service => (
+                        {/*{["Website", "Branding", "Ecommerce", "SEO", "Hire Me"].map(service => (*/}
+                        {[{"name": "Websites", "icon": <IoIosGlobe className="icon-form" size={30}/>},{"name": "Branding", "icon": <FaRegLightbulb className="icon-form" size={30}/>}
+                            , {"name": "Ecommerce", "icon": <FiSmartphone className="icon-form" size={30}/>}, {"name": "SEO", "icon": <FaGoogle className="icon-form" size={30}/>},
+                            {"name": "Hire Me", "icon": <FaHandshakeSimple className="icon-form" size={30}/>}].map(item => (
                             <button
-                                key={service}
+                                key={item.name.valueOf()}
                                 type="button"
-                                onClick={() => handleServiceChange(service)}
-                                className={`px-4 py-2 h-20 rounded border transition font-bold ${
-                                    services.includes(service)
-                                        ? 'text-white bg-[#C9AA71]'
-                                        : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+                                onClick={() => handleServiceChange(item.name)}
+                                className={`px-4 py-3 h-20 rounded border transition font-bold${
+                                    services.includes(item.name)
+                                        ? 'text-black bg-white font-bold'
+                                        : 'bg-white text-white border-gray-300 hover:bg-gray-100 font-bold'
                                 }`}
                             >
-                                {service}
+                                {item.icon}
+                                {item.name}
                             </button>
                         ))}
                     </div>
