@@ -27,7 +27,7 @@ function Projects() {
         "Finally, some text for page 30000.",
     ];
     const images2 = [
-        "../../images/WS-image.png",
+        "../../images/wine-search/product-list.png",
         "../../images/wine-search/product-page.png",
         "../../images/wine-search/product-graph.png",
     ];
@@ -37,9 +37,9 @@ function Projects() {
         "SECOND TEXT THREE",
     ];
     const images3 = [
-        "../../images/AT-image.png",
+        "../../images/AT/home-page.png",
         "../../images/AT/hot-beverages.png",
-        "../../images/AT/toasties-and-sandwiches.png",
+        "../../images/AT/our-community.png",
     ];
     const text3 = [
         "An institutional website for a coffee shop, featuring the main menu, contact information, and details about community services.",
@@ -47,7 +47,7 @@ function Projects() {
         "SECOND TEXT THREE",
     ];
     const images4 = [
-        "../../images/lucas-alves.png",
+        "../../images/LA/home-page.png",
         "../../images/LA/trabalhos.png",
         "../../images/LA/depoimentos.png",
     ];

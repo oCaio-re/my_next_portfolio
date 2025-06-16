@@ -42,9 +42,9 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                 Discover More
             </button>
 
-            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-50 flex items-center justify-center">
-                <div className="fixed inset-0 bg-black opacity-50"/>
-                <div className="relative bg-white rounded-lg p-6 w-full max-w-md z-50">
+            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-101 flex items-center justify-center">
+                <div className="fixed inset-0 backdrop-blur-md bg-black opacity-60"/>
+                <div className="relative  bg-opacity-10 rounded-lg p-6 w-full z-50 md:w-[70vw] md:h-[100vh]">
                     <button onClick={closeModal} className="absolute top-4 right-2 text-[#C9AA71] hover:text-gray-700">
                         <FaTimes size={20}/>
                     </button>
@@ -53,12 +53,12 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                         <img
                             src={images[currentPage]}
                             alt={`Page ${currentPage + 1}`}
-                            className="rounded-lg object-contain w-full h-64"
+                            className="rounded-lg object-contain w-full h-64 md:h-180"
                         />
                     </div>
 
-                    <div className="mb-4">
-                        <p className="text-gray-700 text-center">{texts[currentPage]}</p>
+                    <div className="mb-4 backdrop-blur-md rounded-lg py-3">
+                        <p className="text-white text-center md:text-[1.3rem]">{texts[currentPage]}</p>
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -68,7 +68,6 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                             className="px-4 py-2 bg-[#609BE3] rounded disabled:opacity-50 text-white"
                         >
                             <GrFormPrevious size={30}/>
-                            {/*Previous*/}
                         </button>
 
                         <div className="text-sm  text-[#C9AA71]">
@@ -81,7 +80,6 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                             className="px-4 py-2 bg-[#646DD2] text-white rounded disabled:opacity-50"
                         >
                             <MdNavigateNext size={30}/>
-                            {/*Next*/}
                         </button>
                     </div>
                 </div>
