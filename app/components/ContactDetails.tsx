@@ -18,7 +18,7 @@ function ContactDetails() {
                                 Branding
                             </p>
                         </div>
-                        <div className="flex text-[1.2rem] gap-3 mt-3">
+                        <div className="flex text-[1.2rem] gap-1 mt-3">
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 Ecommerce
                             </p>

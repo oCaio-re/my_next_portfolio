@@ -1,9 +1,10 @@
 "use client";
 
 import {useState} from "react";
-import Image from "next/image";
 import {Dialog} from "@headlessui/react";
 import {FaTimes} from "react-icons/fa";
+import { MdNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
 
 interface PaginatedModalProps {
     images: string[]; // array of 3 image URLs
@@ -39,19 +40,17 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
             </button>
 
             <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-50 flex items-center justify-center">
-                <div className="fixed inset-0 bg-black bg-opacity-50"/>
+                <div className="fixed inset-0 bg-black opacity-50"/>
                 <div className="relative bg-white rounded-lg p-6 w-full max-w-md z-50">
-                    <button onClick={closeModal} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <button onClick={closeModal} className="absolute top-4 right-2 text-[#C9AA71] hover:text-gray-700">
                         <FaTimes size={20}/>
                     </button>
 
                     <div className="mb-4">
-                        <Image
+                        <img
                             src={images[currentPage]}
                             alt={`Page ${currentPage + 1}`}
-                            width={400}
-                            height={300}
-                            className="rounded-lg object-cover w-full h-64"
+                            className="rounded-lg object-contain w-full h-64"
                         />
                     </div>
 
@@ -63,21 +62,23 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                         <button
                             onClick={() => goToPage(currentPage - 1)}
                             disabled={currentPage === 0}
-                            className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                            className="px-4 py-2 bg-[#609BE3] rounded disabled:opacity-50 text-white"
                         >
-                            Previous
+                            <GrFormPrevious size={30}/>
+                            {/*Previous*/}
                         </button>
 
-                        <div className="text-sm text-gray-600">
-                            Page {currentPage + 1} of {images.length}
+                        <div className="text-sm  text-[#C9AA71]">
+                             {currentPage + 1} of {images.length}
                         </div>
 
                         <button
                             onClick={() => goToPage(currentPage + 1)}
                             disabled={currentPage === images.length - 1}
-                            className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
+                            className="px-4 py-2 bg-[#646DD2] text-white rounded disabled:opacity-50"
                         >
-                            Next
+                            <MdNavigateNext size={30}/>
+                            {/*Next*/}
                         </button>
                     </div>
                 </div>

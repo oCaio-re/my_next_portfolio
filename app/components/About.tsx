@@ -21,7 +21,7 @@ export function About() {
 
                     <p className="">
                         I&#39;m Caio Oliveira,
-                        a <i>full-stack</i> Developer with solid experience in front-end development (React, JavaScript) and back-end (Python/Django).
+                        a <i>full-stack</i> Developer with solid experience in front-end development (React/NextJS, TypeScript) and back-end (Python/Django).
                     </p>
                     <p className="mt-2 mb-2">
                         Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles
