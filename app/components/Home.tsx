@@ -11,7 +11,7 @@ export function Home() {
         }
     };
     return (
-        <section id="home" className="relative bg-[#646DD2] h-[100vh] md:h-[80vh]">
+        <section id="home" className="relative bg-[#646DD2] h-[100vh] md:min-h-[80vh] md:h-[80vh]">
             <img src="../../images/wave%20(2).svg" alt="wave-svg"
                  className="-scale-y-100 overflow-hidden absolute
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />

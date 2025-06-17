@@ -4,7 +4,7 @@ import ContactDetails from "@/app/components/ContactDetails";
 
 export function ContactMe() {
     return (
-        <section id="contact" className="relative w-[90vw] mt-[8rem] mx-auto md:w-[70vw] md:mt-[15rem]">
+        <section id="contact" className="relative w-[90vw] mt-[8rem] mx-auto md:w-[70vw] md:mt-[20rem]">
             <img alt="bg-img-1" src="../../images/background/purple_s.png"
                  className="absolute -z-5 top-0 left-0  mt-[4rem] ml-[5rem] "
             />

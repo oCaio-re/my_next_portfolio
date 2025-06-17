@@ -51,7 +51,7 @@ export function MobileNavbar() {
     };
 
     return (
-        <div className="md:hidden fixed top-3 m-auto left-0 right-0 z-100 w-[95vw]">
+        <div className="lg:hidden fixed top-3 m-auto left-0 right-0 z-100 w-[95vw]">
             <div className="flex items-center justify-between px-4 py-3 bg-white rounded-md">
                 <button
                     onClick={() => setIsOpen(!isOpen)}

@@ -15,7 +15,8 @@ export function About() {
                 </div>
                 <div className="text-white text-[1.3rem] text-justify md:text-[1.4rem]">
                     <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
-                         className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-125 mt-[5rem] "
+                         className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-125 mt-[5rem] md:-mt-[30rem]
+                          md:ml-[20rem] md:scale-140"
                     />
                     <p className="text-left font-bold mb-2 text-[2rem] md:text-[3rem]">
                         A little bit about me

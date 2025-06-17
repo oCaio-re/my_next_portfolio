@@ -11,7 +11,7 @@ export default function ServicesGrid() {
             <div className="relative grid-cols-1 flex flex-col gap-7">
                 <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                      className="absolute -z-5  w-auto h-auto min-w-full min-h-full object-cover scale-150 -mt-[8rem]
-                      md:object-fit md:scale-160 md:min-w-0 md:min-h-0 md:gap-3"
+                      md:object-fit md:scale-200 md:min-w-0 md:min-h-0 md:-mt-[15rem]"
                 />
                 <div className="gap-7 flex flex-col md:flex-row md:gap-3">
                     <ServiceCard
@@ -59,14 +59,15 @@ function ServiceCard({ title, description, Icon, marginTop }: ServiceCardProps) 
         md:w-[50%] ${marginTop} md:rounded-4xl
         `}>
             <div className="flex flex-col justify-around h-[60%] ">
-                <h2 className="text-white font-bold text-4xl mb-1">{title}</h2>
+                <h2 className="text-white font-bold text-4xl mb-1 md:text-left md:text-[3rem]">{title}</h2>
 
                 <div className="w-11/12 border-t-2 border-gray-400 mb-1"></div>
 
                 <p className="text-white w-11/12 text-[1.2rem] mb-1 text-left">{description}</p>
 
-                <button className="mr-auto p-2 px-3 text-white text-[1rem] rounded-2xl transition-all duration-500 bg-[#609BE3] hover:bg-gradient-to-r hover:from-[#665dcd] hover:via-[#5fa4e6] hover:to-[#d2ab67] z-40">
-                    Discover More
+                <button className="mr-auto p-2 px-3 text-white text-[1rem] rounded-2xl transition-all duration-500 bg-[#609BE3]
+                 hover:bg-gradient-to-r hover:from-[#665dcd] hover:via-[#5fa4e6] hover:to-[#d2ab67] z-40 md:px-4 md:py-3 md:font-bold">
+                    DISCOVER MORE
                 </button>
             </div>
 
