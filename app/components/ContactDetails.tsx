@@ -4,8 +4,10 @@ import {FaGithub, FaLinkedin} from "react-icons/fa";
 function ContactDetails() {
     return (
         <div className="mb-[3rem]">
-            <div className="flex flex-col text-white gap-5 md:flex-row md:justify-center md:gap-3">
-                <div className="border-4 flex flex-col rounded-md text-left p-4 h-[25rem] justify-between md:w-[30%] md:h-[30rem] md:rounded-xl">
+            <div className="flex flex-col text-white gap-5 lg:flex-row lg:justify-center lg:gap-3 ">
+                <div className="border-4 flex flex-col rounded-lg text-left p-4 h-[25rem] justify-between lg:w-[30%] lg:h-[30rem] lg:rounded-xl
+                    md:w-[50vw] md:m-autolg:m-0
+                ">
                     <div>
                         <p className="font-bold text-[1.4rem]">
                             SERVICES
@@ -53,12 +55,14 @@ function ContactDetails() {
                     </div>
                 </div>
 
-                <div className="border-4 flex flex-col rounded-md text-left p-4 h-[25rem] justify-between md:w-[30%] md:h-[30rem] md:rounded-xl">
+                <div className="border-4 flex flex-col rounded-lg text-left p-4 h-[25rem] justify-between lg:w-[30%] lg:h-[30rem] lg:rounded-xl
+                md:w-[50vw] md:m-auto lg:m-0
+                ">
                     <div>
                         <p className="font-bold text-[1.4rem]">
                             ABOUT
                         </p>
-                        <p className="text-[1.2rem] mt-3 md:text-[1.5rem]">
+                        <p className="text-[1.2rem] mt-3 lg:text-[1.5rem]">
                             I&#39;m a professional software engineer. Feel free to get in touch with me.
                         </p>
                     </div>
@@ -66,7 +70,7 @@ function ContactDetails() {
                         <p className="font-bold text-[1.4rem]">
                             E-MAIL
                         </p>
-                        <p className="text-[1rem] mt-3 md:text-[1.5rem]">
+                        <p className="text-[1rem] mt-3 lg:text-[1.5rem]">
                             xcaio2@gmail.com
                         </p>
                     </div>
@@ -74,7 +78,7 @@ function ContactDetails() {
                         <p className="font-bold text-[1.4rem]">
                             CALL
                         </p>
-                        <p className="text-[1rem] italic mt-3 md:text-[1.5rem]">
+                        <p className="text-[1rem] italic mt-3 lg:text-[1.5rem]">
                             +351 916 248 973
                         </p>
                     </div>

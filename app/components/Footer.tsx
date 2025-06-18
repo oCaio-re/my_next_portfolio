@@ -2,10 +2,10 @@ import React from 'react';
 
 function Footer() {
     return (
-        <section id="footer" className="relative text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem]
-         md:mt-[20rem] md:text-[1.5rem]">
+        <section id="footer" className="relative text-white w-[80vw] text-[1.2rem] italic m-auto mt-[6rem] mb-[3rem] md:mt-[15rem]
+         lg:mt-[30rem] lg:text-[1.5rem] lg:mb-[10rem]">
             <img alt="bg-img-1" src="../../images/background/blue_s.png"
-                 className="absolute -z-5 -mt-[4rem] scale-130 opacity-90"
+                 className="absolute -z-5 -mt-[4rem] scale-130 opacity-90 lg:m-auto lg:left-0 lg:right-0 lg:top-0 lg:bottom-0 lg:scale-180 "
             />
             <p>
                 Loosely designed in

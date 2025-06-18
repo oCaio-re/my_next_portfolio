@@ -19,8 +19,8 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="relative flex justify-center items-center border-4 border-white p-4 text-[1rem] rounded-md z-50
-        md:w-[50vw] md:m-auto md:h-[50rem] md:rounded-xl">
+        <div className="relative flex justify-center items-center border-4 border-white p-4 text-[1rem] rounded-lg z-50
+        lg:w-[50vw] lg:m-auto lg:h-[50rem] lg:rounded-xl">
             <form className="p-3 rounded-lg shadow-lg w-full max-w-2xl" action="https://formsubmit.co/xcaio2@gmail.com" method="POST">
 
                 <div className="mb-6 text-white">
@@ -57,7 +57,7 @@ export default function ContactForm() {
                                 key={item.name}
                                 type="button"
                                 onClick={() => handleServiceChange(item.name)}
-                                className={`px-4 py-3 h-20 rounded border transition font-bold md:h-[10rem]
+                                className={`px-4 py-3 h-20 rounded border transition font-bold lg:h-[10rem]
                                  ${
                                     services.includes(item.name)
                                         ? 'text-black bg-white font-bold'
