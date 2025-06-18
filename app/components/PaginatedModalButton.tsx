@@ -5,13 +5,15 @@ import {Dialog} from "@headlessui/react";
 import {FaTimes} from "react-icons/fa";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
+import { GrDeploy } from "react-icons/gr";
 
 interface PaginatedModalProps {
-    images: string[]; // array of 3 image URLs
-    texts: string[];  // array of 3 texts
+    images: string[];
+    texts: string[];
+    deployLink?: string;
 }
 
-export default function PaginatedModalButton({images, texts}: PaginatedModalProps) {
+export default function PaginatedModalButton({images, texts, deployLink}: PaginatedModalProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState<number>(0);
 
@@ -70,10 +72,17 @@ export default function PaginatedModalButton({images, texts}: PaginatedModalProp
                             <GrFormPrevious size={30}/>
                         </button>
 
-                        <div className="text-sm  text-[#C9AA71]">
-                             {currentPage + 1} of {images.length}
+                        <div className="flex flex-col gap-5 items-center">
+                            <div className="text-sm  text-[#C9AA71]">
+                                {currentPage + 1} of {images.length}
+                            </div>
+                            {deployLink ?
+                                <a href={deployLink} target="_blank">
+                                <button className="transition-all font-bold duration-300 px-4 py-2 flex items-center gap-3 rounded text-white bg-[#C9AA71] hover:bg-white hover:text-gray-700">
+                                    Deploy Link <GrDeploy className="font-bold"/>
+                                </button>
+                            </a> : null}
                         </div>
-
                         <button
                             onClick={() => goToPage(currentPage + 1)}
                             disabled={currentPage === images.length - 1}

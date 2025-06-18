@@ -1,0 +1,21 @@
+.glowing-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(100, 109, 210, 0.8), rgba(0, 255, 255, 0));
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: inherit;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(100, 109, 210, 0.6), 0 0 20px rgba(100, 109, 210, 0.4), 0 0 30px rgb(100, 109, 210);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(100, 109, 210, 0.8), 0 0 30px rgba(100, 109, 210, 0.6), 0 0 40px rgba(100, 109, 210, 0.4);
+    }
+}

@@ -8,16 +8,18 @@ import Projects from "@/app/components/Projects";
 import {ContactMe} from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
 import {NavBar} from "@/app/components/NavBar";
+import GlowingCursor from "@/app/components/GlowingCursor/GlowingCursor";
 
 function Page() {
     return (
         <div className="overflow-x-hidden overflow-y-hidden h-full text-4xl text-center flex flex-col">
             <MobileNavbar />
             <NavBar/>
+            <GlowingCursor/>
             <Home/>
             <About/>
-            <Services/>
             <Projects/>
+            <Services/>
             <ContactMe/>
             <Footer />
         </div>

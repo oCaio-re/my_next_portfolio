@@ -95,7 +95,7 @@ export default function ContactForm() {
                     Submit
                 </button>
 
-                <input type="hidden" name="_next" value="https://portfolio-lucas-7fi7l.ondigitalocean.app/obrigado"/>
+                <input type="hidden" name="_next" value="https://oyster-app-kkuyg.ondigitalocean.app/thank-you"/>
             </form>
         </div>
     );

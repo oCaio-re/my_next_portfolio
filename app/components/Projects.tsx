@@ -15,46 +15,47 @@ import {SiVite} from "react-icons/si";
 import PaginatedModalButton from "@/app/components/PaginatedModalButton";
 
 function Projects() {
-    const images = [
-        "../../images/HC-image.png",
-        "../../images/HC/about-us.png",
-        "../../images/HC/zoe-school.png",
+    const text_HC = [
+        "An institutional website that presents key information about a Drop-In Centre located in Roscommon, Ireland.",
+        "The objective was to present and clearly explain all services available at this Drop-In Center, making it more accessible for those seeking assistance or wishing to offer support..",
+        "It is a concise and objective way to communicate and offer support. Please, feel free to explore it on the link below:",
     ];
 
-    const text1 = [
-        "An institutional website that presents key information about a Drop-In Centre located in Roscommon, Ireland.",
-        "Here goes the content for page 2.",
-        "Finally, some text for page 30000.",
+    const images_HC = [
+        "../../images/HC/home-page.png",
+        "../../images/HC/zoe-school.png",
+        "../../images/HC/about-us.png",
     ];
-    const images2 = [
+
+    const images_WS = [
         "../../images/wine-search/product-list.png",
         "../../images/wine-search/product-page.png",
         "../../images/wine-search/product-graph.png",
     ];
-    const text2 = [
+    const text_WS = [
         "A web application with two primary functionalities: collecting wine prices through web scraping and presenting the collected data via an interactive dashboard.",
-        "SECOND TEXT TWO",
-        "SECOND TEXT THREE",
+        "Using this tool, the company was able to collect valuable data and develop commercial strategies aimed at enhancing both sales performance and overall business planning.",
+        "The software is proprietary to the company; therefore, no deployment link is available. Feel free to contact me to discuss it further — I would be happy to share more details.",
     ];
-    const images3 = [
+    const images_AT = [
         "../../images/AT/home-page.png",
         "../../images/AT/hot-beverages.png",
         "../../images/AT/our-community.png",
     ];
-    const text3 = [
-        "An institutional website for a coffee shop, featuring the main menu, contact information, and details about community services.",
-        "SECOND TEXT TWO",
-        "SECOND TEXT THREE",
+    const text_AT = [
+        "A sleek and modern website designed for a coffee shop featuring the main menu, contact information, and details about community services.",
+        "The primary objective was to showcase the full range of products while conveying the atmosphere of a cozy, welcoming shop that invites customers in.",
+        "Please, feel free to explore the shop website on the link below:",
     ];
-    const images4 = [
+    const images_LA = [
         "../../images/LA/home-page.png",
         "../../images/LA/trabalhos.png",
         "../../images/LA/depoimentos.png",
     ];
-    const text4 = [
+    const text_LA = [
         "A portfolio website showcasing the primary body of work of a professional photographer, including an extensive collection of photographs and photo shoots.",
-        "SECOND TEXT TWO",
-        "SECOND TEXT THREE",
+        "The primary objective was to design a concise and refined user interface while ensuring an excellent user experience.",
+        "Next, present essential information about how the photo shoots are conducted, along with a clear method of communication.\n Please use the (provisional) link below to explore the webpage:",
     ];
     return (
         <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw]">
@@ -72,7 +73,7 @@ function Projects() {
                 <div>
                     <ProjectsItem category="PORTFOLIO" title="Lucas Alves" src="../../images/lucas-alves.png"
                                   colorFilter="#C9AA71">
-                        <PaginatedModalButton images={images4} texts={text4}/>
+                        <PaginatedModalButton images={images_LA} texts={text_LA} deployLink="https://portfolio-lucas-7fi7l.ondigitalocean.app/"/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF"/><RiNextjsFill color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/>
@@ -82,7 +83,7 @@ function Projects() {
                 <div>
                     <ProjectsItem category="WEBSITE" title="All Tasty Caffe" src="../../images/AT-image.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images3} texts={text3}/>
+                        <PaginatedModalButton images={images_AT} texts={text_AT} deployLink="https://www.alltasty.cafe/"/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF"/><SiVite color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/> <FaHtml5
@@ -92,7 +93,7 @@ function Projects() {
                 <div>
                     <ProjectsItem category="WEBAPP" title="Sogrape Wines" src="../../images/WS-image.png"
                                   colorFilter="#C9AA71">
-                        <PaginatedModalButton images={images2} texts={text2}/>
+                        <PaginatedModalButton images={images_WS} texts={text_WS}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaPython color="#FFFFFF"/> <SiSelenium color="#FFFFFF"/> <SiMysql color="#FFFFFF"/><SiFastapi
@@ -102,7 +103,7 @@ function Projects() {
                 <div className="">
                     <ProjectsItem category="WEBSITE" title="Hope Connections" src="../../images/HC-image.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images} texts={text1}/>
+                        <PaginatedModalButton images={images_HC} texts={text_HC} deployLink="https://hope-connections-hmqdx.ondigitalocean.app"/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF"/><SiVite color="#FFFFFF"/><BiLogoTypescript color="#FFFFFF"/> <FaHtml5

@@ -11,7 +11,7 @@ export default function ServicesGrid() {
             <div className="relative grid-cols-1 flex flex-col gap-7">
                 <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                      className="absolute -z-5  w-auto h-auto min-w-full min-h-full object-cover scale-150 -mt-[8rem]
-                      lg:object-fit lg:scale-200 lg:min-w-0 lg:min-h-0 lg:-mt-[15rem]"
+                      lg:object-fit lg:scale-200 lg:min-w-0 lg:min-h-0 lg:-mt-[5rem]"
                 />
                 <div className="gap-7 flex flex-col lg:flex-row lg:gap-3">
                     <ServiceCard
