@@ -3,7 +3,7 @@ import React from 'react';
 export function About() {
     return (
         <section id="about" className="relative grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[5rem] m-auto md:mt-[15rem]
-        lg:w-[70vw] lg:flex lg:mt-[15rem] lg:justify-between
+        lg:w-[70vw] lg:flex lg:mt-[20rem] lg:justify-between pt-[10rem]
         ">
             <img alt="about-me-img" src="../../images/about-me-image.png" className="mb-[1em] lg:w-[40%]"/>
             <div className="gap-[4rem] lg:w-[45%]">

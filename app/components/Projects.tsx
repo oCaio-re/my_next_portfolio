@@ -58,7 +58,7 @@ function Projects() {
         "Next, present essential information about how the photo shoots are conducted, along with a clear method of communication.\n Please use the (provisional) link below to explore the webpage:",
     ];
     return (
-        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw]">
+        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw] ">
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                  className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-140 -mt-[2rem] opacity-80"
             />
