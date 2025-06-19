@@ -19,7 +19,7 @@ const GlowingCursor: React.FC = () => {
 
     return (
         <div
-            className="glowing-cursor"
+            className="glowing-cursor hidden lg:block"
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,

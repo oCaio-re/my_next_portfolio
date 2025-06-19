@@ -7,7 +7,7 @@ export const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('home');
 
-    const navItems = ['home', 'about', 'services', 'projects', 'contact'];
+    const navItems = ['home', 'about', 'projects', 'services', 'contact'];
 
     useEffect(() => {
         const onScroll = () => {
