@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react';
 import {MobileNavbar} from "@/app/components/MobileNavbar";
 import {Home} from "@/app/components/Home";
@@ -9,6 +10,7 @@ import {ContactMe} from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
 import {NavBar} from "@/app/components/NavBar";
 import GlowingCursor from "@/app/components/GlowingCursor/GlowingCursor";
+import ProjectCTA from "@/app/components/ProjectCTA";
 
 function Page() {
     return (
@@ -20,6 +22,7 @@ function Page() {
             <About/>
             <Projects/>
             <Services/>
+            <ProjectCTA/>
             <ContactMe/>
             <Footer />
         </div>

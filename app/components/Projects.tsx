@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react';
 import ProjectsItem from "@/app/components/ProjectsItem";
 import {BiLogoTypescript} from "react-icons/bi";

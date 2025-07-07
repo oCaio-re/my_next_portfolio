@@ -10,64 +10,63 @@ export const NavBar = () => {
     const navItems = ['home', 'about', 'projects', 'services', 'contact'];
 
     useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 10);
-        };
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.6 } // fine-tune this threshold as needed
-        );
-
-        navItems.forEach((id) => {
-            const section = document.getElementById(id);
-            if (section) observer.observe(section);
-        });
-
-        return () => {
-            navItems.forEach((id) => {
-                const section = document.getElementById(id);
-                if (section) observer.unobserve(section);
-            });
-        };
-    }, []);
-
-    useEffect(() => {
         const handleScroll = () => {
-            const sections = ["home", "about", "services", "projects", "contact"];
-            const scrollPosition = window.scrollY;
+            // Handle navbar background change
+            setScrolled(window.scrollY > 10);
 
-            for (const section of sections) {
+            // Handle active section detection
+            const sections = navItems;
+            const scrollPosition = window.scrollY + 100; // Add offset for navbar height
+
+            // Find the current section
+            let currentSection = 'home'; // default
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
                 const element = document.getElementById(section);
                 if (element) {
                     const offsetTop = element.offsetTop;
-                    const offsetHeight = element.offsetHeight;
-                    if (scrollPosition >= offsetTop + 300 && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
+                    if (scrollPosition >= offsetTop) {
+                        currentSection = section;
                         break;
                     }
                 }
             }
+
+            setActiveSection(currentSection);
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        // Use throttle to improve performance
+        let ticking = false;
+        const throttledHandleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        // Set initial state
+        handleScroll();
+
+        window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+
+        return () => window.removeEventListener('scroll', throttledHandleScroll);
     }, []);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Calculate the offset to account for the fixed navbar
+            const navbarHeight = 80; // Adjust this to match your navbar height
+            const elementPosition = element.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
         }
     };
 
@@ -92,13 +91,13 @@ export const NavBar = () => {
                             <a
                                 onClick={() => scrollToSection(item)}
                                 className={`hover:text-[#C9AA71] transition-colors cursor-pointer text-[1.2rem] font-bold 
-                                ${activeSection === item ? 'text-[#C9AA71]' : 'text-black'} ${scrolled ? 'text-black' : 'text-white'}
+                                ${activeSection === item ? 'text-[#C9AA71]' : ''} ${scrolled ? 'text-black' : 'text-white'}
                                 `}
                             >
                                 {item}
                                 <span
                                     className={`absolute -bottom-1 left-0 h-[3px] w-full bg-[#C9AA71] rounded-full transition-transform duration-300 
-                                    ${activeSection === item ? 'scale-x-100' : 'scale-x-0'} ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}
+                                    ${activeSection === item ? 'scale-x-100' : 'scale-x-0'} 
                                      origin-left`}
                                 />
                             </a>
