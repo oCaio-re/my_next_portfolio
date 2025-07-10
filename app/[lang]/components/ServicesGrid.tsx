@@ -4,7 +4,7 @@ import { LuSmartphone } from "react-icons/lu";
 import { FaGoogle } from "react-icons/fa";
 import React from "react";
 
-export default function ServicesGrid() {
+export default function ServicesGrid({ dictionary }: { dictionary: any }) {
     return (
         <div className="flex flex-col px-4 lg:w-[50vw] lg:m-auto lg:overflow-x-visible">
 
@@ -15,13 +15,13 @@ export default function ServicesGrid() {
                 />
                 <div className="gap-7 flex flex-col lg:flex-row lg:gap-3">
                     <ServiceCard
-                        title="Website"
-                        description="Building custom websites with a focus on user experience, responsive design, and modern technologies."
+                        title={dictionary.page.services.grid.website.title}
+                        description={dictionary.page.services.grid.website.description}
                         Icon={TbWorld}
                     />
                     <ServiceCard
-                        title="Branding"
-                        description="Creating cohesive brand experiences across all touch-points, from logo design and website development to marketing materials and social media presence."
+                        title={dictionary.page.services.grid.branding.title}
+                        description={dictionary.page.services.grid.branding.description}
                         Icon={PiLightbulbBold}
                         marginTop="lg:-mt-[5rem]"
                     />
@@ -29,13 +29,13 @@ export default function ServicesGrid() {
 
             <div className="gap-7 flex flex-col lg:flex-row lg:gap-3">
                     <ServiceCard
-                        title="E-commerce"
-                        description="Developing robust online stores with features like product catalogs, shopping carts, secure payment processing, and order management."
+                        title={dictionary.page.services.grid.ecommerce.title}
+                        description={dictionary.page.services.grid.ecommerce.description}
                         Icon={LuSmartphone}
                     />
                     <ServiceCard
-                        title="SEO"
-                        description="Optimizing websites for local search results to attract customers in specific geographic areas."
+                        title={dictionary.page.services.grid.seo.title}
+                        description={dictionary.page.services.grid.seo.description}
                         Icon={FaGoogle}
                         marginTop="lg:-mt-[5rem]"
                     />

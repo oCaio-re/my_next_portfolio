@@ -1,8 +1,9 @@
-export default function ProjectCTA() {
+'use client'
+
+export default function ProjectCTA({ dictionary }: { dictionary: any }) {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            // Calculate the offset to account for the fixed navbar
             const navbarHeight = 80; // Adjust this to match your navbar height
             const elementPosition = element.offsetTop - navbarHeight;
 
@@ -18,9 +19,8 @@ export default function ProjectCTA() {
         text-4xl md:text-5xl lg:text-[5rem] font-extrabold
         bg-clip-text text-transparent drop-shadow-xl drop-shadow-[#646DD2]/50 hover:shadow-white
         bg-gradient-to-r from-[#609BE3] via-[#646DD2] to-purple-500 py-3
-      ">
-                Boost Your Sales. <br/> Redefine Your Strategy.
-            </h3>
+      "
+            dangerouslySetInnerHTML={{ __html: dictionary.page.project_cta.title }} />
             <div className="mt-10">
                 <a
                     onClick={() => scrollToSection("contact")}
@@ -32,7 +32,7 @@ export default function ProjectCTA() {
             shadow-2xl shadow-[#646DD2]/120 hover:shadow-white
           "
                 >
-                    Let&#39;s Talk Growth
+                    {dictionary.page.project_cta.button}
                 </a>
             </div>
         </div>

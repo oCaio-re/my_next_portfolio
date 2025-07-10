@@ -7,7 +7,7 @@ import { FiSmartphone } from "react-icons/fi";
 import { FaGoogle } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 
-export default function ContactForm() {
+export default function ContactForm({ dictionary }: { dictionary: any }) {
     const [services, setServices] = useState<string[]>([]);
 
     const handleServiceChange = (service: string) => {
@@ -28,7 +28,7 @@ export default function ContactForm() {
                         name="name"
                         type="text"
                         id="name"
-                        placeholder="Name"
+                        placeholder={dictionary.page.contact.form.name_placeholder}
                         className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#646DD2]"
                         required
                     />
@@ -39,7 +39,7 @@ export default function ContactForm() {
                         name="email"
                         type="email"
                         id="email"
-                        placeholder="Email address"
+                        placeholder={dictionary.page.contact.form.email_placeholder}
                         className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#646DD2]"
                         required
                     />
@@ -47,11 +47,11 @@ export default function ContactForm() {
 
                 <div className="mb-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        {[{"name": "Websites", "icon": <IoIosGlobe className="icon-form" size={30}/>},
-                            {"name": "Branding", "icon": <FaRegLightbulb className="icon-form" size={30}/>},
-                            {"name": "Ecommerce", "icon": <FiSmartphone className="icon-form" size={30}/>},
-                            {"name": "SEO", "icon": <FaGoogle className="icon-form" size={30}/>},
-                            {"name": "Hire Me", "icon": <FaHandshakeSimple className="icon-form" size={30}/>},
+                        {[{"name": dictionary.page.contact.details.websites, "icon": <IoIosGlobe className="icon-form" size={30}/>},
+                            {"name": dictionary.page.contact.details.branding, "icon": <FaRegLightbulb className="icon-form" size={30}/>},
+                            {"name": dictionary.page.contact.details.ecommerce, "icon": <FiSmartphone className="icon-form" size={30}/>},
+                            {"name": dictionary.page.contact.details.seo, "icon": <FaGoogle className="icon-form" size={30}/>},
+                            {"name": dictionary.page.contact.details.hire_me, "icon": <FaHandshakeSimple className="icon-form" size={30}/>},
                         ].map(item => (
                             <button
                                 key={item.name}
@@ -76,7 +76,7 @@ export default function ContactForm() {
                         id="project"
                         name="info-subject"
                         rows={5}
-                        placeholder="Tell me about the project"
+                        placeholder={dictionary.page.contact.form.project_placeholder}
                         className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         required
                     />
@@ -92,7 +92,7 @@ export default function ContactForm() {
                     type="submit"
                     className="btn w-full bg-[#646DD2] text-white font-semibold py-3 rounded hover:bg-[#7F85CCFF] transition z-50"
                 >
-                    Submit
+                    {dictionary.page.contact.form.submit_button}
                 </button>
 
                 <input type="hidden" name="_next" value="https://oyster-app-kkuyg.ondigitalocean.app/thank-you"/>

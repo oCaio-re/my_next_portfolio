@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function About() {
+export function About({ dictionary }: { dictionary: any }) {
     return (
         <section id="about" className="relative grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[5rem] m-auto md:mt-[15rem]
         lg:w-[70vw] lg:flex lg:mt-[20rem] lg:justify-between pt-[10rem]
@@ -9,7 +9,7 @@ export function About() {
             <div className="gap-[4rem] lg:w-[45%]">
                 <div className="flex bg-[#646DD2] rounded-lg items-center px-4 py-2 mb-[1em] lg:rounded-4xl">
                         <p className="text-[1.8rem] text-white font-bold ml-auto mr-5 lg:text-[4rem] lg:mr-[3rem]">
-                            My Story
+                            {dictionary.page.about.my_story}
                         </p>
                         <img className="w-40 h-40 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                 </div>
@@ -19,21 +19,12 @@ export function About() {
                           lg:ml-[20rem] lg:scale-140"
                     />
                     <p className="text-left font-bold mb-2 text-[2rem] lg:text-[3rem]">
-                        A little bit about me
+                        {dictionary.page.about.a_little_bit_about_me}
                     </p>
 
-                    <p className="lg:mt-3">
-                        I&#39;m Caio Oliveira,<br/>
-                        a <i>full-stack</i> Developer with solid experience in front-end development <i>(React/NextJS, TypeScript)</i> and back-end <i>(Python/Django)</i>.
-                    </p>
-                    <p className="mt-2 mb-2">
-                        Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles
-                        in innovative projects and a collaborative work environment.
-                    </p>
-                    <p className="">
-                        Weather you look for a service or a problem solver employer,
-                        <b className="text-[#C9AA71]"> I am the solution.</b>
-                    </p>
+                    <p className="lg:mt-3" dangerouslySetInnerHTML={{ __html: dictionary.page.about.bio_line_1 }} />
+                    <p className="mt-2 mb-2" dangerouslySetInnerHTML={{ __html: dictionary.page.about.bio_line_2 }} />
+                    <p className="" dangerouslySetInnerHTML={{ __html: dictionary.page.about.bio_line_3 }} />
                 </div>
             </div>
         </section>

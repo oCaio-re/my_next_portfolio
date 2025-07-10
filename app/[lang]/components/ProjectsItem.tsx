@@ -24,8 +24,8 @@ function ProjectsItem(props: Props) {
             </div>
             <div className="img-item-project relative w-[90%] -ml-[1rem] rotate-10 mt-[5rem] hover:rotate-0 hover:mt-0
             hover:ml-[1rem] transition-all ease-in-out duration-600 md:w-[90%] md:hover:mt-[5rem] md:mt-[12rem]">
-                <div className={`opacity-50 bg-[${props.colorFilter}] w-[100%] h-[100%] z-30 absolute rounded-md`}/>
-                <img alt="filter" src={props.src} className="w-[100%] rounded-md"/>
+                <div className={`opacity-50 bg-gradient-to-t from-[#646DD2] via-[#646DD2] to-transparent w-[100%] h-[100%] z-30 absolute rounded-md`}/>
+                <img alt="filter" src={props.src} className="w-[100%] object-contain bg-white aspect-square rounded-md"/>
                 {props.children}
             </div>
         </div>

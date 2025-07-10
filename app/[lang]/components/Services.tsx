@@ -1,7 +1,7 @@
 import React from 'react';
-import ServicesGrid from "@/app/components/ServicesGrid";
+import ServicesGrid from "./ServicesGrid";
 
-export function Services() {
+export function Services({ dictionary }: { dictionary: any }) {
     return (
         <section id="services" className="grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[8rem] m-auto md:mt-[15rem] lg:w-[70vw]">
             <img alt="bg-img-1" src="../../images/background/purple_s.png"
@@ -16,11 +16,11 @@ export function Services() {
 
                     <img className="w-40 h-40 object-cover rounded-full ml-auto mr-5 lg:mr-8" src="../../images/handshake.jpg" alt="profile-picture"/>
                     <p className="text-[1.8rem] text-white font-bold lg:text-[4rem] lg:mr-auto">
-                        Services
+                        {dictionary.page.services.title}
                     </p>
                 </div>
             </div>
-            <ServicesGrid/>
+            <ServicesGrid dictionary={dictionary}/>
             <img alt="bg-img-1" src="../../images/background/blue_s.png"
                  className="hidden absolute -z-50 h-150 w-150 -mt-[35rem] ml-[40rem] scale-130 lg:block opacity-70"
             />

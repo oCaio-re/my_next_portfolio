@@ -1,21 +1,20 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import {FiPhone} from "react-icons/fi";
+import { Dictionary, NavItem } from './types';
 
-export const NavBar = () => {
+export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('home');
 
-    const navItems = ['home', 'about', 'projects', 'services', 'contact'];
+    const navItems = dictionary.navItems;
 
     useEffect(() => {
         const handleScroll = () => {
             // Handle navbar background change
             setScrolled(window.scrollY > 10);
 
-            // Handle active section detection
-            const sections = navItems;
+            const sections = navItems.map((item: NavItem) => item.id);
             const scrollPosition = window.scrollY + 100; // Add offset for navbar height
 
             // Find the current section
@@ -86,25 +85,24 @@ export const NavBar = () => {
                 </a>
 
                 <ul className={`hidden md:flex gap-6 text-sm uppercase`}>
-                    {navItems.map((item) => (
-                        <li key={item} className="relative">
+                    {navItems.map((item: NavItem) => (
+                        <li key={item.id} className="relative">
                             <a
-                                onClick={() => scrollToSection(item)}
+                                onClick={() => scrollToSection(item.id)}
                                 className={`hover:text-[#C9AA71] transition-colors cursor-pointer text-[1.2rem] font-bold 
-                                ${activeSection === item ? 'text-[#C9AA71]' : ''} ${scrolled ? 'text-black' : 'text-white'}
+                                ${activeSection === item.id ? 'text-[#C9AA71]' : ''} ${scrolled ? 'text-black' : 'text-white'}
                                 `}
                             >
-                                {item}
+                                {item.label}
                                 <span
                                     className={`absolute -bottom-1 left-0 h-[3px] w-full bg-[#C9AA71] rounded-full transition-transform duration-300 
-                                    ${activeSection === item ? 'scale-x-100' : 'scale-x-0'} 
+                                    ${activeSection === item.id ? 'scale-x-100' : 'scale-x-0'} 
                                      origin-left`}
                                 />
                             </a>
                         </li>
                     ))}
                 </ul>
-
                 <div className={`flex items-center gap-4`}>
                     <FiPhone className={`w-10 h-10 bg-[#C9AA71] rounded-full px-2  py-1 text-white ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}`} />
                     <a href="tel:+351916248973" className={`text-[1.2rem] font-medium border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]

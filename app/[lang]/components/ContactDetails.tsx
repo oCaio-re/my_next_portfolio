@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaGithub, FaLinkedin} from "react-icons/fa";
 
-function ContactDetails() {
+function ContactDetails({ dictionary }: { dictionary: any }) {
     return (
         <div className="mb-[3rem]">
             <div className="flex flex-col text-white gap-5 lg:flex-row lg:justify-center lg:gap-3 ">
@@ -10,31 +10,31 @@ function ContactDetails() {
                 ">
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            SERVICES
+                            {dictionary.page.contact.details.services_title}
                         </p>
                         <div className="flex text-[1.2rem] gap-5 mt-3">
                             <p className="border-2 border-white rounded-3xl px-3 py-2">
-                                Websites
+                                {dictionary.page.contact.details.websites}
                             </p>
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
-                                Branding
+                                {dictionary.page.contact.details.branding}
                             </p>
                         </div>
                         <div className="flex text-[1.2rem] gap-1 mt-3">
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
-                                Ecommerce
+                                {dictionary.page.contact.details.ecommerce}
                             </p>
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
-                                SEO
+                                {dictionary.page.contact.details.seo}
                             </p>
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
-                                Hire Me
+                                {dictionary.page.contact.details.hire_me}
                             </p>
                         </div>
                     </div>
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            STAY CONNECTED
+                            {dictionary.page.contact.details.stay_connected}
                         </p>
                         <div className="flex mt-3 gap-4">
                             <a href="https://github.com/oCaio-re hover:bg-[#C9AA71]" target="_blank">
@@ -47,10 +47,10 @@ function ContactDetails() {
                     </div>
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            START A PROJECT
+                            {dictionary.page.contact.details.start_a_project}
                         </p>
                         <p className="text-[1.2rem] italic mt-3">
-                            I&#39;m available for either a freelance project or a permanent job
+                            {dictionary.page.contact.details.project_description}
                         </p>
                     </div>
                 </div>
@@ -60,15 +60,15 @@ function ContactDetails() {
                 ">
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            ABOUT
+                            {dictionary.page.contact.details.about_title}
                         </p>
                         <p className="text-[1.2rem] mt-3 lg:text-[1.5rem]">
-                            I&#39;m a professional software engineer. Feel free to get in touch with me.
+                            {dictionary.page.contact.details.about_description}
                         </p>
                     </div>
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            E-MAIL
+                            {dictionary.page.contact.details.email_title}
                         </p>
                         <p className="text-[1rem] mt-3 lg:text-[1.5rem]">
                             xcaio2@gmail.com
@@ -76,7 +76,7 @@ function ContactDetails() {
                     </div>
                     <div>
                         <p className="font-bold text-[1.4rem]">
-                            CALL
+                            {dictionary.page.contact.details.call_title}
                         </p>
                         <p className="text-[1rem] italic mt-3 lg:text-[1.5rem]">
                             +351 916 248 973

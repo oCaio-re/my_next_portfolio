@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from 'react';
 
-export function Home() {
+export function Home({ dictionary }: { dictionary: any }) {
     const [, setIsOpen] = useState(false);
     const scrollToSection = (sectionId: string) => {
         setIsOpen(false);
@@ -23,11 +23,11 @@ export function Home() {
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                         <div className="font-bold bg-white rounded-full py-3 px-3">
-                            Hello, I&#39;m Caio!
+                            {dictionary.page.home.title}
                         </div>
                     </div>
                     <div className="text-[1.6rem] font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[2rem] md:px-3">
-                        A <i>FullStack</i> Software Engineer
+                        {dictionary.page.home.description}
                     </div>
                     <button className="bg-[#609BE3] hover:bg-[#646DD2]
                      text-white font-bold py-2 px-4 rounded-full transition-all ease-in-out
