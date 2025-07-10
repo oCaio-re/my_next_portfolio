@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { i18n } from "@/i18n";
 import { use } from "react";
+import LayoutWrapper from "./components/LayoutWrapper";
 
 export async function generateStaticParams() {
     return i18n.locales.map((locale) => ({ lang: locale }));
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 const dmSans = DM_Sans({
-    weight: ['400', '500', '700'],
+    weight: ['400', '500'],
     subsets: ['latin'],
     variable: '--font-dm-sans',
 });
@@ -43,7 +44,7 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased ${dmSans.variable} antialiased`}
         >
-        {children}
+        <LayoutWrapper>{children}</LayoutWrapper>
         </body>
         </html>
     );
