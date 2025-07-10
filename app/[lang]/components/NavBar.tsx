@@ -53,7 +53,7 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
         window.addEventListener('scroll', throttledHandleScroll, { passive: true });
 
         return () => window.removeEventListener('scroll', throttledHandleScroll);
-    }, []);
+    }, [navItems]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);

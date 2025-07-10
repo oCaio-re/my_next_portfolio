@@ -1,10 +1,15 @@
 import React from 'react';
 import {MdOutlineMarkEmailRead} from "react-icons/md";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-import Footer from "@/app/components/Footer";
+import Footer from "../components/Footer";
 import Link from "next/link";
+import { getDictionary } from '@/get-dictionary';
+import { Locale } from '@/i18n';
 
-function Page() {
+async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+    const { lang } = await params;
+    const dictionary = await getDictionary(lang);
+
     return (
         <div className="relative overflow-x-hidden overflow-y-hidden h-full text-4xl text-center flex flex-col ">
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
@@ -22,7 +27,7 @@ function Page() {
                 <p className="text-[2rem] md:text-[3rem] font-semibold text-center">Your request was sent</p>
                 <p className="text-[1.5rem] md:text-[2rem] text-center italic">Check your email address to <b>confirm</b> it</p>
             </div>
-            <Footer />
+            <Footer dictionary={dictionary} />
         </div>
     );
 }

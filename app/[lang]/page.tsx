@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {MobileNavbar} from "./components/MobileNavbar";
 import {Home} from "./components/Home";
@@ -14,8 +13,10 @@ import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n';
 import LanguageSwitcher from "@/app/[lang]/components/LanguageSwitcher";
 
-async function Page({ params: { lang } }: { params: { lang: Locale } }) {
+async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+    const { lang } = await params;
     const dictionary = await getDictionary(lang);
+
     return (
         <div className="overflow-x-hidden overflow-y-hidden h-full text-4xl text-center flex flex-col">
             <LanguageSwitcher />
