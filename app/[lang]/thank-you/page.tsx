@@ -11,7 +11,7 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     const dictionary = await getDictionary(lang);
 
     return (
-        <div className="relative overflow-x-hidden overflow-y-hidden h-full text-4xl text-center flex flex-col ">
+        <div className="relative overflow-y-hidden h-full text-4xl text-center flex flex-col ">
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                  className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-110 -mt-[50rem] opacity-80"
             />

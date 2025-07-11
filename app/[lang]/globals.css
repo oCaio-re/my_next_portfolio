@@ -44,12 +44,13 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
   background-color: black;
   font-family: DMsans, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 :root {
@@ -155,4 +156,35 @@ body {
   opacity: 100;
   color: white;
   background-color: #609BE3;
+}
+
+/* Target the smooth scrollbar wrapper */
+.scrollbar-track.scrollbar-track-x {
+  display: none !important;
+}
+
+/* Alternative: Hide horizontal scrollbar track */
+.s-scrollbar-horizontal {
+  display: none !important;
+}
+
+/* Ensure container doesn't overflow */
+.scroll-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Specific to smooth scrollbar containers */
+[data-scrollbar] {
+  overflow-x: hidden !important;
+}
+
+.scrollbar-track-x {
+  display: none !important;
 }

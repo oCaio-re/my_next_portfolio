@@ -16,7 +16,7 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
         }
     };
     return (
-        <motion.div className="mt-[15rem] text-center w-fit py-5 m-auto "
+        <motion.div className="w-[95vw] md:w-auto mt-[15rem] text-center py-5 px-1 m-auto"
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.1 }}
@@ -31,7 +31,7 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
             <div className="mt-10">
                 <a
                     onClick={() => scrollToSection("contact")}
-                    className="
+                    className="w-[80%]
             group inline-block px-12 py-5 rounded-lg
             bg-[#646DD2] text-white font-bold text-xl
             transition-transform duration-300 ease-in-out

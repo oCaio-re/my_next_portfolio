@@ -1,5 +1,4 @@
 import React from 'react';
-import {MobileNavbar} from "./components/MobileNavbar";
 import {Home} from "./components/Home";
 import {About} from "./components/About";
 import {Services} from "./components/Services";
@@ -20,7 +19,6 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     return (
         <ScrollContainer dictionary={dictionary}>
             <LanguageSwitcher />
-            <MobileNavbar />
             <GlowingCursor/>
             <Home dictionary={dictionary}/>
             <About dictionary={dictionary}/>

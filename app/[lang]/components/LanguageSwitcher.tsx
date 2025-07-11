@@ -18,8 +18,8 @@ export default function LanguageSwitcher() {
     const portuguese = i18n.locales[1]
 
     return (
-        <div className="absolute right-4 top-4 z-100 text-[1.5rem] opacity-40 text-[#646DD2] font-bold hover:opacity-100
-        transition-all  duration-300 ease-in-out uppercase hover:backdrop-blur-md hover:drop-shadow-md/15 hover:bg-white/10 p-3 rounded-[1rem]
+        <div className="absolute right-4 top-[20rem] md:right-4 md:top-4 z-100 text-[1.5rem] opacity-40 text-[#646DD2] font-bold hover:opacity-100
+        transition-all duration-300 ease-in-out uppercase hover:backdrop-blur-md hover:drop-shadow-md/15 hover:bg-white/10 p-3 rounded-[1rem]
     ">
             {/*<p>Locale switcher:</p>*/}
             <ul>

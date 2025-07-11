@@ -4,8 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { FiX, FiPhone } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Scrollbar from 'smooth-scrollbar';
 
-export function MobileNavbar() {
+export function MobileNavbar({ scrollbar }: { scrollbar: Scrollbar | null }) {
     const [isOpen, setIsOpen] = useState(false);
     const [height, setHeight] = useState(0);
     const [activeSection, setActiveSection] = useState("home");
@@ -20,9 +21,11 @@ export function MobileNavbar() {
     }, [isOpen]);
 
     useEffect(() => {
+        if (!scrollbar) return;
+
         const handleScroll = () => {
             const sections = ["home", "about", "services", "projects", "contact"];
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = scrollbar.scrollTop + 100;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -38,20 +41,24 @@ export function MobileNavbar() {
             }
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        scrollbar.addListener(handleScroll);
+        return () => scrollbar.removeListener(handleScroll);
+    }, [scrollbar]);
 
     const scrollToSection = (sectionId: string) => {
         setIsOpen(false);
+        if (!scrollbar) return;
+
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const navbarHeight = 80; // Adjust this to match your navbar height
+            const elementPosition = element.offsetTop - navbarHeight;
+            scrollbar.scrollTo(0, elementPosition, 600);
         }
     };
 
     return (
-        <div className="lg:hidden fixed top-3 m-auto left-0 right-0 z-100 w-[95vw]">
+        <div className="lg:hidden fixed top-3 m-auto left-0 right-0 z-[999] w-[95vw]">
             <div className="flex items-center justify-between px-4 py-3 bg-white rounded-md">
                 <button
                     onClick={() => setIsOpen(!isOpen)}

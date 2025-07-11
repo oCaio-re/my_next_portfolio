@@ -9,7 +9,8 @@
   "page": {
     "home": {
       "title": "Hello, I'm Caio!",
-      "description": "And this is my personal portfolio"
+      "description": "And this is my personal portfolio",
+      "button": "Let's Begin"
     },
     "about": {
       "my_story": "My Story",

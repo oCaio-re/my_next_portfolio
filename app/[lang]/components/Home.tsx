@@ -29,18 +29,18 @@ export function Home({ dictionary }: { dictionary: any }) {
                 <motion.div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col ">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
-                        <div className="font-bold bg-white rounded-full py-3 px-3">
+                        <div className="text-[2.5rem] font-bold bg-white rounded-full py-3 px-3 md:text-[3.5rem] md:px-6">
                             {dictionary.page.home.title}
                         </div>
                     </div>
-                    <div className="text-[1.6rem] font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[2rem] md:px-3">
+                    <div className="text-[1.5rem] text-center font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[3rem] md:px-6">
                         {dictionary.page.home.description}
                     </div>
                     <button className="bg-[#609BE3] hover:bg-[#646DD2]
                      text-white font-bold py-2 px-4 rounded-full transition-all ease-in-out
                     text-[1rem] mr-auto mt-3 md:hover:bg-[#609BE3] md:bg-[#646DD2] md:text-[1.2rem] md:left-0 md:py-3
                      " onClick={() => scrollToSection('about')}>
-                        Let&#39;s Begin
+                        {dictionary.page.home.button}
                     </button>
                 </motion.div>
                     <div className="mt-[5rem] h-[25rem] relative flex">
