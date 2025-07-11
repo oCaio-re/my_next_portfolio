@@ -3,20 +3,23 @@ import { useState, useEffect } from 'react';
 import {FiPhone} from "react-icons/fi";
 import { Dictionary, NavItem } from './types';
 import {ScrollProgressBar} from "@/app/[lang]/components/ScrollProgressBar";
+import Scrollbar from 'smooth-scrollbar';
 
-export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
+export const NavBar = ({ dictionary, scrollbar }: { dictionary: Dictionary, scrollbar: Scrollbar | null }) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('home');
 
     const navItems = dictionary.navItems;
 
     useEffect(() => {
+        if (!scrollbar) return;
+
         const handleScroll = () => {
             // Handle navbar background change
-            setScrolled(window.scrollY > 10);
+            setScrolled(scrollbar.scrollTop > 10);
 
             const sections = navItems.map((item: NavItem) => item.id);
-            const scrollPosition = window.scrollY + 100; // Add offset for navbar height
+            const scrollPosition = scrollbar.scrollTop + 100; // Add offset for navbar height
 
             // Find the current section
             let currentSection = 'home'; // default
@@ -51,34 +54,33 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
         // Set initial state
         handleScroll();
 
-        window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+        scrollbar.addListener(throttledHandleScroll);
 
-        return () => window.removeEventListener('scroll', throttledHandleScroll);
-    }, [navItems]);
+        return () => scrollbar.removeListener(throttledHandleScroll);
+    }, [navItems, scrollbar]);
 
     const scrollToSection = (sectionId: string) => {
+        if (!scrollbar) return;
+
         const element = document.getElementById(sectionId);
         if (element) {
             // Calculate the offset to account for the fixed navbar
             const navbarHeight = 80; // Adjust this to match your navbar height
             const elementPosition = element.offsetTop - navbarHeight;
 
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
+            scrollbar.scrollTo(0, elementPosition, 600);
         }
     };
 
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
+                className={`fixed top-0 left-0 right-0 z-60 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
                         h-20 items-center hidden px-5 lg:flex 
              ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} ${scrolled ? 'text-black' : 'text-white'}
             `}
             >
-                <div className="w-full m-auto px-4 py-3 flex items-center justify-between ">
+                <div className="w-full h-full m-auto px-4 py-3 flex items-center justify-between">
                     <a
                         className="text-[3rem] font-bold cursor-pointer"
                         onClick={() => scrollToSection("home")}
@@ -114,7 +116,7 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
                     </div>
                 </div>
             </nav>
-            <ScrollProgressBar/>
+            <ScrollProgressBar scrollbar={scrollbar}/>
         </>
     );
 };

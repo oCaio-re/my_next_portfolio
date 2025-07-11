@@ -12,20 +12,21 @@ export function Home({ dictionary }: { dictionary: any }) {
         }
     };
     return (
-        <motion.section id="home" className="relative bg-[#646DD2] h-[100vh] md:min-h-[80vh] md:h-[100vh] lg:h-[80vh] scroll-mt-32"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
+        <section id="home" className="relative bg-[#646DD2] h-[100vh] md:min-h-[80vh] md:h-[100vh] lg:h-[80vh] scroll-mt-32"
+
         >
             <img src="../../images/wave%20(2).svg" alt="wave-svg"
                  className="-scale-y-100 overflow-hidden absolute
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
             <div className="top-0 -scale-y-100 object-cover w-[200rem] overflow-hidden "/>
-            <div className="relative grid-cols-1 md:flex-col lg:flex-row w-[95vw] mt-[10rem] mx-auto flex flex-col z-50 drop-shadow-xl
-                    md:w-[70vw]  md:justify-between md:items-center md:mt-[6rem] lg:mt-[10rem]
-            ">
-                <div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col ">
+            <motion.div className="relative grid-cols-1 md:flex-col lg:flex-row w-[95vw] mt-[10rem] mx-auto flex flex-col z-50 drop-shadow-xl
+                    md:w-[70vw]  md:justify-between md:items-center md:mt-[6rem] lg:mt-[10rem]"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5 }}
+            >
+                <motion.div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col ">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                         <div className="font-bold bg-white rounded-full py-3 px-3">
@@ -41,7 +42,7 @@ export function Home({ dictionary }: { dictionary: any }) {
                      " onClick={() => scrollToSection('about')}>
                         Let&#39;s Begin
                     </button>
-                </div>
+                </motion.div>
                     <div className="mt-[5rem] h-[25rem] relative flex">
                         <div className="absolute m-auto left-0 right-0 bg-white rounded-full h-[20rem] w-[20rem] z-1
                             md:h-[20rem] lg:h-[25rem] md:w-[20rem] lg:w-[25rem]
@@ -49,8 +50,8 @@ export function Home({ dictionary }: { dictionary: any }) {
                         <img alt="smiling-man" src="../../images/smiling-man.png "
                               className="z-50 relative w-[80vw] m-auto md:w-[35vw] lg:w-[25vw]"/>
                     </div>
-            </div>
+            </motion.div>
 
-        </motion.section>
+        </section>
     );
 }

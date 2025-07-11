@@ -30,7 +30,7 @@ export function Services({ dictionary }: { dictionary: any }) {
             </div>
             <ServicesGrid dictionary={dictionary}/>
             <img alt="bg-img-1" src="../../images/background/blue_s.png"
-                 className="hidden absolute -z-50 h-150 w-150 -mt-[35rem] ml-[40rem] scale-130 lg:block opacity-70"
+                 className="animate-pulse-slow hidden absolute -z-50 h-150 w-150 -mt-[35rem] ml-[40rem] scale-130 lg:block opacity-70"
             />
         </motion.section>
     );

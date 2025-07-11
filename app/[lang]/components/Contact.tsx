@@ -24,7 +24,7 @@ export function ContactMe({ dictionary }: { dictionary: any }) {
             </div>
             <ContactDetails dictionary={dictionary}/>
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
-                 className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-125
+                 className="animate-pulse-slow absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-125
                  mt-[5rem] opacity-80"
             />
             <ContactForm dictionary={dictionary}/>
