@@ -1,10 +1,18 @@
+'use client'
+
 import React from 'react';
 import ContactForm from "./ContactForm";
 import ContactDetails from "./ContactDetails";
+import { motion } from 'framer-motion';
 
 export function ContactMe({ dictionary }: { dictionary: any }) {
     return (
-        <section id="contact" className="relative w-[90vw] mt-[8rem] mx-auto md:mt-0 lg:w-[70vw] lg:mt-[20rem] lg:py-[10rem]">
+        <motion.section id="contact" className="relative w-[90vw] mt-[8rem] mx-auto md:mt-0 lg:w-[70vw] lg:mt-[20rem] lg:py-[10rem]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+        >
             <img alt="bg-img-1" src="../../images/background/purple_s.png"
                  className="absolute -z-5 top-0 left-0 mt-[4rem] ml-[5rem] lg:ml-[40rem] lg:mt-[-10rem]"
             />
@@ -20,6 +28,6 @@ export function ContactMe({ dictionary }: { dictionary: any }) {
                  mt-[5rem] opacity-80"
             />
             <ContactForm dictionary={dictionary}/>
-        </section>
+        </motion.section>
     );
 }

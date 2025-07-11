@@ -1,9 +1,17 @@
+'use client'
+
 import React from 'react';
 import ServicesGrid from "./ServicesGrid";
+import { motion } from 'framer-motion';
 
 export function Services({ dictionary }: { dictionary: any }) {
     return (
-        <section id="services" className="grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[8rem] m-auto md:mt-[15rem] lg:w-[70vw]">
+        <motion.section id="services" className="grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[8rem] m-auto md:mt-[15rem] lg:w-[70vw]"
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.1 }}
+                transition={{ duration: 1 }}
+        >
             <img alt="bg-img-1" src="../../images/background/purple_s.png"
                  className="hidden absolute -z-50 h-200 w-200 -mt-[25rem] ml-[10rem] scale-130 lg:block"
             />
@@ -24,6 +32,6 @@ export function Services({ dictionary }: { dictionary: any }) {
             <img alt="bg-img-1" src="../../images/background/blue_s.png"
                  className="hidden absolute -z-50 h-150 w-150 -mt-[35rem] ml-[40rem] scale-130 lg:block opacity-70"
             />
-        </section>
+        </motion.section>
     );
 }

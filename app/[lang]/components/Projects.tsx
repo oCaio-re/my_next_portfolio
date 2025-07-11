@@ -14,6 +14,7 @@ import {SiFastapi} from "react-icons/si";
 import {RiNextjsFill} from "react-icons/ri";
 import {RiTailwindCssFill} from "react-icons/ri";
 import {SiVite} from "react-icons/si";
+import { motion } from 'framer-motion';
 
 function Projects({ dictionary }: { dictionary: any }) {
     const text_HC = [
@@ -69,7 +70,12 @@ function Projects({ dictionary }: { dictionary: any }) {
     //     dictionary.page.projects.lucas_alves.text_3,
     // ];
     return (
-        <section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw] ">
+        <motion.section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw] "
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 1 }}
+        >
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
                  className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-140 -mt-[2rem] opacity-80"
             />
@@ -132,7 +138,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

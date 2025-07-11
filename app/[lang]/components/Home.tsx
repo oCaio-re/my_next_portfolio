@@ -1,5 +1,6 @@
 'use client'
 import React, {useState} from 'react';
+import { motion } from 'framer-motion';
 
 export function Home({ dictionary }: { dictionary: any }) {
     const [, setIsOpen] = useState(false);
@@ -11,7 +12,12 @@ export function Home({ dictionary }: { dictionary: any }) {
         }
     };
     return (
-        <section id="home" className="relative bg-[#646DD2] h-[100vh] md:min-h-[80vh] md:h-[100vh] lg:h-[80vh] scroll-mt-32">
+        <motion.section id="home" className="relative bg-[#646DD2] h-[100vh] md:min-h-[80vh] md:h-[100vh] lg:h-[80vh] scroll-mt-32"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+        >
             <img src="../../images/wave%20(2).svg" alt="wave-svg"
                  className="-scale-y-100 overflow-hidden absolute
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
@@ -45,6 +51,6 @@ export function Home({ dictionary }: { dictionary: any }) {
                     </div>
             </div>
 
-        </section>
+        </motion.section>
     );
 }
