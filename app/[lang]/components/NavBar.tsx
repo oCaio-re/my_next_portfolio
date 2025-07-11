@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import {FiPhone} from "react-icons/fi";
 import { Dictionary, NavItem } from './types';
+import {ScrollProgressBar} from "@/app/[lang]/components/ScrollProgressBar";
 
 export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -70,47 +71,50 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
     };
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
+        <>
+            <nav
+                className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
                         h-20 items-center hidden px-5 lg:flex 
              ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} ${scrolled ? 'text-black' : 'text-white'}
             `}
-        >
-            <div className="w-full m-auto px-4 py-3 flex items-center justify-between ">
-                <a
-                    className="text-[3rem] font-bold cursor-pointer"
-                    onClick={() => scrollToSection("home")}
-                >
-                    CO
-                </a>
+            >
+                <div className="w-full m-auto px-4 py-3 flex items-center justify-between ">
+                    <a
+                        className="text-[3rem] font-bold cursor-pointer"
+                        onClick={() => scrollToSection("home")}
+                    >
+                        CO
+                    </a>
 
-                <ul className={`hidden md:flex gap-6 text-sm uppercase`}>
-                    {navItems.map((item: NavItem) => (
-                        <li key={item.id} className="relative">
-                            <a
-                                onClick={() => scrollToSection(item.id)}
-                                className={`hover:text-[#C9AA71] transition-colors cursor-pointer text-[1.2rem] font-bold 
+                    <ul className={`hidden md:flex gap-6 text-sm uppercase`}>
+                        {navItems.map((item: NavItem) => (
+                            <li key={item.id} className="relative">
+                                <a
+                                    onClick={() => scrollToSection(item.id)}
+                                    className={`hover:text-[#C9AA71] transition-colors cursor-pointer text-[1.2rem] font-bold 
                                 ${activeSection === item.id ? 'text-[#C9AA71]' : ''} ${scrolled ? 'text-black' : 'text-white'}
                                 `}
-                            >
-                                {item.label}
-                                <span
-                                    className={`absolute -bottom-1 left-0 h-[3px] w-full bg-[#C9AA71] rounded-full transition-transform duration-300 
+                                >
+                                    {item.label}
+                                    <span
+                                        className={`absolute -bottom-1 left-0 h-[3px] w-full bg-[#C9AA71] rounded-full transition-transform duration-300 
                                     ${activeSection === item.id ? 'scale-x-100' : 'scale-x-0'} 
                                      origin-left`}
-                                />
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-                <div className={`flex items-center gap-4`}>
-                    <FiPhone className={`w-10 h-10 bg-[#C9AA71] rounded-full px-2  py-1 text-white ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}`} />
-                    <a href="tel:+351916248973" className={`text-[1.2rem] font-medium border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]
+                                    />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className={`flex items-center gap-4`}>
+                        <FiPhone className={`w-10 h-10 bg-[#C9AA71] rounded-full px-2  py-1 text-white ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}`} />
+                        <a href="tel:+351916248973" className={`text-[1rem] font-bold border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]
                      ${scrolled ? 'text-[#C9AA71]' : 'text-white'} ${scrolled ? 'border-[#C9AA71]' : 'border-transparent'}`}>
-                        916-248-973
-                    </a>
+                            +351 916 248 973
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+            <ScrollProgressBar/>
+        </>
     );
 };

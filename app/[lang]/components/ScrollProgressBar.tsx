@@ -19,7 +19,7 @@ export const ScrollProgressBar = () => {
     }, []);
 
     return (
-        <div className={`fixed top-[6rem] w-[70vw] m-auto left-0 right-0 z-40 h-2 bg-gray-300 rounded-full ${scrollProgress === 0 ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
+        <div className={`fixed w-[95vw] top-[5.5rem] md:w-[70vw] md:top-[6.2rem] m-auto left-0 right-0 z-80 h-2 bg-white/70 rounded-full ${scrollProgress === 0 ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
             <div
                 className="h-full bg-[#C9AA71] transition-all duration-100 ease-out rounded-full"
                 style={{ width: `${scrollProgress}%` }}

@@ -8,8 +8,8 @@
   ],
   "page": {
     "home": {
-      "title": "Welcome to my portfolio",
-      "description": "This is my personal portfolio built with Next.js"
+      "title": "Hello, I'm Caio",
+      "description": "And this is my personal portfolio"
     },
     "about": {
       "my_story": "My Story",
