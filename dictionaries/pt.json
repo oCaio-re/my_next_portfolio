@@ -16,7 +16,7 @@
       "a_little_bit_about_me": "Um pouco sobre mim",
       "bio_line_1": "Sou Caio Oliveira,<br/>um Desenvolvedor <i>full-stack</i> com sólida experiência em desenvolvimento front-end <i>(React/NextJS, TypeScript)</i> e back-end <i>(Python/Django)</i>.",
       "bio_line_2": "Estudei Ciência da Computação na <b>FCUP</b>. Proficiente no desenvolvimento de aplicações web responsivas e modernas. Busco por papéis desafiadores em projetos inovadores e um ambiente de trabalho colaborativo.",
-      "bio_line_3": "Esteja você procurando por um serviço ou um empregador que resolva problemas,<b class=\"text-[#C9AA71]\"> eu sou a solução.</b>"
+      "bio_line_3": "Esteja você procurando por um serviço ou um funcionário resolvedor de problemas,<b class=\"text-[#C9AA71]\"> eu sou a solução.</b>"
     },
 
     "services": {
@@ -60,12 +60,17 @@
       "lucas_alves": {
         "text_1": "Um website de portfólio que exibe o corpo principal do trabalho de um fotógrafo profissional, incluindo uma extensa coleção de fotografias e sessões fotográficas.",
         "text_2": "O objetivo principal foi projetar uma interface de usuário concisa e refinada, garantindo uma excelente experiência do usuário.",
-        "text_3": "Em seguida, apresentar informações essenciais sobre como as sessões fotográficas são realizadas, juntamente com um método claro de comunicação.\n Por favor, use o link (provisório) abaixo para explorar a página web:"
+        "text_3": "Em seguida, apresentar informações essenciais sobre como as sessões fotográficas são realizadas, juntamente com um método claro de comunicação.\n Use o link abaixo para explorar a página web:"
+      },
+      "voar_bem": {
+        "text_1": "Este projeto é a plataforma de uma agência de viagens focada em pacotes personalizados, oferecendo voos, hotéis e aluguéis.",
+        "text_2": "O objetivo principal é conectar usuários a ofertas de viagem exclusivas, com descontos significativos e uma seleção de acomodações cuidadosamente curada para diferentes perfis de viajantes.",
+        "text_3": "Através de um design moderno e interativo, os usuários podem solicitar facilmente uma cotação gratuita e sem compromisso, informando suas preferências de viagem diretamente no site."
       }
     },
     "project_cta": {
       "title": "Aumente Suas Vendas. <br/> Redefina Sua Estratégia.",
-      "button": "Vamos Conversar sobre Crescimento"
+      "button": "Vamos falar sobre Crescimento"
     },
     "contact": {
       "title": "Entre em Contato",
@@ -92,12 +97,12 @@
       }
     },
     "footer": {
-      "designed_in": "Vagamente projetado em",
-      "coded_by": "e codificado em",
+      "designed_in": "Precisamente concebido no",
+      "coded_by": "e codificado no",
       "by_yours_truly": "por este que vos fala.",
       "built_with": "Construído com",
       "and": "e",
-      "deployed_with": "Implantado com DigitalOcean",
+      "deployed_with": "deploy com DigitalOcean",
       "font_text": "Todo o texto está definido na fonte DM Sans."
     }
   }

@@ -64,11 +64,11 @@ function Projects({ dictionary }: { dictionary: any }) {
         "../../images/VB/hoteis.png",
         "../../images/VB/pacotes.png",
     ];
-    // const text_LA = [
-    //     dictionary.page.projects.lucas_alves.text_1,
-    //     dictionary.page.projects.lucas_alves.text_2,
-    //     dictionary.page.projects.lucas_alves.text_3,
-    // ];
+    const text_VB = [
+        dictionary.page.projects.voar_bem.text_1,
+        dictionary.page.projects.voar_bem.text_2,
+        dictionary.page.projects.voar_bem.text_3,
+    ];
     return (
         <motion.section id="projects" className="relative w-[90vw] mt-[8rem] m-auto z-10 md:mt-[15rem] lg:w-[70vw] "
             initial={{ opacity: 0, y: -40 }}
@@ -90,7 +90,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="PORTFOLIO" title="Lucas Alves" src="../../images/LA/logo-lucas.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_LA} texts={text_LA} deployLink="https://portfolio-lucas-7fi7l.ondigitalocean.app/"/>
+                        <PaginatedModalButton images={images_LA} texts={text_LA} deployLink="https://lucasfotos.art/"/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><RiNextjsFill color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/>
@@ -100,7 +100,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="WEBSITE" title="Voar Bem" src="../../images/VB/logo-sfundo.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_VB} texts={text_LA} deployLink="https://portfolio-lucas-7fi7l.ondigitalocean.app/"/>
+                        <PaginatedModalButton images={images_VB} texts={text_VB} deployLink="https://voar-bem.vercel.app/"/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><RiNextjsFill color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/>

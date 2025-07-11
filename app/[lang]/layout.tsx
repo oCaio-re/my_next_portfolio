@@ -42,7 +42,7 @@ export default function RootLayout({
     return (
         <html lang={lang}>
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased ${dmSans.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased ${dmSans.variable} antialiased overflow-x-hidden`}
         >
         <LayoutWrapper>{children}</LayoutWrapper>
         </body>

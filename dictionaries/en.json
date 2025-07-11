@@ -16,7 +16,7 @@
       "a_little_bit_about_me": "A little bit about me",
       "bio_line_1": "I'm Caio Oliveira,<br/>a <i>full-stack</i> Developer with solid experience in front-end development <i>(React/NextJS, TypeScript)</i> and back-end <i>(Python/Django)</i>.",
       "bio_line_2": "Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles in innovative projects and a collaborative work environment.",
-      "bio_line_3": "Weather you look for a service or a problem solver employer,<b class=\"text-[#C9AA71]\"> I am the solution.</b>"
+      "bio_line_3": "Weather you look for a service or a problem solver employee,<b class=\"text-[#C9AA71]\"> I am the solution.</b>"
     },
 
     "services": {
@@ -61,6 +61,11 @@
         "text_1": "A portfolio website showcasing the primary body of work of a professional photographer, including an extensive collection of photographs and photo shoots.",
         "text_2": "The primary objective was to design a concise and refined user interface while ensuring an excellent user experience.",
         "text_3": "Next, present essential information about how the photo shoots are conducted, along with a clear method of communication.\n Please use the (provisional) link below to explore the webpage:"
+      },
+      "voar_bem": {
+        "text_1": "This project is a travel agency platform focused on personalized packages, offering flights, hotels, and rentals.",
+        "text_2": "The main goal is to connect users with exclusive travel deals, featuring significant discounts and a selection of accommodations carefully curated for different traveler profiles.",
+        "text_3": "Through a modern and interactive design, users can easily request a free, no-obligation quote by providing their travel preferences directly on the site."
       }
     },
     "project_cta": {
