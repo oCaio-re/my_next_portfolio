@@ -8,6 +8,7 @@ import { useScroll } from './ScrollContext';
 export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
     const { scrollbar } = useScroll();
     const [scrolled, setScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>(''); // Changed from 'home' to empty string
 
     const navItems = dictionary.navItems;
 
@@ -16,6 +17,30 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
 
         const handleScroll = () => {
             setScrolled(scrollbar.scrollTop > 10);
+
+            // If at the very top, don't highlight any section
+            if (scrollbar.scrollTop === 0) {
+                setActiveSection('');
+                return;
+            }
+
+            // Check which section is currently in view
+            const sections = navItems.map(item => item.id);
+            const navbarHeight = 80;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const element = document.getElementById(sections[i]);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top + scrollbar.scrollTop;
+                    const currentScrollPosition = scrollbar.scrollTop + navbarHeight;
+
+                    if (currentScrollPosition >= elementTop - 100) {
+                        setActiveSection(sections[i]);
+                        break;
+                    }
+                }
+            }
         };
 
         let ticking = false;
@@ -34,7 +59,7 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
         scrollbar.addListener(throttledHandleScroll);
 
         return () => scrollbar.removeListener(throttledHandleScroll);
-    }, [scrollbar]);
+    }, [scrollbar, navItems]);
 
     const scrollToSection = (sectionId: string) => {
         if (!scrollbar) return;
@@ -54,7 +79,7 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
                     h-20 items-center hidden px-5 lg:flex 
          ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
         `}
-            style={{ backgroundColor: scrolled ? 'white' : 'transparent' }} // Temporary: to test scrolled state
+            style={{ backgroundColor: scrolled ? 'white' : 'transparent' }}
         >
             <div className="w-full h-full m-auto px-4 py-3 flex items-center justify-between">
                 <a
@@ -65,19 +90,30 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
                     CO
                 </a>
 
-                <ul className={`hidden md:flex gap-6 text-sm uppercase`}>
+                <ul className={`hidden md:flex gap-6 text-sm uppercase relative`}>
                     {navItems.map((item: NavItem) => (
                         <li key={item.id} className="relative">
                             <a
                                 onClick={() => scrollToSection(item.id)}
-                                className={`hover:text-[#C9AA71] transition-colors cursor-pointer text-[1.2rem] font-bold`}
-                                style={{ color: scrolled ? 'black' : 'white' }}
+                                className={`hover:text-[#C9AA71] transition-all duration-300 cursor-pointer text-[1.2rem] font-bold relative block pb-2
+                                    ${activeSection === item.id ? 'text-[#C9AA71]' : ''}
+                                `}
+                                style={{
+                                    color: activeSection === item.id ? '#C9AA71' : (scrolled ? 'black' : 'white')
+                                }}
                             >
                                 {item.label}
+                                {/* Active section indicator bar */}
+                                <span
+                                    className={`absolute bottom-0 left-0 h-[3px] bg-[#C9AA71] transition-all duration-300 ease-out
+                                        ${activeSection === item.id ? 'w-full opacity-100' : 'w-0 opacity-0'}
+                                    `}
+                                />
                             </a>
                         </li>
                     ))}
                 </ul>
+
                 <div className={`flex items-center gap-4`}>
                     <FiPhone className={`w-10 h-10 bg-[#C9AA71] rounded-full px-2  py-1 text-white ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}`} />
                     <a href="tel:+351916248973" className={`text-[1rem] font-bold border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]
