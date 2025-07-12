@@ -4,5 +4,6 @@ export interface NavItem {
 }
 
 export interface Dictionary {
+    page: any;
     navItems: NavItem[];
 }

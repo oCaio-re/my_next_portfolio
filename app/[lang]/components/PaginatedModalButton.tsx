@@ -6,14 +6,16 @@ import {FaTimes} from "react-icons/fa";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrDeploy } from "react-icons/gr";
+import { Dictionary } from "./types";
 
 interface PaginatedModalProps {
     images: string[];
     texts: string[];
     deployLink?: string;
+    dictionary: Dictionary;
 }
 
-export default function PaginatedModalButton({images, texts, deployLink}: PaginatedModalProps) {
+export default function PaginatedModalButton({images, texts, deployLink, dictionary}: PaginatedModalProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState<number>(0);
 
@@ -39,9 +41,9 @@ export default function PaginatedModalButton({images, texts, deployLink}: Pagina
                 className="button-call py-3 shadow opacity-0 absolute top-0 left-0 right-0 bottom-0
                 md:p-1 md:items-center cursor-pointer
                 discover-projects m-auto p-2 w-[50%] h-[15%] px-3 text-white text-[1rem] rounded-2xl transition-all
-                duration-500 bg-[#609BE3]  hover:bg-[#665dcd] z-40"
+                duration-500 bg-[#609BE3]  hover:bg-[#665dcd] z-80"
             >
-                Discover More
+                {dictionary.page.projects.button}
             </button>
 
             <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-[9999] flex items-center justify-center">

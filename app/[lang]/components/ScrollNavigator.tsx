@@ -65,10 +65,9 @@ const ScrollNavigator: React.FC<ScrollNavigatorProps> = ({ scrollbar }) => {
                     <IoChevronUp className="w-5 h-5 text-gray-600 group-hover:text-[#646DD2] transition-colors duration-200" />
 
                     {/* Tooltip */}
-                    <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-[#646DD2] text-white text-xs
-                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap
-                        pointer-events-none">
-                        Scroll up (double-click for top)
+                    <div className="absolute w-80 right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-[#646DD2] text-white text-xs
+                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                        Scroll <b>Up</b>
                     </div>
                 </button>
 
@@ -78,15 +77,14 @@ const ScrollNavigator: React.FC<ScrollNavigatorProps> = ({ scrollbar }) => {
                     className="group relative p-3 bg-white hover:bg-gray-50 rounded-full shadow-lg hover:shadow-xl
                    transition-all duration-300 ease-out hover:scale-110 active:scale-95
                    border border-gray-200 hover:border-blue-200"
-                    aria-label="Scroll down (double-click for bottom)"
+                    aria-label="Scroll down"
                 >
                     <IoChevronDown className="w-5 h-5 text-[#646DD2] group-hover:text-[#C9AA71] transition-colors duration-200" />
 
                     {/* Tooltip */}
                     <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-[#646DD2] text-white text-xs
-                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap
-                        pointer-events-none">
-                        Scroll down (double-click for bottom)
+                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                        Scroll <b>Down</b>
                     </div>
                 </button>
             </div>

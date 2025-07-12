@@ -3,17 +3,10 @@
 import React from 'react';
 import ProjectsItem from "./ProjectsItem";
 import PaginatedModalButton from "./PaginatedModalButton";
+import {SiChakraui, SiSelenium, SiMysql, SiFastapi, SiVite} from "react-icons/si";
+import {FaReact, FaHtml5, FaPython} from "react-icons/fa";
+import {RiNextjsFill, RiTailwindCssFill} from "react-icons/ri";
 import {BiLogoTypescript} from "react-icons/bi";
-import {FaReact} from "react-icons/fa";
-import {FaHtml5} from "react-icons/fa";
-import {SiChakraui} from "react-icons/si";
-import {FaPython} from "react-icons/fa";
-import {SiSelenium} from "react-icons/si";
-import {SiMysql} from "react-icons/si";
-import {SiFastapi} from "react-icons/si";
-import {RiNextjsFill} from "react-icons/ri";
-import {RiTailwindCssFill} from "react-icons/ri";
-import {SiVite} from "react-icons/si";
 import { motion } from 'framer-motion';
 
 function Projects({ dictionary }: { dictionary: any }) {
@@ -90,7 +83,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="PORTFOLIO" title="Lucas Alves" src="../../images/LA/logo-lucas.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_LA} texts={text_LA} deployLink="https://lucasfotos.art/"/>
+                        <PaginatedModalButton images={images_LA} texts={text_LA} deployLink="https://lucasfotos.art/" dictionary={dictionary}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><RiNextjsFill color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/>
@@ -100,7 +93,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="WEBSITE" title="Voar Bem" src="../../images/VB/logo-sfundo.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_VB} texts={text_VB} deployLink="https://voar-bem.vercel.app/"/>
+                        <PaginatedModalButton images={images_VB} texts={text_VB} deployLink="https://voar-bem.vercel.app/" dictionary={dictionary}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><RiNextjsFill color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/>
@@ -110,7 +103,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="WEBSITE" title="All Tasty Caffe" src="../../images/AT/AT_logo.png"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_AT} texts={text_AT} deployLink="https://www.alltasty.cafe/"/>
+                        <PaginatedModalButton images={images_AT} texts={text_AT} deployLink="https://www.alltasty.cafe/" dictionary={dictionary}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><SiVite color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/> <FaHtml5
@@ -120,7 +113,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div>
                     <ProjectsItem category="WEBAPP" title="Sogrape Wines" src="../../images/wine-search/sogrape-logo.svg"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_WS} texts={text_WS}/>
+                        <PaginatedModalButton images={images_WS} texts={text_WS} dictionary={dictionary}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaPython color="#FFFFFF" size={40}/> <SiSelenium color="#FFFFFF" size={40}/> <SiMysql color="#FFFFFF" size={40}/><SiFastapi
@@ -130,7 +123,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                 <div className="">
                     <ProjectsItem category="WEBSITE" title="Hope Connections" src="../../images/HC/hc_logo.svg"
                                   colorFilter="#646DD2">
-                        <PaginatedModalButton images={images_HC} texts={text_HC} deployLink="https://hope-connections-hmqdx.ondigitalocean.app"/>
+                        <PaginatedModalButton images={images_HC} texts={text_HC} deployLink="https://hope-connections-hmqdx.ondigitalocean.app" dictionary={dictionary}/>
                     </ProjectsItem>
                     <div className="flex justify-around mt-3 lg:mt-5">
                         <FaReact color="#FFFFFF" size={40}/><SiVite color="#FFFFFF" size={40}/><BiLogoTypescript color="#FFFFFF" size={40}/> <FaHtml5

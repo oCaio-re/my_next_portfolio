@@ -11,7 +11,7 @@ interface Props {
 function ProjectsItem(props: Props) {
 
     return (
-        <div className="relative z-50 border-3 border-white hover:border-[#646DD2] rounded-2xl flex flex-col
+        <div className="relative z-20 border-3 border-white hover:border-[#646DD2] rounded-2xl flex flex-col
          h-[25rem] overflow-hidden transition-all duration:600 ease-in-out md:h-[35rem] md:p-4">
             <div className="p-5">
                 <p className="text-[#C9AA71] text-left text-[1rem] font-bold italic">

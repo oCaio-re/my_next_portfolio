@@ -43,6 +43,7 @@
     },
     "projects": {
       "title": "Projects",
+      "button": "Discover More",
       "hope_connections": {
         "text_1": "An institutional website that presents key information about a Drop-In Centre located in Roscommon, Ireland.",
         "text_2": "The objective was to present and clearly explain all services available at this Drop-In Center, making it more accessible for those seeking assistance or wishing to offer support..",
