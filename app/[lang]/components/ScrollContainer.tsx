@@ -17,7 +17,6 @@ class EdgeEasingPlugin extends ScrollbarPlugin {
         const { limit, offset } = this.scrollbar;
         const isWheelEvent = fromEvent.type.includes('wheel');
 
-        // Force horizontal delta to 0 to prevent horizontal scrolling
         if (isWheelEvent) {
             if (offset.y + y < 0) {
                 return { x: 0, y: -offset.y };
@@ -26,7 +25,6 @@ class EdgeEasingPlugin extends ScrollbarPlugin {
                 return { x: 0, y: limit.y - offset.y };
             }
         }
-        // Always return 0 for x to prevent horizontal scrolling
         return { x: 0, y: delta.y };
     }
 }
@@ -36,15 +34,35 @@ class EdgeEasingPlugin extends ScrollbarPlugin {
 interface ScrollContainerProps {
     children: React.ReactNode;
     dictionary: Dictionary;
+    onScrollbarInit?: (scrollbar: any) => void; // Add this prop
 }
 
-const ScrollContainer: React.FC<ScrollContainerProps> = ({ children, dictionary }) => {
+const ScrollContainer: React.FC<ScrollContainerProps> = ({
+                                                             children,
+                                                             dictionary,
+                                                             onScrollbarInit
+                                                         }) => {
     Scrollbar.use(EdgeEasingPlugin);
     const scrollbarRef = useRef<HTMLDivElement>(null);
-    const [scrollbar, setScrollbar] = useState<Scrollbar | null>(null);
+    const [scrollbar, setScrollbar] = useState<any>(null);
 
     useEffect(() => {
+        // Clean up any existing scrollbar instances first
+        const existingScrollbars = document.querySelectorAll('[data-scrollbar]');
+        existingScrollbars.forEach((element) => {
+            const instance = Scrollbar.get(element as HTMLElement);
+            if (instance) {
+                instance.destroy();
+            }
+        });
+
+        // Hide body scrollbar
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
         if (scrollbarRef.current) {
+            scrollbarRef.current.setAttribute('data-scrollbar', 'main');
+
             const scrollbarInstance = Scrollbar.init(scrollbarRef.current, {
                 damping: 0.07,
                 renderByPixels: true,
@@ -55,35 +73,39 @@ const ScrollContainer: React.FC<ScrollContainerProps> = ({ children, dictionary 
                 },
             });
 
-            // Force disable horizontal scrolling
             scrollbarInstance.addListener(() => {
                 scrollbarInstance.scrollLeft = 0;
             });
 
             setScrollbar(scrollbarInstance);
 
+            // Pass scrollbar instance to parent
+            if (onScrollbarInit) {
+                onScrollbarInit(scrollbarInstance);
+            }
+
             return () => {
                 scrollbarInstance.destroy();
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             };
         }
-    }, []);
+    }, [onScrollbarInit]);
 
     return (
-        <div className="relative overflow-x-hidden w-full max-w-full">
-            {/* NavBar with highest z-index */}
+        <div className="relative overflow-hidden w-full max-w-full h-screen">
             <div className="fixed top-0 left-0 right-0 z-[9999]">
-                <NavBar dictionary={dictionary} scrollbar={scrollbar} />
+                <NavBar dictionary={dictionary} />
             </div>
 
-            {/* Mobile navbar */}
             <div className="fixed top-0 left-0 right-0 z-[9998] md:hidden">
-                <MobileNavbar scrollbar={scrollbar} />
+                <MobileNavbar />
             </div>
 
-            {/* Scroll container */}
             <div
                 ref={scrollbarRef}
-                className="relative"
+                className="relative scrollbar-container"
+                data-scrollbar="main"
                 style={{
                     height: '100vh',
                     width: '100%',
@@ -93,10 +115,11 @@ const ScrollContainer: React.FC<ScrollContainerProps> = ({ children, dictionary 
                     zIndex: 1
                 }}
             >
-                {children}
+                <div className="scroll-content">
+                    {children}
+                </div>
             </div>
 
-            {/* Navigation components */}
             <ScrollNavigator scrollbar={scrollbar} />
             <ScrollProgressBar scrollbar={scrollbar} />
         </div>

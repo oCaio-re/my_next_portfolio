@@ -31,7 +31,7 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
             <div className="mt-10">
                 <a
                     onClick={() => scrollToSection("contact")}
-                    className="w-[80%]
+                    className="w-[80%] md:w-fit
             group inline-block px-12 py-5 rounded-lg
             bg-[#646DD2] text-white font-bold text-xl
             transition-transform duration-300 ease-in-out

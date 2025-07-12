@@ -9,7 +9,6 @@ import GlowingCursor from "./components/GlowingCursor/GlowingCursor";
 import ProjectCTA from "./components/ProjectCTA";
 import { getDictionary } from '@/get-dictionary';
 import LanguageSwitcher from "@/app/[lang]/components/LanguageSwitcher";
-import ScrollContainer from "./components/ScrollContainer";
 import { Locale } from "@/i18n";
 
 async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
@@ -17,7 +16,7 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     const dictionary = await getDictionary(lang);
 
     return (
-        <ScrollContainer dictionary={dictionary}>
+        <>
             <LanguageSwitcher />
             <GlowingCursor/>
             <Home dictionary={dictionary}/>
@@ -27,7 +26,7 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
             <ProjectCTA dictionary={dictionary}/>
             <ContactMe dictionary={dictionary}/>
             <Footer dictionary={dictionary}/>
-        </ScrollContainer>
+        </>
     );
 }
 

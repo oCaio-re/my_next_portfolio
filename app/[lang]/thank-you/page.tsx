@@ -11,9 +11,9 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     const dictionary = await getDictionary(lang);
 
     return (
-        <div className="relative overflow-y-hidden h-full text-4xl text-center flex flex-col ">
+        <div className="relative overflow-hidden h-full text-4xl text-center flex flex-col ">
             <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
-                 className="absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-110 -mt-[50rem] opacity-80"
+                 className="animate-pulse-slow absolute -z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-110 -mt-[50rem] opacity-80"
             />
             <Link href="/" className="drop-shadow-md text-white flex w-fit ml-[10%] gap-5 items-center font-bold mt-[5rem] cursor-pointer hover:text-[#C9AA71] transition-all duration-300 ease-in-out">
                 <IoIosArrowDropleftCircle  size={50} className="text-[#646DD2] hover:text-[#C9AA71] transition-all duration-300 ease-in-out"/>

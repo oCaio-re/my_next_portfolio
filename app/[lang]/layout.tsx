@@ -25,10 +25,10 @@ export default function RootLayout({
     params: { lang: string };
 }) {
     return (
-        <html lang={params.lang} className="overflow-x-hidden">
+        <html lang={params.lang} className="overflow-hidden">
         <body
-            className={`overflow-x-hidden w-full max-w-full ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
-            style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}
+            className={`overflow-hidden ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
+            style={{ overflow: 'hidden' }}
         >
         <LayoutWrapper>
             {children}

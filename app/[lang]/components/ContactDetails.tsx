@@ -5,14 +5,14 @@ function ContactDetails({ dictionary }: { dictionary: any }) {
     return (
         <div className="mb-[3rem]">
             <div className="flex flex-col text-white gap-5 lg:flex-row lg:justify-center lg:gap-3 ">
-                <div className="border-4 flex flex-col rounded-lg text-left p-4 h-[25rem] justify-between lg:w-[30%] lg:h-[30rem] lg:rounded-xl
+                <div className="border-4 flex flex-col rounded-lg text-left p-4 h-[30rem] md:h-[25rem] justify-between lg:w-[30%] lg:h-[30rem] lg:rounded-xl
                     md:w-[50vw] md:m-autolg:m-0
                 ">
                     <div>
                         <p className="font-bold text-[1.4rem]">
                             {dictionary.page.contact.details.services_title}
                         </p>
-                        <div className="flex text-[1.2rem] gap-5 mt-3">
+                        <div className="flex text-[1rem] md:text-[1.2rem] gap-5 mt-3">
                             <p className="border-2 border-white rounded-3xl px-3 py-2">
                                 {dictionary.page.contact.details.websites}
                             </p>
@@ -20,7 +20,7 @@ function ContactDetails({ dictionary }: { dictionary: any }) {
                                 {dictionary.page.contact.details.branding}
                             </p>
                         </div>
-                        <div className="flex text-[1.2rem] gap-1 mt-3">
+                        <div className="flex text-[1rem] md:text-[1.2rem] gap-1 mt-3">
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 {dictionary.page.contact.details.ecommerce}
                             </p>

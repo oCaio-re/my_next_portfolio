@@ -44,9 +44,9 @@ export default function PaginatedModalButton({images, texts, deployLink}: Pagina
                 Discover More
             </button>
 
-            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-101 flex items-center justify-center">
+            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-[9999] flex items-center justify-center">
                 <div className="fixed inset-0 backdrop-blur-md bg-black opacity-60"/>
-                <div className="relative  bg-opacity-10 rounded-lg p-6 w-full z-50 md:w-[70vw] md:h-[100vh]">
+                <div className="relative  bg-opacity-10 rounded-lg p-6 w-full z-90 md:w-[70vw] md:h-[100vh]">
                     <button onClick={closeModal} className="absolute top-4 right-2 text-[#C9AA71] hover:text-gray-700">
                         <FaTimes size={20}/>
                     </button>

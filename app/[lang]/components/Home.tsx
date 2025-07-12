@@ -18,7 +18,7 @@ export function Home({ dictionary }: { dictionary: any }) {
             <img src="../../images/wave%20(2).svg" alt="wave-svg"
                  className="-scale-y-100 overflow-hidden absolute
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
-            <div className="top-0 -scale-y-100 object-cover w-[200rem] overflow-hidden "/>
+            <div className="top-0 -scale-y-100 object-cover w-full overflow-hidden "/>
             <motion.div className="relative grid-cols-1 md:flex-col lg:flex-row w-[95vw] mt-[10rem] mx-auto flex flex-col z-50 drop-shadow-xl
                     md:w-[70vw]  md:justify-between md:items-center md:mt-[6rem] lg:mt-[10rem]"
                         initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export function Home({ dictionary }: { dictionary: any }) {
                 <motion.div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col ">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
-                        <div className="text-[2.5rem] font-bold bg-white rounded-full py-3 px-3 md:text-[3.5rem] md:px-6">
+                        <div className="text-nowrap text-[2.5rem] font-bold bg-white rounded-full py-3 px-3 md:text-[3.5rem] md:px-6">
                             {dictionary.page.home.title}
                         </div>
                     </div>
