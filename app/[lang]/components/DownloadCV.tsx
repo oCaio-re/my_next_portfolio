@@ -2,25 +2,14 @@
 
 import React, { useState } from 'react';
 import { FiDownload, FiFile, FiCheck } from 'react-icons/fi';
+import { Dictionary } from './types';
 
 interface DownloadSectionProps {
-    title?: string;
-    subtitle?: string;
-    fileName?: string;
-    fileSize?: string;
-    fileType?: string;
-    buttonText?: string;
-    description?: string;
+    dictionary: Dictionary;
 }
 
 const DownloadCV: React.FC<DownloadSectionProps> = ({
-                                                             title = "Download My Resume",
-                                                             subtitle = "Get a copy of my professional resume",
-                                                             fileName = "Resume_Caio_Oliveira.pdf",
-                                                             fileSize = "245 KB",
-                                                             fileType = "PDF",
-                                                             buttonText = "Download Now",
-                                                             description = "Click the button below to download my latest resume in PDF format."
+                                                             dictionary
                                                          }) => {
     const [isDownloading, setIsDownloading] = useState(false);
     const [downloadComplete, setDownloadComplete] = useState(false);
@@ -32,7 +21,7 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
             // Create a temporary link element
             const link = document.createElement('a');
             link.href = '/api/download-cv';
-            link.download = fileName;
+            link.download = dictionary.page.download_cv.file_name;
 
             // Append to body, click, and remove
             document.body.appendChild(link);
@@ -65,10 +54,10 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
             <div className="container mx-auto px-4 max-w-4xl py-20">
                 <div className="text-center mb-12">
                     <h2 className="text-5xl font-bold text-white mb-4">
-                        {title}
+                        {dictionary.page.download_cv.title}
                     </h2>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                        {subtitle}
+                        {dictionary.page.download_cv.subtitle}
                     </p>
                 </div>
 
@@ -82,19 +71,19 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
                         {/* File Info */}
                         <div className="mb-8">
                             <h3 className="text-2xl font-bold text-white mb-2">
-                                {fileName}
+                                {dictionary.page.download_cv.file_name}
                             </h3>
                             <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
                                 <span className="px-3 py-1 bg-gray-100 rounded-full">
-                                    {fileType}
+                                    {dictionary.page.download_cv.file_type}
                                 </span>
-                                <span className="text-white">{fileSize}</span>
+                                <span className="text-white">{dictionary.page.download_cv.file_size}</span>
                             </div>
                         </div>
 
                         {/* Description */}
                         <p className="text-white mb-8 leading-relaxed">
-                            {description}
+                            {dictionary.page.download_cv.description}
                         </p>
 
                         {/* Download Button */}
@@ -103,7 +92,7 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
                             disabled={isDownloading || downloadComplete}
                             className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
                                 downloadComplete
-                                    ? 'bg-green-500 text-white cursor-default'
+                                    ? 'bg-[#609BE3] text-white cursor-default'
                                     : isDownloading
                                         ? 'bg-gray-400 text-white cursor-not-allowed'
                                         : 'bg-[#C9AA71] text-white hover:bg-[#B8956B] active:scale-95'
@@ -112,24 +101,24 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
                             {downloadComplete ? (
                                 <>
                                     <FiCheck className="w-5 h-5" />
-                                    Downloaded!
+                                    {dictionary.page.download_cv.downloaded_text}
                                 </>
                             ) : isDownloading ? (
                                 <>
                                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                    Downloading...
+                                    {dictionary.page.download_cv.downloading_text}
                                 </>
                             ) : (
                                 <>
                                     <FiDownload className="w-5 h-5" />
-                                    {buttonText}
+                                    {dictionary.page.download_cv.button_text}
                                 </>
                             )}
                         </button>
 
                         {/* Additional Info */}
                         <p className="text-xs text-gray-400 mt-4">
-                            By downloading, you agree to use this file for professional purposes only.
+                            {dictionary.page.download_cv.additional_info}
                         </p>
                     </div>
                 </div>

@@ -70,6 +70,18 @@
         "text_3": "Through a modern and interactive design, users can easily request a free, no-obligation quote by providing their travel preferences directly on the site."
       }
     },
+    "download_cv": {
+      "title": "Download My Resume",
+      "subtitle": "Get a copy of my professional resume",
+      "file_name": "CAIO_OLIVEIRA-SW-ENG.pdf",
+      "file_size": "245 KB",
+      "file_type": "PDF",
+      "button_text": "Download Now",
+      "description": "Click the button below to download my latest resume in PDF format.",
+      "downloaded_text": "Downloaded!",
+      "downloading_text": "Downloading...",
+      "additional_info": "By downloading, you agree to use this file for professional purposes only."
+    },
     "project_cta": {
       "title": "Boost Your Sales. <br/> Redefine Your Strategy.",
       "button": "Let's Talk Growth"

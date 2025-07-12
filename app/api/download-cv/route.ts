@@ -4,13 +4,13 @@ import { promises as fs } from 'fs';
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'files', 'resume.pdf');
+    const filePath = path.join(process.cwd(), 'public', 'files', 'CAIO_OLIVEIRA-SW-ENG.pdf');
     const fileBuffer = await fs.readFile(filePath);
 
     return new NextResponse(fileBuffer, {
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename="resume.pdf"',
+        'Content-Disposition': 'attachment; filename="CAIO_OLIVEIRA-SW-ENG.pdf"',
       },
     });
   } catch (error) {

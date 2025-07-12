@@ -24,7 +24,7 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
             <Services dictionary={dictionary}/>
             <ProjectCTA dictionary={dictionary}/>
             <ContactMe dictionary={dictionary}/>
-            <DownloadCV/>
+            <DownloadCV dictionary={dictionary}/>
             <Footer dictionary={dictionary}/>
         </>
     );

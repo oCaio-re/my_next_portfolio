@@ -70,6 +70,18 @@
         "text_3": "Através de um design moderno e interativo, os usuários podem solicitar facilmente uma cotação gratuita e sem compromisso, informando suas preferências de viagem diretamente no site."
       }
     },
+    "download_cv": {
+      "title": "Baixar Meu Currículo",
+      "subtitle": "Obtenha uma cópia do meu currículo profissional",
+      "file_name": "CAIO_OLIVEIRA-SW-ENG.pdf",
+      "file_size": "245 KB",
+      "file_type": "PDF",
+      "button_text": "Baixar Agora",
+      "description": "Clique no botão abaixo para baixar meu currículo mais recente em formato PDF.",
+      "downloaded_text": "Baixado!",
+      "downloading_text": "Baixando...",
+      "additional_info": "Ao baixar, você concorda em usar este arquivo apenas para fins profissionais."
+    },
     "project_cta": {
       "title": "Aumente Suas Vendas. <br/> Redefina Sua Estratégia.",
       "button": "Vamos falar sobre Crescimento"
