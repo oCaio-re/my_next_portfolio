@@ -7,6 +7,7 @@ import { ScrollProgressBar } from "./ScrollProgressBar";
 import { Dictionary } from "./types";
 import { MobileNavbar } from "@/app/[lang]/components/MobileNavbar";
 import { NavBar } from "@/app/[lang]/components/NavBar";
+import GlowingCursor from "@/app/[lang]/components/GlowingCursor/GlowingCursor";
 
 // Plugin to prevent horizontal scrolling and edge jumping
 class EdgeEasingPlugin extends ScrollbarPlugin {
@@ -94,6 +95,7 @@ const ScrollContainer: React.FC<ScrollContainerProps> = ({
 
     return (
         <div className="relative overflow-hidden w-full max-w-full h-screen">
+            <GlowingCursor/>
             <div className="fixed top-0 left-0 right-0 z-[9999]">
                 <NavBar dictionary={dictionary} />
             </div>

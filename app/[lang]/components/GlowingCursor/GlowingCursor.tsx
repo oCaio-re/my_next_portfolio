@@ -10,10 +10,11 @@ const GlowingCursor: React.FC = () => {
             setPosition({ x: event.clientX, y: event.clientY });
         };
 
-        window.addEventListener("mousemove", handleMouseMove);
+        // Use document instead of window for better compatibility
+        document.addEventListener("mousemove", handleMouseMove);
 
         return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mousemove", handleMouseMove);
         };
     }, []);
 
@@ -21,10 +22,14 @@ const GlowingCursor: React.FC = () => {
         <div
             className="glowing-cursor hidden lg:block"
             style={{
+                position: 'fixed',
                 left: `${position.x}px`,
                 top: `${position.y}px`,
+                transform: 'translate(-50%, -50%)',
+                pointerEvents: 'none',
+                zIndex: 10000, // Higher than navbar
             }}
-        ></div>
+        />
     );
 };
 
