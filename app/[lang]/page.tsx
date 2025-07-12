@@ -9,6 +9,7 @@ import ProjectCTA from "./components/ProjectCTA";
 import { getDictionary } from '@/get-dictionary';
 import LanguageSwitcher from "@/app/[lang]/components/LanguageSwitcher";
 import { Locale } from "@/i18n";
+import DownloadCV from "@/app/[lang]/components/DownloadCV";
 
 async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     const { lang } = await params;
@@ -23,6 +24,7 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
             <Services dictionary={dictionary}/>
             <ProjectCTA dictionary={dictionary}/>
             <ContactMe dictionary={dictionary}/>
+            <DownloadCV/>
             <Footer dictionary={dictionary}/>
         </>
     );
