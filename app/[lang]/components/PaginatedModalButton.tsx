@@ -46,22 +46,22 @@ export default function PaginatedModalButton({images, texts, deployLink, diction
                 {dictionary.page.projects.button}
             </button>
 
-            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-[9999] flex items-center justify-center">
-                <div className="fixed inset-0 backdrop-blur-md bg-black opacity-60"/>
-                <div className="relative  bg-opacity-10 rounded-lg p-6 w-full z-90 md:w-[70vw] md:h-[100vh]">
-                    <button onClick={closeModal} className="absolute top-4 right-2 text-[#C9AA71] hover:text-gray-700">
+            <Dialog open={isOpen} onClose={closeModal} className="fixed inset-0 z-[9999] flex items-start justify-center">
+                <div className="fixed inset-0 backdrop-blur-md bg-black opacity-60" onClick={closeModal}/>
+                <div className="relative flex flex-col justify-between bg-opacity-10 rounded-lg p-6 w-full z-90 md:w-[70vw] h-[100vh] overflow-y-scroll">
+                    <button onClick={closeModal} className="absolute top-0 right-2 text-[#C9AA71] hover:text-gray-700">
                         <FaTimes size={20}/>
                     </button>
 
-                    <div className="mb-4">
+                    <div className="mb-0">
                         <img
                             src={images[currentPage]}
                             alt={`Page ${currentPage + 1}`}
-                            className="rounded-lg object-contain w-full h-64 md:h-180"
+                            className="rounded-lg object-contain w-full h-64 md:h-full"
                         />
                     </div>
 
-                    <div className="mb-4 backdrop-blur-md rounded-lg py-3">
+                    <div className="mb-0 backdrop-blur-md rounded-lg py-3">
                         <p className="text-white text-center md:text-[1.3rem]">{texts[currentPage]}</p>
                     </div>
 
@@ -74,7 +74,7 @@ export default function PaginatedModalButton({images, texts, deployLink, diction
                             <GrFormPrevious size={30}/>
                         </button>
 
-                        <div className="flex flex-col gap-5 items-center">
+                        <div className="flex flex-col justify-around items-center">
                             <div className="text-sm  text-[#C9AA71]">
                                 {currentPage + 1} of {images.length}
                             </div>
