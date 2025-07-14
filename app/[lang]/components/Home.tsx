@@ -1,14 +1,21 @@
 'use client'
 import React, {useState} from 'react';
 import { motion } from 'framer-motion';
+import { useScroll } from './ScrollContext';
 
 export function Home({ dictionary }: { dictionary: any }) {
     const [, setIsOpen] = useState(false);
+    const { scrollbar } = useScroll();
+
     const scrollToSection = (sectionId: string) => {
-        setIsOpen(false);
+        if (!scrollbar) return;
+
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const navbarHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top + scrollbar.scrollTop - navbarHeight;
+
+            scrollbar.scrollTo(0, elementPosition, 600);
         }
     };
     return (

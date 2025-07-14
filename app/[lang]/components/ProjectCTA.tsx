@@ -1,18 +1,19 @@
 'use client'
 
 import { motion } from "framer-motion";
+import { useScroll } from "./ScrollContext";
 
 export default function ProjectCTA({ dictionary }: { dictionary: any }) {
+    const { scrollbar } = useScroll();
     const scrollToSection = (sectionId: string) => {
+        if (!scrollbar) return;
+
         const element = document.getElementById(sectionId);
         if (element) {
-            const navbarHeight = 80; // Adjust this to match your navbar height
-            const elementPosition = element.offsetTop - navbarHeight;
+            const navbarHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top + scrollbar.scrollTop - navbarHeight;
 
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
+            scrollbar.scrollTo(0, elementPosition, 600);
         }
     };
     return (
@@ -29,7 +30,7 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
       "
             dangerouslySetInnerHTML={{ __html: dictionary.page.project_cta.title }} />
             <div className="mt-10">
-                <a
+                <button
                     onClick={() => scrollToSection("contact")}
                     className="w-[80%] md:w-fit
             group inline-block px-12 py-5 rounded-lg
@@ -40,7 +41,7 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
           "
                 >
                     {dictionary.page.project_cta.button}
-                </a>
+                </button>
             </div>
         </motion.div>
     );
