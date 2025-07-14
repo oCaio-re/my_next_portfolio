@@ -1,10 +1,9 @@
 'use client'
-import React, {useState} from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useScroll } from './ScrollContext';
 
 export function Home({ dictionary }: { dictionary: any }) {
-    const [, setIsOpen] = useState(false);
     const { scrollbar } = useScroll();
 
     const scrollToSection = (sectionId: string) => {
