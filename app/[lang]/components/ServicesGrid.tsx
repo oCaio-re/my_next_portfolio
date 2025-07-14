@@ -56,7 +56,7 @@ function ServiceCard({ title, description, Icon, marginTop }: ServiceCardProps) 
     return (
         <div className={`relative group flex flex-col justify-between items-start h-[30rem] px-8 pt-10 pb-4 border-4 border-white rounded-2xl
         overflow-hidden transition-all duration-300 ease-in-out hover:border-[#646DD2] md:h-[15rem] hover:shadow-[-2px_8px_8px_rgba(77,76,76,0.4)]
-        lg:w-[50%] ${marginTop} lg:rounded-4xl md:h-[50rem] lg:h-[40rem]
+        lg:w-[50%] ${marginTop} lg:rounded-4xl md:h-[30rem] lg:h-[30rem]
         `}>
             <div className="flex flex-col justify-around h-[60%] ">
                 <h2 className="text-white font-bold text-4xl mb-1 lg:text-left lg:text-[3rem]">{title}</h2>

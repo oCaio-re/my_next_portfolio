@@ -26,14 +26,14 @@ export function Home({ dictionary }: { dictionary: any }) {
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.5 }}
             >
-                <motion.div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col ">
+                <motion.div className="md:m-auto md:ml-0 md:text-[3rem] md:justify-start flex flex-col md:w-[80%]">
                     <div className="flex items-center gap-2">
                         <img className="w-25 h-25 object-cover rounded-full" src="../../images/caio-profile-half.jpeg" alt="profile-picture"/>
                         <div className="text-nowrap text-[2.5rem] font-bold bg-white rounded-full py-3 px-3 md:text-[3.5rem] md:px-6">
                             {dictionary.page.home.title}
                         </div>
                     </div>
-                    <div className="text-[1.5rem] text-center font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[3rem] md:px-6">
+                    <div className="text-nowrap text-[1.5rem] text-center font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[3rem] md:px-6">
                         {dictionary.page.home.description}
                     </div>
                     <button className="bg-[#609BE3] hover:bg-[#646DD2]
@@ -43,13 +43,17 @@ export function Home({ dictionary }: { dictionary: any }) {
                         {dictionary.page.home.button}
                     </button>
                 </motion.div>
-                    <div className="mt-[5rem] h-[25rem] relative flex">
-                        <div className="absolute m-auto left-0 right-0 bg-white rounded-full h-[20rem] w-[20rem] z-1
-                            md:h-[20rem] lg:h-[25rem] md:w-[20rem] lg:w-[25rem]
-                        "/>
-                        <img alt="smiling-man" src="../../images/smiling-man.png "
-                              className="z-50 relative w-[80vw] m-auto md:w-[35vw] lg:w-[25vw]"/>
-                    </div>
+
+                <div className="relative mt-[5rem] h-[25rem] flex md:w-[30%]">
+                    {/*<div className="absolute m-auto left-0 right-0 bg-white rounded-full h-[20rem] w-[20rem] z-1*/}
+                    {/*    md:h-[20rem]  md:w-[20rem] lg:h-[100%] lg:w-[100%] aspect-square*/}
+                    {/*"/>*/}
+                    <img alt="white-circle" src="../../images/white-circle.svg"
+                            className="absolute"
+                    />
+                    <img alt="smiling-man" src="../../images/smiling-man.png "
+                          className="z-50 relative w-[80vw] m-auto md:w-[100%] lg:w-[100%]"/>
+                </div>
             </motion.div>
 
         </section>

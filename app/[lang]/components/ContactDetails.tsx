@@ -12,21 +12,22 @@ function ContactDetails({ dictionary }: { dictionary: any }) {
                         <p className="font-bold text-[1.4rem]">
                             {dictionary.page.contact.details.services_title}
                         </p>
-                        <div className="flex text-[1rem] md:text-[1.2rem] gap-5 mt-3">
+                        <div className="flex text-[1rem] md:text-[1.2rem] gap-2 justify-left mt-3">
                             <p className="border-2 border-white rounded-3xl px-3 py-2">
                                 {dictionary.page.contact.details.websites}
                             </p>
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 {dictionary.page.contact.details.branding}
                             </p>
-                        </div>
-                        <div className="flex text-[1rem] md:text-[1.2rem] gap-1 mt-3">
-                            <p className="border-2 border-white rounded-4xl px-3 py-2">
-                                {dictionary.page.contact.details.ecommerce}
-                            </p>
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 {dictionary.page.contact.details.seo}
                             </p>
+                        </div>
+                        <div className="flex text-[1rem] md:text-[1.2rem] gap-2 justify-left mt-3">
+                            <p className="border-2 border-white rounded-4xl px-3 py-2">
+                                {dictionary.page.contact.details.ecommerce}
+                            </p>
+
                             <p className="border-2 border-white rounded-4xl px-3 py-2">
                                 {dictionary.page.contact.details.hire_me}
                             </p>

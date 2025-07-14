@@ -13,7 +13,9 @@ export function About({ dictionary }: { dictionary: any }) {
             viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 2 }}
         >
-            <img alt="about-me-img" src="../../images/about-me-image.png" className="mb-[1em] lg:w-[40%]"/>
+            <img alt="about-me-img" src="../../images/about-me-image.png"
+                 className="object-contain mb-[1em] lg:w-[40%] drop-shadow-xl/60 drop-shadow-white"
+            />
             <div className="gap-[4rem] lg:w-[45%]">
                 <div className="flex bg-[#646DD2] rounded-lg items-center px-4 py-2 mb-[1em] lg:rounded-4xl">
                         <p className="text-[1.8rem] text-white font-bold ml-auto mr-5 lg:text-[4rem] lg:mr-[3rem] text-center">

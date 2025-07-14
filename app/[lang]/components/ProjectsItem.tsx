@@ -12,7 +12,7 @@ function ProjectsItem(props: Props) {
 
     return (
         <div className="relative z-20 border-3 border-white hover:border-[#646DD2] rounded-2xl flex flex-col
-         h-[25rem] overflow-hidden transition-all duration:600 ease-in-out md:h-[35rem] md:p-4">
+         h-[25rem] overflow-hidden transition-all duration:600 ease-in-out md:h-[27rem] md:p-4">
             <div className="p-5">
                 <p className="text-[#C9AA71] text-left text-[1rem] font-bold italic">
                     {props.category}
@@ -23,7 +23,7 @@ function ProjectsItem(props: Props) {
                 <div className="w-11/12 border-t-2 border-gray-400 mt-2"/>
             </div>
             <div className="img-item-project relative w-[90%] -ml-[1rem] rotate-10 mt-[5rem] hover:rotate-0 hover:mt-0
-            hover:ml-[1rem] transition-all ease-in-out duration-600 md:w-[90%] md:hover:mt-[5rem] md:mt-[12rem]">
+            hover:ml-[1rem] transition-all ease-in-out duration-600 md:w-[90%] md:hover:mt-[0rem] md:mt-[6rem]">
                 <div className={`opacity-50 bg-gradient-to-t from-[#646DD2] via-[#646DD2] to-transparent w-[100%] h-[100%] z-30 absolute rounded-md`}/>
                 <img alt="filter" src={props.src} className="w-[100%] object-contain bg-white aspect-square rounded-md"/>
                 {props.children}
