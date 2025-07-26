@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useScroll } from './ScrollContext';
+import ScrollIndicator from "./ScrollIndicator";
 
 export function Home({ dictionary }: { dictionary: any }) {
     const { scrollbar } = useScroll();
@@ -26,7 +27,7 @@ export function Home({ dictionary }: { dictionary: any }) {
                   z-5 top-0 left-0 w-auto h-auto min-w-full min-h-full object-cover scale-100" />
             <div className="top-0 -scale-y-100 object-cover w-full overflow-hidden "/>
             <motion.div className="relative grid-cols-1 md:flex-col lg:flex-row w-[95vw] mt-[10rem] mx-auto flex flex-col z-50 drop-shadow-xl
-                    md:w-[70vw]  md:justify-between md:items-center md:mt-[6rem] lg:mt-[10rem]"
+                    md:w-[1280px]  md:justify-between md:items-center md:mt-[6rem] lg:mt-[10rem]"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
@@ -39,9 +40,9 @@ export function Home({ dictionary }: { dictionary: any }) {
                             {dictionary.page.home.title}
                         </div>
                     </div>
-                    <div className="text-nowrap text-[1.5rem] text-center font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[3rem] md:px-6">
+                    <p className="text-nowrap w-[90%] text-[1.5rem] text-center font-bold bg-white rounded-full py-2 px-2 mt-3 md:text-[3rem] md:px-1">
                         {dictionary.page.home.description}
-                    </div>
+                    </p>
                     <button className="bg-[#609BE3] hover:bg-[#646DD2]
                      text-white font-bold py-2 px-4 rounded-full transition-all ease-in-out
                     text-[1rem] mr-auto mt-3 md:hover:bg-[#609BE3] md:bg-[#646DD2] md:text-[1.2rem] md:left-0 md:py-3
@@ -62,6 +63,7 @@ export function Home({ dictionary }: { dictionary: any }) {
                 </div>
             </motion.div>
 
+            <ScrollIndicator />
         </section>
     );
 }
