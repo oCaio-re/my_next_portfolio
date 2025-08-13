@@ -95,7 +95,7 @@ export default function ContactForm({ dictionary }: { dictionary: any }) {
                     {dictionary.page.contact.form.submit_button}
                 </button>
 
-                <input type="hidden" name="_next" value="https://oyster-app-kkuyg.ondigitalocean.app/thank-you"/>
+                <input type="hidden" name="_next" value="https://oliveiradev.live/en/thank-you"/>
             </form>
         </div>
     );
