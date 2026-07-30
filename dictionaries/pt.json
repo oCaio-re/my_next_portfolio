@@ -8,9 +8,13 @@
   ],
   "page": {
     "home": {
-      "title": "Olá, sou Caio!",
-      "description": "Este é o meu portfólio pessoal",
-      "button": "Vamos começar"
+      "badge": "⚡ Disponível para novos projetos & oportunidades",
+      "greeting": "Olá, eu sou",
+      "name": "Caio Oliveira",
+      "role": "Engenheiro de Software Full-Stack",
+      "description": "Transformo ideias e problemas complexos em aplicações web modernas, escaláveis e de alta performance.",
+      "button_primary": "Ver Projetos",
+      "button_secondary": "Entrar em Contato"
     },
     "about": {
       "my_story": "Minha História",

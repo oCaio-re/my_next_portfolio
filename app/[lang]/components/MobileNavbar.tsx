@@ -1,17 +1,34 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { FiX, FiPhone } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useScroll } from './ScrollContext';
 
-export function MobileNavbar() {
+import { Dictionary, NavItem } from "./types";
+
+import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
+
+interface MobileNavbarProps {
+    dictionary?: Dictionary;
+}
+
+export function MobileNavbar({ dictionary }: MobileNavbarProps) {
     const { scrollbar } = useScroll();
     const [isOpen, setIsOpen] = useState(false);
     const [height, setHeight] = useState(0);
     const [activeSection, setActiveSection] = useState("home");
     const menuRef = useRef<HTMLDivElement>(null);
+
+    const navItems = useMemo(() => dictionary?.navItems || [
+        { id: "home", label: "HOME" },
+        { id: "about", label: "ABOUT" },
+        { id: "projects", label: "PROJECTS" },
+        { id: "services", label: "SERVICES" },
+        { id: "contact", label: "CONTACT" },
+    ], [dictionary]);
 
     useEffect(() => {
         if (isOpen && menuRef.current) {
@@ -25,7 +42,7 @@ export function MobileNavbar() {
         if (!scrollbar) return;
 
         const handleScroll = () => {
-            const sections = ["home", "about", "services", "projects", "contact"];
+            const sections = navItems.map(item => item.id);
             const scrollPosition = scrollbar.scrollTop + 100;
 
             for (let i = sections.length - 1; i >= 0; i--) {
@@ -46,115 +63,95 @@ export function MobileNavbar() {
 
         scrollbar.addListener(handleScroll);
         return () => scrollbar.removeListener(handleScroll);
-    }, [scrollbar]);
+    }, [scrollbar, navItems]);
 
     const scrollToSection = (sectionId: string) => {
-            setIsOpen(false);
-            if (!scrollbar) return;
+        setIsOpen(false);
+        if (!scrollbar) return;
 
-            const element = document.getElementById(sectionId);
-            if (element) {
-                const navbarHeight = 80; // Adjust this to match your navbar height
-                const elementPosition = element.getBoundingClientRect().top + scrollbar.scrollTop - navbarHeight;
-                scrollbar.scrollTo(0, elementPosition, 600);
-            }
-        };
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const navbarHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top + scrollbar.scrollTop - navbarHeight;
+            scrollbar.scrollTo(0, elementPosition, 600);
+        }
+    };
 
-        return (
-            <div className="lg:hidden fixed top-3 m-auto left-0 right-0 z-[9999] w-[95vw]">
-                <div className="flex items-center justify-between px-4 py-3 bg-white rounded-md">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="p-2 rounded-md"
-                        aria-label="Toggle menu"
-                    >
-                        <div className="relative w-8 h-8 m-auto ">
-                            <RxHamburgerMenu
-                                className={cn(
-                                    "absolute w-8 h-8 transition-all duration-300 ",
-                                    isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
-                                )}
-                            />
-                            <FiX
-                                className={cn(
-                                    "absolute w-8 h-8 transition-all duration-300",
-                                    isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
-                                )}
-                            />
-                        </div>
-                    </button>
-
-                    <div
-                        className="text-3xl font-semibold mx-auto cursor-pointer"
-                        onClick={() => scrollToSection('home')}
-                    >
-                        Caio
+    return (
+        <div className="relative top-3 m-auto left-0 right-0 w-[95vw]">
+            <div className="flex items-center justify-between px-4 py-2.5 bg-black/80 border border-white/15 backdrop-blur-xl rounded-full shadow-2xl text-white">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="p-1.5 rounded-full text-white hover:bg-white/10 focus:outline-none transition-colors"
+                    aria-label="Toggle menu"
+                >
+                    <div className="relative w-6 h-6 m-auto flex items-center justify-center">
+                        <RxHamburgerMenu
+                            className={cn(
+                                "absolute w-6 h-6 transition-all duration-300",
+                                isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
+                            )}
+                        />
+                        <FiX
+                            className={cn(
+                                "absolute w-6 h-6 transition-all duration-300",
+                                isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
+                            )}
+                        />
                     </div>
-
-                    <div className="flex items-center gap-4">
-                        <FiPhone className="w-8 h-8 bg-[#C9AA71] rounded-full px-2  py-1 text-white" />
-                        <a href="tel:+351916248973" className="text-sm font-bold border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]">
-                            +351 916 248 973
-                        </a>
-                    </div>
-                </div>
+                </button>
 
                 <div
-                    ref={menuRef}
-                    className={cn(
-                        "bg-white overflow-hidden transition-all duration-300 ease-in-out",
-                        "border-b w-full absolute top-full left-0 rounded-md -mt-4 -z-4 shadow-md"
-                    )}
-                    style={{ height: `${height}px` }}
+                    className="flex items-center gap-2 cursor-pointer"
+                    onClick={() => scrollToSection('home')}
                 >
-                    <nav className="px-4 py-2 space-y-4 text-[0.8rem] justify-items-start text-gray-500 font-semibold">
-                        <button
-                            onClick={() => scrollToSection('home')}
-                            className={cn(
-                                "block py-2 px-3 rounded transition-colors w-full text-left",
-                                activeSection === 'home' ? "bg-[#C9AA71]/10 text-[#C9AA71] border-l-4 border-[#C9AA71]" : "hover:bg-gray-100"
-                            )}
-                        >
-                            HOME
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('about')}
-                            className={cn(
-                                "block py-2 px-3 rounded transition-colors w-full text-left",
-                                activeSection === 'about' ? "bg-[#C9AA71]/10 text-[#C9AA71] border-l-4 border-[#C9AA71]" : "hover:bg-gray-100"
-                            )}
-                        >
-                            ABOUT
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('services')}
-                            className={cn(
-                                "block py-2 px-3 rounded transition-colors w-full text-left",
-                                activeSection === 'services' ? "bg-[#C9AA71]/10 text-[#C9AA71] border-l-4 border-[#C9AA71]" : "hover:bg-gray-100"
-                            )}
-                        >
-                            SERVICES
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('projects')}
-                            className={cn(
-                                "block py-2 px-3 rounded transition-colors w-full text-left",
-                                activeSection === 'projects' ? "bg-[#C9AA71]/10 text-[#C9AA71] border-l-4 border-[#C9AA71]" : "hover:bg-gray-100"
-                            )}
-                        >
-                            PROJECTS
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('contact')}
-                            className={cn(
-                                "block py-2 px-3 rounded transition-colors w-full text-left",
-                                activeSection === 'contact' ? "bg-[#C9AA71]/10 text-[#C9AA71] border-l-4 border-[#C9AA71]" : "hover:bg-gray-100"
-                            )}
-                        >
-                            CONTACT
-                        </button>
-                    </nav>
+                    <span className="w-7 h-7 rounded-full bg-gradient-to-tr from-[#609BE3] via-[#646DD2] to-[#C9AA71] flex items-center justify-center text-white text-[10px] font-black shadow-md">
+                        CO
+                    </span>
+                    <span className="text-base font-extrabold tracking-tight text-white">
+                        Caio
+                    </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <LanguageSwitcher />
+                    <ThemeToggle />
+                    <a
+                        href="tel:+351916248973"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold text-white bg-white/10 border border-white/15 backdrop-blur-md"
+                        aria-label="Phone"
+                    >
+                        <FiPhone className="w-3.5 h-3.5 text-[#C9AA71]" />
+                        <span className="hidden sm:inline text-xs">+351 916 248 973</span>
+                    </a>
                 </div>
             </div>
-        );
-    };
+
+            <div
+                ref={menuRef}
+                className={cn(
+                    "bg-black/90 backdrop-blur-2xl border border-white/15 overflow-hidden transition-all duration-300 ease-in-out",
+                    "w-full absolute top-full left-0 rounded-2xl mt-2 z-50 shadow-2xl"
+                )}
+                style={{ height: `${height}px` }}
+            >
+                <nav className="px-3 py-3 space-y-1.5 text-xs text-gray-300 font-semibold tracking-wider uppercase">
+                    {navItems.map((item: NavItem) => (
+                        <button
+                            key={item.id}
+                            onClick={() => scrollToSection(item.id)}
+                            className={cn(
+                                "block py-3 px-4 rounded-xl transition-all w-full text-left font-bold tracking-wider",
+                                activeSection === item.id 
+                                    ? "bg-white/10 text-[#C9AA71] border-l-2 border-[#C9AA71]" 
+                                    : "hover:bg-white/5 hover:text-white"
+                            )}
+                        >
+                            {item.label}
+                        </button>
+                    ))}
+                </nav>
+            </div>
+        </div>
+    );
+}

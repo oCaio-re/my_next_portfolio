@@ -6,32 +6,31 @@ import { motion } from 'framer-motion';
 
 export function Services({ dictionary }: { dictionary: any }) {
     return (
-        <motion.section id="services" className="grid-cols-1 lg:grid-cols-2 w-[90vw] mt-[8rem] m-auto md:mt-[15rem] lg:w-[70vw]"
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.1 }}
-                transition={{ duration: 1 }}
-        >
-            <img alt="bg-img-1" src="../../images/background/purple_s.png"
-                 className="hidden absolute -z-50 h-200 w-200 -mt-[25rem] ml-[10rem] scale-130 lg:block"
-            />
-            <img alt="bg-img-1" src="../../images/background/yellow_s.png"
-                 className="hidden absolute -z-50 h-120 w-120 -mt-[20rem] ml-[0rem] scale-130 lg:block"
-            />
-            <div className="gap-[4rem] lg:mb-[10rem]">
-                <div className="flex bg-[#646DD2] rounded-lg items-center px-4 py-2 mb-[1em]
-                lg:flex-row lg:w-[50vw] lg:rounded-4xl lg:mt-[15rem] lg:mx-auto">
+        <section id="services" className="relative py-12 sm:py-16 scroll-mt-24 overflow-hidden bg-black">
+            {/* Ambient Background Glow */}
+            <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-[#646DD2]/15 rounded-full blur-[140px] pointer-events-none" />
 
-                    <img className="w-40 h-40 object-cover rounded-full ml-auto mr-5 lg:mr-8" src="../../images/handshake.jpg" alt="profile-picture"/>
-                    <p className="text-[1.8rem] text-white font-bold lg:text-[4rem] lg:mr-auto">
-                        {dictionary.page.services.title}
-                    </p>
-                </div>
+            <div className="container relative z-10 mx-auto px-4 max-w-5xl">
+                
+                {/* Section Header */}
+                <motion.div 
+                    className="flex flex-col items-start mb-10"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <span className="text-[#C9AA71] text-xs font-mono font-bold tracking-widest uppercase mb-1.5">
+                        {`// ${dictionary.page.services.title}`}
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Soluções & Desenvolvimento Sob Medida
+                    </h2>
+                </motion.div>
+
+                <ServicesGrid dictionary={dictionary}/>
+
             </div>
-            <ServicesGrid dictionary={dictionary}/>
-            <img alt="bg-img-1" src="../../images/background/blue_s.png"
-                 className="animate-pulse-slow hidden absolute -z-50 h-150 w-150 -mt-[35rem] ml-[40rem] scale-130 lg:block opacity-70"
-            />
-        </motion.section>
+        </section>
     );
 }

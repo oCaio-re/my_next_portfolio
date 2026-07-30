@@ -5,6 +5,9 @@ import {FiPhone} from "react-icons/fi";
 import { Dictionary, NavItem } from './types';
 import { useScroll } from './ScrollContext';
 
+import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
+
 export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
     const { scrollbar } = useScroll();
     const [scrolled, setScrolled] = useState(false);
@@ -75,37 +78,37 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-80 transition-all duration-300 mt-[1rem] w-[70vw] m-auto rounded-lg
-                    h-20 items-center hidden px-5 lg:flex 
-         ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
+            className={`transition-all duration-300 mt-2 sm:mt-3 w-[92vw] lg:w-[70vw] max-w-5xl m-auto rounded-full
+                    h-14 items-center flex px-4 sm:px-5 border shadow-xl backdrop-blur-xl z-40
+         ${scrolled ? 'bg-black/80 border-white/20 shadow-black/50' : 'bg-white/5 border-white/10'}
         `}
-            style={{ backgroundColor: scrolled ? 'white' : 'transparent' }}
         >
-            <div className="w-full h-full m-auto px-4 py-3 flex items-center justify-between">
+            <div className="w-full h-full m-auto flex items-center justify-between">
                 <a
-                    className="text-[3rem] font-bold cursor-pointer"
+                    className="flex items-center gap-2 cursor-pointer group"
                     onClick={() => scrollToSection("home")}
-                    style={{ color: scrolled ? 'black' : 'white' }}
                 >
-                    CO
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#609BE3] via-[#646DD2] to-[#C9AA71] flex items-center justify-center text-white text-[11px] font-black shadow-md group-hover:scale-105 transition-transform">
+                        CO
+                    </span>
+                    <span className="hidden sm:inline-block font-extrabold text-sm tracking-tight text-white group-hover:text-[#C9AA71] transition-colors">
+                        Caio Oliveira
+                    </span>
                 </a>
 
-                <ul className={`hidden md:flex gap-6 text-sm uppercase relative`}>
+                <ul className="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider relative font-semibold">
                     {navItems.map((item: NavItem) => (
                         <li key={item.id} className="relative">
                             <a
                                 onClick={() => scrollToSection(item.id)}
-                                className={`hover:text-[#C9AA71] transition-all duration-300 cursor-pointer text-[1.2rem] font-bold relative block pb-2
-                                    ${activeSection === item.id ? 'text-[#C9AA71]' : ''}
+                                className={`transition-all duration-300 cursor-pointer relative block py-1.5
+                                    ${activeSection === item.id ? 'text-[#C9AA71] font-bold' : 'text-gray-300 hover:text-white'}
                                 `}
-                                style={{
-                                    color: activeSection === item.id ? '#C9AA71' : (scrolled ? 'black' : 'white')
-                                }}
                             >
                                 {item.label}
                                 {/* Active section indicator bar */}
                                 <span
-                                    className={`absolute bottom-0 left-0 h-[3px] bg-[#C9AA71] transition-all duration-300 ease-out
+                                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#609BE3] to-[#C9AA71] transition-all duration-300 ease-out rounded-full
                                         ${activeSection === item.id ? 'w-full opacity-100' : 'w-0 opacity-0'}
                                     `}
                                 />
@@ -114,11 +117,16 @@ export const NavBar = ({ dictionary }: { dictionary: Dictionary }) => {
                     ))}
                 </ul>
 
-                <div className={`flex items-center gap-4`}>
-                    <FiPhone className={`w-10 h-10 bg-[#C9AA71] rounded-full px-2  py-1 text-white ${scrolled ? 'bg-[#C9AA71]' : 'bg-transparent'}`} />
-                    <a href="tel:+351916248973" className={`text-[1rem] font-bold border-2 text-[#C9AA71] rounded-full px-2  py-1 border-[#C9AA71]
-                     ${scrolled ? 'text-[#C9AA71]' : 'text-white'} ${scrolled ? 'border-[#C9AA71]' : 'border-transparent'}`}>
-                        +351 916 248 973
+                <div className="flex items-center gap-3">
+                    <LanguageSwitcher />
+                    <ThemeToggle />
+                    <a
+                        href="tel:+351916248973"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md transition-all duration-300 transform hover:scale-105 shadow-sm"
+                        aria-label="Phone"
+                    >
+                        <FiPhone className="w-3.5 h-3.5 text-[#C9AA71]" />
+                        <span className="hidden lg:inline tracking-wide">+351 916 248 973</span>
                     </a>
                 </div>
             </div>

@@ -7,7 +7,6 @@ import {ContactMe} from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectCTA from "./components/ProjectCTA";
 import { getDictionary } from '@/get-dictionary';
-import LanguageSwitcher from "@/app/[lang]/components/LanguageSwitcher";
 import { Locale } from "@/i18n";
 import DownloadCV from "@/app/[lang]/components/DownloadCV";
 
@@ -17,7 +16,6 @@ async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
 
     return (
         <>
-            <LanguageSwitcher />
             <Home dictionary={dictionary}/>
             <About dictionary={dictionary}/>
             <Projects dictionary={dictionary}/>

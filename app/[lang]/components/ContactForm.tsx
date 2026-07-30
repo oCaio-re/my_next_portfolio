@@ -19,65 +19,77 @@ export default function ContactForm({ dictionary }: { dictionary: any }) {
     };
 
     return (
-        <div className="relative flex justify-center items-center border-4 border-white p-4 text-[1rem] rounded-lg z-50
-        lg:w-[50vw] lg:m-auto lg:h-[50rem] lg:rounded-xl">
-            <form className="p-3 rounded-lg shadow-lg w-full max-w-2xl" action="https://formsubmit.co/xcaio2@gmail.com" method="POST">
+        <div className="relative border border-white/15 bg-white/5 backdrop-blur-2xl p-6 sm:p-8 text-sm rounded-3xl z-40 max-w-2xl mx-auto shadow-2xl">
+            <form className="w-full space-y-5" action="https://formsubmit.co/xcaio2@gmail.com" method="POST">
 
-                <div className="mb-6 text-white">
+                <div>
+                    <label htmlFor="name" className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                        Seu Nome
+                    </label>
                     <input
                         name="name"
                         type="text"
                         id="name"
                         placeholder={dictionary.page.contact.form.name_placeholder}
-                        className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#646DD2]"
+                        className="w-full bg-black/60 text-white placeholder-gray-500 border border-white/15 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#609BE3] focus:ring-1 focus:ring-[#609BE3] transition-all"
                         required
                     />
                 </div>
 
-                <div className="mb-6 text-white">
+                <div>
+                    <label htmlFor="email" className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                        Seu E-mail
+                    </label>
                     <input
                         name="email"
                         type="email"
                         id="email"
                         placeholder={dictionary.page.contact.form.email_placeholder}
-                        className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#646DD2]"
+                        className="w-full bg-black/60 text-white placeholder-gray-500 border border-white/15 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#609BE3] focus:ring-1 focus:ring-[#609BE3] transition-all"
                         required
                     />
                 </div>
 
-                <div className="mb-6">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        {[{"name": dictionary.page.contact.details.websites, "icon": <IoIosGlobe className="icon-form" size={30}/>},
-                            {"name": dictionary.page.contact.details.branding, "icon": <FaRegLightbulb className="icon-form" size={30}/>},
-                            {"name": dictionary.page.contact.details.ecommerce, "icon": <FiSmartphone className="icon-form" size={30}/>},
-                            {"name": dictionary.page.contact.details.seo, "icon": <FaGoogle className="icon-form" size={30}/>},
-                            {"name": dictionary.page.contact.details.hire_me, "icon": <FaHandshakeSimple className="icon-form" size={30}/>},
+                <div>
+                    <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-400 mb-2">
+                        Serviços Desejados
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                        {[
+                            {"name": dictionary.page.contact.details.websites, "icon": <IoIosGlobe size={18}/>},
+                            {"name": dictionary.page.contact.details.branding, "icon": <FaRegLightbulb size={18}/>},
+                            {"name": dictionary.page.contact.details.ecommerce, "icon": <FiSmartphone size={18}/>},
+                            {"name": dictionary.page.contact.details.seo, "icon": <FaGoogle size={18}/>},
+                            {"name": dictionary.page.contact.details.hire_me, "icon": <FaHandshakeSimple size={18}/>},
                         ].map(item => (
                             <button
                                 key={item.name}
                                 type="button"
                                 onClick={() => handleServiceChange(item.name)}
-                                className={`px-4 py-3 h-20 rounded border transition font-bold lg:h-[10rem]
+                                className={`flex flex-col items-center justify-center p-3 rounded-2xl border transition-all duration-300 font-semibold text-xs gap-1.5
                                  ${
                                     services.includes(item.name)
-                                        ? 'text-black bg-white font-bold'
-                                        : 'bg-transparent f text-white border-gray-300 hover:bg-gray-400 hover:text-white font-bold'
+                                        ? 'bg-gradient-to-r from-[#609BE3] to-[#646DD2] text-white border-transparent shadow-lg shadow-[#646DD2]/30 scale-[1.02]'
+                                        : 'bg-black/40 text-gray-300 border-white/15 hover:bg-white/10 hover:border-white/30'
                                 }`}
                             >
                                 {item.icon}
-                                {item.name}
+                                <span>{item.name}</span>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                <div className="mb-6 text-white">
+                <div>
+                    <label htmlFor="project" className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                        Detalhes do Projeto / Mensagem
+                    </label>
                     <textarea
                         id="project"
                         name="info-subject"
-                        rows={5}
+                        rows={4}
                         placeholder={dictionary.page.contact.form.project_placeholder}
-                        className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full bg-black/60 text-white placeholder-gray-500 border border-white/15 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#609BE3] focus:ring-1 focus:ring-[#609BE3] transition-all"
                         required
                     />
                 </div>
@@ -90,7 +102,7 @@ export default function ContactForm({ dictionary }: { dictionary: any }) {
 
                 <button
                     type="submit"
-                    className="btn w-full bg-[#646DD2] text-white font-semibold py-3 rounded hover:bg-[#7F85CCFF] transition z-50"
+                    className="w-full py-3.5 px-6 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-[#609BE3] via-[#646DD2] to-[#C9AA71] shadow-xl shadow-[#646DD2]/30 hover:shadow-[#646DD2]/50 transition-all duration-300 transform hover:scale-[1.01] active:scale-95 cursor-pointer"
                 >
                     {dictionary.page.contact.form.submit_button}
                 </button>

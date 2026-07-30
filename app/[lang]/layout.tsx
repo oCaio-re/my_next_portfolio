@@ -17,15 +17,17 @@ export const metadata: Metadata = {
     description: "Caio Oliveira's Website, Software Engineer",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
                                        children,
                                        params,
                                    }: {
     children: React.ReactNode;
-    params: { lang: string };
+    params: Promise<{ lang: string }>;
 }) {
+    const { lang } = await params;
+
     return (
-        <html lang={params.lang} className="overflow-hidden">
+        <html lang={lang} className="overflow-hidden">
         <body
             className={`overflow-hidden ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
             style={{ overflow: 'hidden' }}

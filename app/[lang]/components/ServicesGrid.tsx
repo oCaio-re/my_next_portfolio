@@ -6,40 +6,28 @@ import React from "react";
 
 export default function ServicesGrid({ dictionary }: { dictionary: any }) {
     return (
-        <div className="flex flex-col px-4 lg:w-[50vw] lg:m-auto">
-
-            <div className="relative grid-cols-1 flex flex-col gap-7">
-                <img alt="bg-img-1" src="../../images/background/yellow_and_purple_b.png"
-                     className="animate-pulse-slow absolute -z-5  w-auto h-auto min-w-full min-h-full object-cover scale-150 -mt-[8rem]
-                      lg:object-fit lg:scale-200 lg:min-w-0 lg:min-h-0 lg:-mt-[5rem]"
+        <div className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <ServiceCard
+                    title={dictionary.page.services.grid.website.title}
+                    description={dictionary.page.services.grid.website.description}
+                    Icon={TbWorld}
                 />
-                <div className="gap-7 flex flex-col lg:flex-row lg:gap-3">
-                    <ServiceCard
-                        title={dictionary.page.services.grid.website.title}
-                        description={dictionary.page.services.grid.website.description}
-                        Icon={TbWorld}
-                    />
-                    <ServiceCard
-                        title={dictionary.page.services.grid.branding.title}
-                        description={dictionary.page.services.grid.branding.description}
-                        Icon={PiLightbulbBold}
-                        marginTop="lg:-mt-[5rem]"
-                    />
-                </div>
-
-            <div className="gap-7 flex flex-col lg:flex-row lg:gap-3">
-                    <ServiceCard
-                        title={dictionary.page.services.grid.ecommerce.title}
-                        description={dictionary.page.services.grid.ecommerce.description}
-                        Icon={LuSmartphone}
-                    />
-                    <ServiceCard
-                        title={dictionary.page.services.grid.seo.title}
-                        description={dictionary.page.services.grid.seo.description}
-                        Icon={FaGoogle}
-                        marginTop="lg:-mt-[5rem]"
-                    />
-            </div>
+                <ServiceCard
+                    title={dictionary.page.services.grid.branding.title}
+                    description={dictionary.page.services.grid.branding.description}
+                    Icon={PiLightbulbBold}
+                />
+                <ServiceCard
+                    title={dictionary.page.services.grid.ecommerce.title}
+                    description={dictionary.page.services.grid.ecommerce.description}
+                    Icon={LuSmartphone}
+                />
+                <ServiceCard
+                    title={dictionary.page.services.grid.seo.title}
+                    description={dictionary.page.services.grid.seo.description}
+                    Icon={FaGoogle}
+                />
             </div>
         </div>
     );
@@ -52,25 +40,25 @@ type ServiceCardProps = {
     marginTop?: string;
 };
 
-function ServiceCard({ title, description, Icon, marginTop }: ServiceCardProps) {
+function ServiceCard({ title, description, Icon }: ServiceCardProps) {
     return (
-        <div className={`relative group flex flex-col justify-between items-start h-[30rem] px-8 pt-10 pb-4 border-4 border-white rounded-2xl
-        overflow-hidden transition-all duration-300 ease-in-out hover:border-[#646DD2] md:h-[15rem] hover:shadow-[-2px_8px_8px_rgba(77,76,76,0.4)]
-        lg:w-[50%] ${marginTop} lg:rounded-4xl md:h-[30rem] lg:h-[30rem]
-        `}>
-            <div className="flex flex-col justify-around h-[60%] ">
-                <h2 className="text-white font-bold text-4xl mb-1 lg:text-left lg:text-[3rem]">{title}</h2>
-
-                <div className="w-11/12 border-t-2 border-gray-400 mb-1"></div>
-
-                <p className="text-white w-11/12 text-[1.2rem] mb-1 text-left lg:mb-[4rem]">{description}</p>
-
+        <div className="relative group flex flex-col justify-between p-6 sm:p-8 border border-white/15 bg-white/5 backdrop-blur-xl rounded-3xl
+        overflow-hidden transition-all duration-500 ease-in-out hover:border-[#609BE3] hover:bg-white/10 shadow-xl hover:shadow-2xl hover:shadow-[#609BE3]/20">
+            <div>
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#609BE3]/20 to-[#646DD2]/20 border border-white/15 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-[#609BE3]/50 transition-all duration-300">
+                    <Icon className="w-6 h-6 text-[#609BE3] group-hover:text-[#C9AA71] transition-colors" />
+                </div>
+                <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-3 group-hover:text-[#609BE3] transition-colors">
+                    {title}
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+                    {description}
+                </p>
             </div>
-
-            <div className="absolute bottom-[-0.3rem] right-[-1.5rem] w-[60%] aspect-square border border-gray-400
-            lg:bottom-[-3rem] lg:right-[-3rem]
-             rounded-xl flex justify-center items-center rotate-[43deg] transition-all duration-500 ease-in-out group-hover:bg-[#646DD2] z-0">
-                <Icon className="top-2 right-3 absolute md:top-10 md:right-5 lg:top-5 left-0 bottom-0 w-[60%] h-[60%] text-white -rotate-[90deg] mt-8 transition-all m-auto duration-500 ease-in-out group-hover:text-[#C9AA71]" />
+            <div className="pt-5 mt-5 border-t border-white/10 flex items-center gap-2 text-xs font-mono font-semibold text-[#C9AA71]">
+                <span>SOB MEDIDA</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C9AA71]" />
+                <span>EXCELÊNCIA TÉCNICA</span>
             </div>
         </div>
     );

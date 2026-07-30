@@ -17,33 +17,32 @@ export default function ProjectCTA({ dictionary }: { dictionary: any }) {
         }
     };
     return (
-        <motion.div className="w-[95vw] md:w-auto mt-[15rem] text-center py-5 px-1 m-auto"
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.1 }}
-                transition={{ duration: 1 }}
-        >
-            <h3 className="
-        text-4xl md:text-5xl lg:text-[5rem] font-extrabold
-        bg-clip-text text-transparent drop-shadow-xl drop-shadow-[#646DD2]/50 hover:shadow-white
-        bg-gradient-to-r from-[#609BE3] via-[#646DD2] to-purple-500 py-3
-      "
-            dangerouslySetInnerHTML={{ __html: dictionary.page.project_cta.title }} />
-            <div className="mt-10">
-                <button
-                    onClick={() => scrollToSection("contact")}
-                    className="w-[80%] md:w-fit
-            group inline-block px-12 py-5 rounded-lg
-            bg-[#646DD2] text-white font-bold text-xl
-            transition-transform duration-300 ease-in-out
-            hover:scale-105 hover:bg-white hover:text-black
-            shadow-2xl shadow-[#646DD2]/120 hover:shadow-white
-          "
+        <section className="relative py-12 sm:py-16 bg-black overflow-hidden">
+            <div className="container relative z-10 mx-auto px-4 max-w-4xl">
+                <motion.div 
+                    className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/10 via-white/5 to-transparent border border-white/15 backdrop-blur-2xl shadow-2xl text-center relative overflow-hidden"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    {dictionary.page.project_cta.button}
-                </button>
+                    <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#646DD2]/25 rounded-full blur-[120px] pointer-events-none" />
+
+                    <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6"
+                        dangerouslySetInnerHTML={{ __html: dictionary.page.project_cta.title }} 
+                    />
+
+                    <div className="flex justify-center">
+                        <button
+                            onClick={() => scrollToSection("contact")}
+                            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-[#609BE3] via-[#646DD2] to-[#C9AA71] shadow-2xl shadow-[#646DD2]/30 hover:shadow-[#646DD2]/50 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer"
+                        >
+                            {dictionary.page.project_cta.button}
+                        </button>
+                    </div>
+                </motion.div>
             </div>
-        </motion.div>
+        </section>
     );
 }
 

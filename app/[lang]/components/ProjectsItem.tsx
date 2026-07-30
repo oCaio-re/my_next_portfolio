@@ -11,21 +11,20 @@ interface Props {
 function ProjectsItem(props: Props) {
 
     return (
-        <div className="relative z-20 border-3 border-white hover:border-[#646DD2] rounded-2xl flex flex-col
-         h-[25rem] overflow-hidden transition-all duration:600 ease-in-out md:h-[27rem] md:p-4">
-            <div className="p-5">
-                <p className="text-[#C9AA71] text-left text-[1rem] font-bold italic">
+        <div className="relative z-20 border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-[#646DD2] rounded-3xl flex flex-col
+         h-[21rem] md:h-[23rem] overflow-hidden transition-all duration-500 ease-in-out shadow-xl hover:shadow-2xl hover:shadow-[#646DD2]/20 group">
+            <div className="p-4 sm:p-5">
+                <span className="text-[#C9AA71] text-left text-xs font-mono font-bold tracking-widest uppercase block mb-1">
                     {props.category}
-                </p>
-                <p className="text-[#646DD2] text-left text-[1.8rem] font-bold md:mt-2">
+                </span>
+                <h3 className="text-white text-left text-lg sm:text-xl font-bold group-hover:text-[#609BE3] transition-colors">
                     {props.title}
-                </p>
-                <div className="w-11/12 border-t-2 border-gray-400 mt-2"/>
+                </h3>
+                <div className="w-full border-t border-white/10 mt-2.5"/>
             </div>
-            <div className="img-item-project relative w-[90%] -ml-[1rem] rotate-10 mt-[5rem] hover:rotate-0 hover:mt-0
-            hover:ml-[1rem] transition-all ease-in-out duration-600 md:w-[90%] md:hover:mt-[0rem] md:mt-[6rem]">
-                <div className={`opacity-50 bg-gradient-to-t from-[#646DD2] via-[#646DD2] to-transparent w-[100%] h-[100%] z-30 absolute rounded-md`}/>
-                <img alt="filter" src={props.src} className="w-[100%] object-contain bg-white aspect-square rounded-md"/>
+            <div className="img-item-project relative w-[92%] mx-auto mt-2 rounded-2xl overflow-hidden flex-1 border border-white/10">
+                <div className="opacity-60 bg-gradient-to-t from-black via-black/40 to-transparent w-full h-full z-10 absolute rounded-2xl pointer-events-none group-hover:opacity-40 transition-opacity"/>
+                <img alt={props.title} src={props.src} className="w-full h-full object-cover bg-black/40 rounded-2xl transform group-hover:scale-105 transition-transform duration-700"/>
                 {props.children}
             </div>
         </div>

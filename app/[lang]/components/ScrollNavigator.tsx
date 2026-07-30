@@ -43,7 +43,7 @@ const ScrollNavigator: React.FC<ScrollNavigatorProps> = ({ scrollbar }) => {
 
 
     return (
-        <div className="fixed bottom-2 right-1 md:bottom-6 md:right-6 z-100 flex flex-col items-center space-y-2">
+        <div className="fixed bottom-2 right-1 md:bottom-6 md:right-6 z-30 flex flex-col items-center space-y-2">
             {/* Progress indicator */}
             {/*<div className="relative w-2 h-20 bg-gray-200 rounded-full overflow-hidden shadow-lg">*/}
             {/*    <div*/}
@@ -53,39 +53,27 @@ const ScrollNavigator: React.FC<ScrollNavigatorProps> = ({ scrollbar }) => {
             {/*</div>*/}
 
             {/* Navigation buttons */}
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-2">
                 {/* Scroll Up */}
                 <button
                     onClick={scrollToTop}
-                    className="group relative p-3 bg-white hover:bg-gray-50 rounded-full shadow-lg hover:shadow-xl
+                    className="group relative p-2.5 bg-black/70 hover:bg-white/20 rounded-full shadow-2xl backdrop-blur-xl
                    transition-all duration-300 ease-out hover:scale-110 active:scale-95
-                   border border-gray-200 hover:border-blue-200"
-                    aria-label="Scroll up (double-click for top)"
+                   border border-white/15"
+                    aria-label="Scroll up"
                 >
-                    <IoChevronUp className="w-5 h-5 text-gray-600 group-hover:text-[#646DD2] transition-colors duration-200" />
-
-                    {/* Tooltip */}
-                    <div className="absolute w-80 right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-[#646DD2] text-white text-xs
-                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                        Scroll <b>Up</b>
-                    </div>
+                    <IoChevronUp className="w-4 h-4 text-gray-300 group-hover:text-[#C9AA71] transition-colors duration-200" />
                 </button>
 
                 {/* Scroll Down */}
                 <button
                     onClick={scrollToBottom}
-                    className="group relative p-3 bg-white hover:bg-gray-50 rounded-full shadow-lg hover:shadow-xl
+                    className="group relative p-2.5 bg-black/70 hover:bg-white/20 rounded-full shadow-2xl backdrop-blur-xl
                    transition-all duration-300 ease-out hover:scale-110 active:scale-95
-                   border border-gray-200 hover:border-blue-200"
+                   border border-white/15"
                     aria-label="Scroll down"
                 >
-                    <IoChevronDown className="w-5 h-5 text-[#646DD2] group-hover:text-[#C9AA71] transition-colors duration-200" />
-
-                    {/* Tooltip */}
-                    <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-[#646DD2] text-white text-xs
-                        rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                        Scroll <b>Down</b>
-                    </div>
+                    <IoChevronDown className="w-4 h-4 text-gray-300 group-hover:text-[#609BE3] transition-colors duration-200" />
                 </button>
             </div>
         </div>

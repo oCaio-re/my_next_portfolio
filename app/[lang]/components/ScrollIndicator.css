@@ -9,9 +9,13 @@
 }
 
 .scroll-indicator svg {
-    color: #fff;
+    color: #ffffff;
     animation: bounce 2s infinite;
     margin-top: -1.5rem; /* Pull arrows closer */
+}
+
+html.light .scroll-indicator svg {
+    color: #646DD2;
 }
 
 .scroll-indicator svg:first-child {

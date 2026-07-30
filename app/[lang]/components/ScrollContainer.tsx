@@ -96,12 +96,12 @@ const ScrollContainer: React.FC<ScrollContainerProps> = ({
     return (
         <div className="relative overflow-hidden w-full max-w-full h-screen">
             <GlowingCursor/>
-            <div className="fixed top-0 left-0 right-0 z-[9999]">
+            <div className="fixed top-0 left-0 right-0 z-40 hidden md:block">
                 <NavBar dictionary={dictionary} />
             </div>
 
-            <div className="fixed top-0 left-0 right-0 z-[9998] md:hidden">
-                <MobileNavbar />
+            <div className="fixed top-0 left-0 right-0 z-40 md:hidden">
+                <MobileNavbar dictionary={dictionary} />
             </div>
 
             <div

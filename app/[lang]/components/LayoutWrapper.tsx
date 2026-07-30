@@ -13,6 +13,8 @@ function isValidLocale(lang: any): lang is Locale {
     return i18n.locales.includes(lang);
 }
 
+import { ThemeProvider } from './ThemeContext';
+
 const LayoutWrapper = ({ children }: { children: ReactNode }) => {
     const params = useParams();
     const [dictionary, setDictionary] = useState<Dictionary | null>(null);
@@ -42,9 +44,11 @@ const LayoutWrapper = ({ children }: { children: ReactNode }) => {
     }
 
     return (
-        <ScrollProvider dictionary={dictionary}>
-            {children}
-        </ScrollProvider>
+        <ThemeProvider>
+            <ScrollProvider dictionary={dictionary}>
+                {children}
+            </ScrollProvider>
+        </ThemeProvider>
     );
 };
 
