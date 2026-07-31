@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import PaginatedModalButton from './PaginatedModalButton';
+import TechStackChaser, { TechItem } from './TechStackChaser';
 
 export interface ProjectData {
     id: string;
@@ -13,7 +14,7 @@ export interface ProjectData {
     previewImages: string[];
     texts: string[];
     deployLink?: string;
-    techs: { name: string; icon: React.ReactNode }[];
+    techs: TechItem[];
 }
 
 interface ProjectCarouselProps {
@@ -59,11 +60,13 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                     const isCenter = offset === 0;
                     const isAbsOne = Math.abs(offset) === 1;
 
-                    // Fish-eye transformations with dramatic scale contrast for the center item
+                    // Fish-eye transformations with dramatic scale contrast & subtle "U" parabola curve
                     const xOffset = offset * (typeof window !== 'undefined' && window.innerWidth < 640 ? 125 : 210);
+                    // Subtle "U" shape arc elevation: center is at y=0, adjacent items elevate upwards (-24px for ±1, -56px for ±2)
+                    const yOffset = -Math.pow(Math.abs(offset), 1.3) * 24;
                     const scale = isCenter ? 1.35 : isAbsOne ? 0.72 : 0.48;
                     const rotateY = offset * -26; // 3D lens curvature
-                    const opacity = isCenter ? 1 : isAbsOne ? 0.45 : 0.15;
+                    const opacity = isCenter ? 1 : isAbsOne ? 0.55 : 0.2;
                     const zIndex = 40 - Math.abs(offset) * 10;
 
                     return (
@@ -73,6 +76,7 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                             className="absolute cursor-pointer flex flex-col items-center justify-center"
                             animate={{
                                 x: xOffset,
+                                y: yOffset,
                                 scale,
                                 rotateY,
                                 opacity,
@@ -80,20 +84,20 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                             }}
                             transition={{
                                 type: 'spring',
-                                stiffness: 300,
-                                damping: 28,
-                                mass: 0.8,
+                                stiffness: 260,
+                                damping: 22,
+                                mass: 0.9,
                             }}
                             style={{
                                 transformStyle: 'preserve-3d',
                             }}
                         >
-                            {/* Circular Photo Frame with Glowing Ambient Halo */}
+                            {/* Circular Photo Frame with Glowing Ambient Halo & Deep Depth Shadow */}
                             <div
                                 className={`relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full p-3 sm:p-4 transition-all duration-500 flex items-center justify-center backdrop-blur-2xl bg-white carousel-item-circle ${
                                     isCenter
                                         ? 'border-4 border-[#646DD2] shadow-[0_0_60px_rgba(100,109,210,0.65)] ring-4 ring-[#646DD2]/30 scale-105'
-                                        : 'border-2 border-white/40 hover:border-white/80 shadow-lg'
+                                        : 'border-2 border-[#609BE3]/40 dark:border-[#609BE3]/50 hover:border-[#609BE3]/90 shadow-[0_14px_35px_rgba(96,155,227,0.35)] dark:shadow-[0_14px_35px_rgba(96,155,227,0.35)]'
                                 }`}
                             >
                                 {/* Inner Ambient Glow ring */}
@@ -124,7 +128,7 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                 <button
                     onClick={handlePrev}
                     className="p-2.5 rounded-full bg-white/5 border border-white/15 hover:bg-white/15 hover:border-[#609BE3] text-white hover:text-[#609BE3] transition-all transform hover:scale-110 active:scale-95 shadow-lg cursor-pointer"
-                    aria-label="Projeto anterior"
+                    aria-label={dictionary.page?.carousel?.prev || "Previous project"}
                 >
                     <FiChevronLeft className="w-4 h-4" />
                 </button>
@@ -140,7 +144,7 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                                     ? 'w-6 h-2 bg-gradient-to-r from-[#609BE3] to-[#646DD2] shadow-md shadow-[#646DD2]/50'
                                     : 'w-2 h-2 bg-white/20 hover:bg-white/40'
                             }`}
-                            aria-label={`Ir para o projeto ${idx + 1}`}
+                            aria-label={`${dictionary.page?.carousel?.go_to || "Go to project"} ${idx + 1}`}
                         />
                     ))}
                 </div>
@@ -148,7 +152,7 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                 <button
                     onClick={handleNext}
                     className="p-2.5 rounded-full bg-white/5 border border-white/15 hover:bg-white/15 hover:border-[#609BE3] text-white hover:text-[#609BE3] transition-all transform hover:scale-110 active:scale-95 shadow-lg cursor-pointer"
-                    aria-label="Próximo projeto"
+                    aria-label={dictionary.page?.carousel?.next || "Next project"}
                 >
                     <FiChevronRight className="w-4 h-4" />
                 </button>
@@ -169,18 +173,15 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                             {`// ${activeProject.category}`}
                         </span>
 
-                        <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-3">
                             {activeProject.title}
                         </h3>
 
-                        {/* Tech icons */}
-                        <div className="flex items-center justify-center gap-3 mb-4 py-1.5 px-3 rounded-lg bg-white/5 border border-white/10 text-gray-400 text-xs">
-                            {activeProject.techs.map((tech, i) => (
-                                <span key={i} title={tech.name}>
-                                    {tech.icon}
-                                </span>
-                            ))}
-                        </div>
+                        {/* Rhythmic Fairy-Light Chaser Tech Stack Icons */}
+                        <TechStackChaser
+                            techs={activeProject.techs}
+                            activeProjectId={activeProject.id}
+                        />
 
                         {/* Action CTA with App Morphing Modal */}
                         <PaginatedModalButton

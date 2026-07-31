@@ -53,7 +53,7 @@ const DownloadCV: React.FC<DownloadSectionProps> = ({
             <div className="container relative z-10 mx-auto px-4 max-w-3xl">
                 <div className="text-center mb-8">
                     <span className="text-[#C9AA71] text-xs font-mono font-bold tracking-widest uppercase mb-1.5 block">
-                        {"// CURRÍCULO & HABILIDADES"}
+                        {dictionary.page.download_cv.badge}
                     </span>
                     <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
                         {dictionary.page.download_cv.title}

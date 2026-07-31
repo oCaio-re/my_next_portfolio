@@ -24,7 +24,7 @@ export function Services({ dictionary }: { dictionary: any }) {
                         {`// ${dictionary.page.services.title}`}
                     </span>
                     <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Soluções & Desenvolvimento Sob Medida
+                        {dictionary.page.services.subtitle}
                     </h2>
                 </motion.div>
 

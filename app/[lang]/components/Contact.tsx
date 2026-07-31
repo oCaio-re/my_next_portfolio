@@ -25,7 +25,7 @@ export function ContactMe({ dictionary }: { dictionary: any }) {
                         {`// ${dictionary.page.contact.title}`}
                     </span>
                     <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Vamos Construir Algo Incrível Juntos
+                        {dictionary.page.contact.subtitle}
                     </h2>
                 </motion.div>
 

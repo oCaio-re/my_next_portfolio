@@ -23,9 +23,9 @@
       "bio_line_2": "Estudei Ciência da Computação na <b>FCUP</b>. Proficiente no desenvolvimento de aplicações web responsivas e modernas. Busco por papéis desafiadores em projetos inovadores e um ambiente de trabalho colaborativo.",
       "bio_line_3": "Esteja você procurando por um serviço ou um funcionário resolvedor de problemas,<b class=\"text-[#C9AA71]\"> eu sou a solução.</b>"
     },
-
     "services": {
       "title": "Serviços",
+      "subtitle": "Soluções & Desenvolvimento Sob Medida",
       "grid": {
         "website": {
           "title": "Website",
@@ -47,6 +47,7 @@
     },
     "projects": {
       "title": "Projetos",
+      "subtitle": "Projetos em Destaque",
       "button": "Descubra Mais",
       "hope_connections": {
         "text_1": "Um website institucional que apresenta informações chave sobre um Centro de Apoio localizado em Roscommon, Irlanda.",
@@ -74,8 +75,14 @@
         "text_3": "Através de um design moderno e interativo, os usuários podem solicitar facilmente uma cotação gratuita e sem compromisso, informando suas preferências de viagem diretamente no site."
       }
     },
+    "carousel": {
+      "prev": "Projeto anterior",
+      "next": "Próximo projeto",
+      "go_to": "Ir para o projeto"
+    },
     "download_cv": {
       "title": "Baixar Meu Currículo",
+      "badge": "// CURRÍCULO & HABILIDADES",
       "subtitle": "Obtenha uma cópia do meu currículo profissional",
       "file_name": "CAIO_OLIVEIRA-SW-ENG.pdf",
       "file_size": "245 KB",
@@ -92,6 +99,7 @@
     },
     "contact": {
       "title": "Entre em Contato",
+      "subtitle": "Vamos Construir Algo Incrível Juntos",
       "details": {
         "services_title": "SERVIÇOS",
         "websites": "Websites",
@@ -108,6 +116,7 @@
         "call_title": "LIGAR"
       },
       "form": {
+        "services_needed": "Serviços Desejados",
         "name_placeholder": "Nome",
         "email_placeholder": "Endereço de e-mail",
         "project_placeholder": "Fale-me sobre o projeto",

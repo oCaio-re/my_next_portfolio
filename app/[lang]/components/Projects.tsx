@@ -27,11 +27,11 @@ function Projects({ dictionary }: { dictionary: any }) {
             ],
             deployLink: 'https://lucasfotos.art/',
             techs: [
-                { name: 'React', icon: <FaReact key="react" className="w-5 h-5 hover:text-sky-400 transition-colors" /> },
-                { name: 'Next.js', icon: <RiNextjsFill key="next" className="w-5 h-5 hover:text-white transition-colors" /> },
-                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5 hover:text-blue-400 transition-colors" /> },
-                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5 hover:text-orange-400 transition-colors" /> },
-                { name: 'Tailwind CSS', icon: <RiTailwindCssFill key="tw" className="w-5 h-5 hover:text-cyan-400 transition-colors" /> },
+                { name: 'React', icon: <FaReact key="react" className="w-5 h-5" />, activeColor: '#38bdf8' },
+                { name: 'Next.js', icon: <RiNextjsFill key="next" className="w-5 h-5" />, activeColor: '#f8fafc' },
+                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5" />, activeColor: '#3178c6' },
+                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5" />, activeColor: '#e34f26' },
+                { name: 'Tailwind CSS', icon: <RiTailwindCssFill key="tw" className="w-5 h-5" />, activeColor: '#06b6d4' },
             ]
         },
         {
@@ -51,11 +51,11 @@ function Projects({ dictionary }: { dictionary: any }) {
             ],
             deployLink: 'https://voar-bem.vercel.app/',
             techs: [
-                { name: 'React', icon: <FaReact key="react" className="w-5 h-5 hover:text-sky-400 transition-colors" /> },
-                { name: 'Next.js', icon: <RiNextjsFill key="next" className="w-5 h-5 hover:text-white transition-colors" /> },
-                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5 hover:text-blue-400 transition-colors" /> },
-                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5 hover:text-orange-400 transition-colors" /> },
-                { name: 'Tailwind CSS', icon: <RiTailwindCssFill key="tw" className="w-5 h-5 hover:text-cyan-400 transition-colors" /> },
+                { name: 'React', icon: <FaReact key="react" className="w-5 h-5" />, activeColor: '#38bdf8' },
+                { name: 'Next.js', icon: <RiNextjsFill key="next" className="w-5 h-5" />, activeColor: '#f8fafc' },
+                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5" />, activeColor: '#3178c6' },
+                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5" />, activeColor: '#e34f26' },
+                { name: 'Tailwind CSS', icon: <RiTailwindCssFill key="tw" className="w-5 h-5" />, activeColor: '#06b6d4' },
             ]
         },
         {
@@ -75,11 +75,11 @@ function Projects({ dictionary }: { dictionary: any }) {
             ],
             deployLink: 'https://www.alltasty.cafe/',
             techs: [
-                { name: 'React', icon: <FaReact key="react" className="w-5 h-5 hover:text-sky-400 transition-colors" /> },
-                { name: 'Vite', icon: <SiVite key="vite" className="w-5 h-5 hover:text-purple-400 transition-colors" /> },
-                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5 hover:text-blue-400 transition-colors" /> },
-                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5 hover:text-orange-400 transition-colors" /> },
-                { name: 'Chakra UI', icon: <SiChakraui key="chakra" className="w-5 h-5 hover:text-teal-400 transition-colors" /> },
+                { name: 'React', icon: <FaReact key="react" className="w-5 h-5" />, activeColor: '#38bdf8' },
+                { name: 'Vite', icon: <SiVite key="vite" className="w-5 h-5" />, activeColor: '#bd34fe' },
+                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5" />, activeColor: '#3178c6' },
+                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5" />, activeColor: '#e34f26' },
+                { name: 'Chakra UI', icon: <SiChakraui key="chakra" className="w-5 h-5" />, activeColor: '#319795' },
             ]
         },
         {
@@ -98,10 +98,10 @@ function Projects({ dictionary }: { dictionary: any }) {
                 dictionary.page.projects.sogrape_wines.text_3,
             ],
             techs: [
-                { name: 'Python', icon: <FaPython key="py" className="w-5 h-5 hover:text-amber-400 transition-colors" /> },
-                { name: 'Selenium', icon: <SiSelenium key="selenium" className="w-5 h-5 hover:text-emerald-400 transition-colors" /> },
-                { name: 'MySQL', icon: <SiMysql key="mysql" className="w-5 h-5 hover:text-blue-400 transition-colors" /> },
-                { name: 'FastAPI', icon: <SiFastapi key="fastapi" className="w-5 h-5 hover:text-teal-400 transition-colors" /> },
+                { name: 'Python', icon: <FaPython key="py" className="w-5 h-5" />, activeColor: '#ffd43b' },
+                { name: 'Selenium', icon: <SiSelenium key="selenium" className="w-5 h-5" />, activeColor: '#43b02a' },
+                { name: 'MySQL', icon: <SiMysql key="mysql" className="w-5 h-5" />, activeColor: '#00758f' },
+                { name: 'FastAPI', icon: <SiFastapi key="fastapi" className="w-5 h-5" />, activeColor: '#059669' },
             ]
         },
         {
@@ -121,11 +121,11 @@ function Projects({ dictionary }: { dictionary: any }) {
             ],
             deployLink: 'https://hope-connections-hmqdx.ondigitalocean.app',
             techs: [
-                { name: 'React', icon: <FaReact key="react" className="w-5 h-5 hover:text-sky-400 transition-colors" /> },
-                { name: 'Vite', icon: <SiVite key="vite" className="w-5 h-5 hover:text-purple-400 transition-colors" /> },
-                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5 hover:text-blue-400 transition-colors" /> },
-                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5 hover:text-orange-400 transition-colors" /> },
-                { name: 'Chakra UI', icon: <SiChakraui key="chakra" className="w-5 h-5 hover:text-teal-400 transition-colors" /> },
+                { name: 'React', icon: <FaReact key="react" className="w-5 h-5" />, activeColor: '#38bdf8' },
+                { name: 'Vite', icon: <SiVite key="vite" className="w-5 h-5" />, activeColor: '#bd34fe' },
+                { name: 'TypeScript', icon: <BiLogoTypescript key="ts" className="w-5 h-5" />, activeColor: '#3178c6' },
+                { name: 'HTML5', icon: <FaHtml5 key="html" className="w-5 h-5" />, activeColor: '#e34f26' },
+                { name: 'Chakra UI', icon: <SiChakraui key="chakra" className="w-5 h-5" />, activeColor: '#319795' },
             ]
         }
     ];
@@ -149,7 +149,7 @@ function Projects({ dictionary }: { dictionary: any }) {
                         {`// ${dictionary.page.projects.title}`}
                     </span>
                     <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Projetos em Destaque
+                        {dictionary.page.projects.subtitle}
                     </h2>
                 </motion.div>
 

@@ -23,9 +23,9 @@
       "bio_line_2": "Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles in innovative projects and a collaborative work environment.",
       "bio_line_3": "Weather you look for a service or a problem solver employee,<b class=\"text-[#C9AA71]\"> I am the solution.</b>"
     },
-
     "services": {
       "title": "Services",
+      "subtitle": "Tailored Solutions & Development",
       "grid": {
         "website": {
           "title": "Website",
@@ -47,6 +47,7 @@
     },
     "projects": {
       "title": "Projects",
+      "subtitle": "Featured Projects",
       "button": "Discover More",
       "hope_connections": {
         "text_1": "An institutional website that presents key information about a Drop-In Centre located in Roscommon, Ireland.",
@@ -74,8 +75,14 @@
         "text_3": "Through a modern and interactive design, users can easily request a free, no-obligation quote by providing their travel preferences directly on the site."
       }
     },
+    "carousel": {
+      "prev": "Previous project",
+      "next": "Next project",
+      "go_to": "Go to project"
+    },
     "download_cv": {
       "title": "Download My Resume",
+      "badge": "// RESUME & SKILLS",
       "subtitle": "Get a copy of my professional resume",
       "file_name": "CAIO_OLIVEIRA-SW-ENG.pdf",
       "file_size": "245 KB",
@@ -92,6 +99,7 @@
     },
     "contact": {
       "title": "Get In Touch",
+      "subtitle": "Let's Build Something Amazing Together",
       "details": {
         "services_title": "SERVICES",
         "websites": "Websites",
@@ -108,6 +116,7 @@
         "call_title": "CALL"
       },
       "form": {
+        "services_needed": "Desired Services",
         "name_placeholder": "Name",
         "email_placeholder": "Email address",
         "project_placeholder": "Tell me about the project",

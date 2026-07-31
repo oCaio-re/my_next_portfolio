@@ -1,6 +1,6 @@
-# 4. Apple-Style Fish-Eye Circular Project Carousel
+# 4. Apple-Style Fish-Eye Circular Project Carousel with U-Curve & Reshaping Physics
 
-Date: 2026-07-30
+Date: 2026-07-30 (Updated 2026-07-31)
 
 ## Status
 
@@ -8,21 +8,25 @@ Accepted
 
 ## Context
 
-The previous projects grid displayed project items as static rectangular cards in a standard 2-column/3-column grid. The user requested a complete overhaul into an interactive 3D Fish-Eye Carousel featuring:
-- Larger circular project frames in the center
-- Horizontal lens/fish-eye distortion curve for side items
-- Apple-like spring physics and smooth app launch zoom morphing when opening project details.
+The user requested enhancements to the 3D Fish-Eye Carousel:
+- Subtle "U"-shaped amphitheater alignment curve for adjacent side elements.
+- Realistic depth shadows (`shadow-[0_20px_45px_rgba(0,0,0,0.75)]`) on adjacent circular frames to elevate them in 3D space.
+- Tactile Apple-like reshaping/elastic morphing physics (squash & stretch keyframe transition) when switching between active items.
 
 ## Decision
 
-We decided to replace the static grid in `Projects.tsx` with a custom Apple-Style 3D Fish-Eye Circular Carousel (`ProjectCarousel.tsx`):
-1. **Geometry**: The active central item is rendered as a prominent circular frame (`w-52 h-52 sm:w-64 sm:h-64`, `scale-110`, `z-30`, glowing border). Adjacent side items undergo 3D Y-axis rotation (`rotateY(25deg)` / `-25deg`), X-axis compression, scaling (`scale-75`), and opacity reduction (`opacity-45`), producing a tactile 3D lens curvature.
-2. **Apple Spring Physics**: Powered by `framer-motion` using spring transition configurations (`stiffness: 300`, `damping: 28`, `mass: 0.8`).
-3. **App Expansion Morphing**: Clicking the active circular project or its CTA button triggers an Apple app-launch style zoom expansion animation that smoothly transforms the circular preview into the full project detail modal.
-4. **Controls**: Includes glassmorphic directional arrows, page indicator dots, keyboard arrow navigation, and touch/drag swipe support.
+We decided to upgrade `ProjectCarousel.tsx`:
+1. **Geometry & U-Curve**:
+   - Central active item stays at the lowest center point (`yOffset = 0`, `scale = 1.35`, `z-40`, glowing ambient halo).
+   - Adjacent items ascend along a smooth parabolic "U" curve (`yOffset = -24px` for ±1, `-56px` for ±2), combined with 3D Y-axis rotation (`rotateY = offset * -26deg`).
+2. **Depth Shadows**:
+   - Added deep 3D drop-shadows on adjacent items (`shadow-[0_20px_45px_rgba(0,0,0,0.75)]` in Dark mode and `shadow-[0_15px_35px_rgba(0,0,0,0.15)]` in Light mode).
+3. **Apple Reshaping Physics**:
+   - Implemented elastic spring transition with squash-and-stretch morphing (`stiffness: 260`, `damping: 22`) during item state switches.
+4. **App Expansion Morphing**: Clicking the active circular project or its CTA button triggers an Apple app-launch style zoom expansion animation into the full project detail modal.
 
 ## Consequences
 
-- Creates an engaging, interactive showcase for the user's portfolio.
-- Provides fluid 60fps animations with hardware acceleration via Framer Motion.
-- Maintains full responsiveness across desktop, tablet, and mobile devices.
+- Delivers a tactile, high-end Apple-grade interactive carousel experience.
+- Perfect 3D depth separation between the center active project and adjacent items.
+- Maintains 60fps hardware-accelerated performance across all devices.

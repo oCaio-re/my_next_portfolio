@@ -51,8 +51,8 @@ export default function ContactForm({ dictionary }: { dictionary: any }) {
                 </div>
 
                 <div>
-                    <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-400 mb-2">
-                        Serviços Desejados
+                    <label className="block text-xs font-mono text-gray-300 mb-2 font-semibold">
+                        {dictionary.page.contact.form.services_needed || 'Desired Services'}
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                         {[
