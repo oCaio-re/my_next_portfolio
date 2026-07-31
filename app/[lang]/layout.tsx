@@ -27,7 +27,7 @@ export default async function RootLayout({
     const { lang } = await params;
 
     return (
-        <html lang={lang} className="overflow-hidden">
+        <html lang={lang} className="dark overflow-hidden">
         <body
             className={`overflow-hidden ${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
             style={{ overflow: 'hidden' }}

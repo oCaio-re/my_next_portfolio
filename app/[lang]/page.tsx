@@ -10,6 +10,10 @@ import { getDictionary } from '@/get-dictionary';
 import { Locale } from "@/i18n";
 import DownloadCV from "@/app/[lang]/components/DownloadCV";
 
+export async function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'pt' }];
+}
+
 async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
