@@ -46,7 +46,7 @@ export function getProjectsList(dictionary: any): (ExtendedProjectData & { caseS
         '/images/SR/socios.jpg',
         '/images/SR/balanca.png',
       ],
-      deployLink: 'https://stussi-reis.vercel.app/',
+      deployLink: 'https://www.stussireisadvocacia.com.br',
       techs: [
         { name: 'React', icon: React.createElement(FaReact, { key: 'react', className: 'w-5 h-5' }), activeColor: '#38bdf8' },
         { name: 'Next.js', icon: React.createElement(RiNextjsFill, { key: 'next', className: 'w-5 h-5' }), activeColor: '#f8fafc' },
