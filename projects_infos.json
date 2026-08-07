@@ -1,0 +1,25 @@
+[
+"voar_bem": {
+	"deploy_url": "https://www.voarbem.net/"
+
+},
+"all_tasty": {
+	"deploy_url": "https://alltasty.cafe/"
+},
+"lucas_alves": {
+	"deploy_url": "https://lucasfotos.vercel.app/"
+},
+"nerytour": {
+	"deploy_url": "https://www.nerytour.com/"
+},
+"jaqueline_e_lucas": {
+	"deploy_url": "https://jaqueline-e-lucas-blond.vercel.app/"
+},
+"stussireis": {
+	"deploy_url": "https://stussi-reis.vercel.app/"
+},
+"sogrape": {
+	"deploy_url": "N/A"
+}
+
+]

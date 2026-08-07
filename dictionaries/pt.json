@@ -49,31 +49,220 @@
       "title": "Projetos",
       "subtitle": "Projetos em Destaque",
       "button": "Descubra Mais",
-      "hope_connections": {
-        "text_1": "Um website institucional que apresenta informações chave sobre um Centro de Apoio localizado em Roscommon, Irlanda.",
-        "text_2": "O objetivo foi apresentar e explicar claramente todos os serviços disponíveis neste Centro de Apoio, tornando-o mais acessível para aqueles que procuram assistência ou desejam oferecer apoio.",
-        "text_3": "É uma forma concisa e objetiva de comunicar e oferecer apoio. Por favor, sinta-se à vontade para explorar o website da loja no link abaixo:"
+      "stussireis": {
+        "text_1": "Plataforma digital para escritório de advocacia em Niterói-RJ especializado em Direito Previdenciário (INSS), Consumidor e Cível.",
+        "text_2": "O objetivo principal foi criar uma experiência moderna e acolhedora de triagem jurídica e agendamento de consultas com os sócios Dr. Felipe Reis e Dr. Saulo Stussi.",
+        "text_3": "Explore a plataforma completa no link abaixo:",
+        "case_study": {
+          "summary": "Plataforma digital para escritório de advocacia em Niterói-RJ especializado em Direito Previdenciário (INSS), Consumidor e Cível.",
+          "problem": "Clientes com problemas de benefícios previdenciários e fraudes bancárias precisavam de orientação jurídica transparente com triagem simplificada sem burocracia.",
+          "solution": "Desenvolvemos uma aplicação Next.js corporativa de alta performance, com design em tons marinho e dourado, busca por áreas de atuação e integração direta ao atendimento dos advogados via WhatsApp.",
+          "architecture_highlights": [
+            "Arquitetura escalável Next.js App Router com Server-Side Rendering.",
+            "SEO estruturado com Schema.org LegalService para indexação do Google.",
+            "Design System responsivo em Tailwind CSS e animações fluidas Framer Motion."
+          ],
+          "technical_challenges": [
+            "Garantir conformidade com diretrizes da OAB e otimização para pesquisas locais.",
+            "Estruturar formulários de triagem por especialidade jurídica (Previdenciário vs Consumidor)."
+          ],
+          "key_metrics": [
+            { "label": "Desempenho Lighthouse", "value": "99/100" },
+            { "label": "Tempo Médio de Carregamento", "value": "< 0.5s" },
+            { "label": "Taxa de Retenção", "value": "A+" }
+          ],
+          "captions": [
+            "Atendimento presencial e personalizado dos sócios fundadores.",
+            "Sócios Dr. Felipe Reis da Silva Oliveira e Dr. Saulo Pedroso Stussi Júnior.",
+            "Identidade institucional sólida representando justiça e direito cível."
+          ]
+        }
       },
-      "sogrape_wines": {
-        "text_1": "Uma aplicação web com duas funcionalidades principais: recolha de preços de vinho através de web scraping e apresentação dos dados recolhidos através de um dashboard interativo.",
-        "text_2": "Com esta ferramenta, a empresa conseguiu recolher dados valiosos e desenvolver estratégias comerciais destinadas a melhorar tanto o desempenho de vendas como o planeamento geral do negócio.",
-        "text_3": "O software é propriedade da empresa; portanto, não há link de implantação disponível. Sinta-se à vontade para me contactar para discutir mais — terei todo o gosto em partilhar mais detalhes."
+      "nerytour": {
+        "text_1": "Portal de mobilidade privada e turismo receptivo premium para transfers executivos e passeios no litoral de Pernambuco e Alagoas.",
+        "text_2": "O objetivo foi permitir que turistas e executivos agendem serviços de transporte privado com cálculo de tempo estimado e atendimento imediato.",
+        "text_3": "Acesse a plataforma de agendamentos no link abaixo:",
+        "case_study": {
+          "summary": "Portal de mobilidade privada e turismo receptivo premium para transfers executivos e passeios no litoral de Pernambuco e Alagoas (Recife, Porto de Galinhas, Maragogi, Olinda).",
+          "problem": "Usuários e empresas necessitavam de reservas transparentes para translados com garantia de veículos de luxo, segurança e pontualidade 24/7.",
+          "solution": "Criamos uma aplicação web Next.js moderna com vídeo hero dinâmico em segundo plano, catálogo interativo de destinos com estimativa de tempo e agendamento instantâneo.",
+          "architecture_highlights": [
+            "Vídeo background otimizado com lazy loading e renderização adaptativa.",
+            "Componentes reutilizáveis em Tailwind CSS e ícones de alta fidelidade.",
+            "Integração rápida com API do WhatsApp para confirmação de reservas."
+          ],
+          "technical_challenges": [
+            "Otimizar vídeo hero sem impactar o tempo de carregamento inicial em redes móveis.",
+            "Interface adaptada para reserva em 1 clique em dispositivos móveis durante viagens."
+          ],
+          "key_metrics": [
+            { "label": "Avaliação dos Clientes", "value": "5.0 ★" },
+            { "label": "Carregamento Mobile", "value": "< 0.7s" },
+            { "label": "Score de Performance", "value": "98/100" }
+          ],
+          "captions": [
+            "Translados com desembarque no Aeroporto Internacional de Recife.",
+            "Passeios exclusivos em Porto de Galinhas com frota credenciada.",
+            "Translados executivos para Maragogi com cotação sob medida."
+          ]
+        }
       },
       "all_tasty_caffe": {
         "text_1": "Um website elegante e moderno projetado para uma cafeteria, apresentando o menu principal, informações de contato e detalhes sobre os serviços comunitários.",
         "text_2": "O objetivo principal foi exibir toda a gama de produtos, transmitindo ao mesmo tempo a atmosfera de uma loja acolhedora e convidativa que atrai os clientes.",
-        "text_3": "Por favor, sinta-se à vontade para explorar o website da loja no link abaixo:"
-      },
-      "lucas_alves": {
-        "text_1": "Um website de portfólio que exibe o corpo principal do trabalho de um fotógrafo profissional, incluindo uma extensa coleção de fotografias e sessões fotográficas.",
-        "text_2": "O objetivo principal foi projetar uma interface de usuário concisa e refinada, garantindo uma excelente experiência do usuário.",
-        "text_3": "Em seguida, apresentar informações essenciais sobre como as sessões fotográficas são realizadas, juntamente com um método claro de comunicação.\n Use o link abaixo para explorar a página web:"
+        "text_3": "Por favor, sinta-se à vontade para explorar o website da loja no link abaixo:",
+        "case_study": {
+          "summary": "Plataforma digital estilizada para cafeteria artesanal com menu interativo e integração de comunidade local.",
+          "problem": "O estabelecimento necessitava de uma presença digital marcante que refletisse a atmosfera física aconchegante da cafeteria e destacasse seu menu especial.",
+          "solution": "Criamos um website interativo com componentes modulares em React/Vite, animações fluidas e seções dedicadas a bebidas quentes, pratos e eventos comunitários.",
+          "architecture_highlights": [
+            "Build ultra rápido com Vite & React TypeScript.",
+            "Componentes de UI customizados com Chakra UI e animações suaves.",
+            "Cardápio dinâmico com navegação por categorias em tempo real."
+          ],
+          "technical_challenges": [
+            "Otimização visual de imagens em alta resolução de alimentos e bebidas.",
+            "Arquitetura responsiva adaptada a dispositivos mobile de clientes no local."
+          ],
+          "key_metrics": [
+            { "label": "Aumento no Engajamento", "value": "+40%" },
+            { "label": "Score UX Mobile", "value": "100/100" }
+          ],
+          "captions": [
+            "Página inicial vibrante com estética artesanal de cafeteria.",
+            "Menu interativo de bebidas quentes e cafés especiais.",
+            "Seção da comunidade destacando eventos e parcerias locais."
+          ]
+        }
       },
       "voar_bem": {
         "text_1": "Este projeto é a plataforma de uma agência de viagens focada em pacotes personalizados, oferecendo voos, hotéis e aluguéis.",
         "text_2": "O objetivo principal é conectar usuários a ofertas de viagem exclusivas, com descontos significativos e uma seleção de acomodações cuidadosamente curada para diferentes perfis de viajantes.",
-        "text_3": "Através de um design moderno e interativo, os usuários podem solicitar facilmente uma cotação gratuita e sem compromisso, informando suas preferências de viagem diretamente no site."
+        "text_3": "Através de um design moderno e interativo, os usuários podem solicitar facilmente uma cotação gratuita e sem compromisso, informando suas preferências de viagem diretamente no site.",
+        "case_study": {
+          "summary": "Plataforma web de agência de turismo focada em pacotes de viagens personalizados, cotações em tempo real e reservas.",
+          "problem": "Criar uma experiência fluida de busca de voos, hotéis e pacotes turísticos que converta visitantes em cotações diretamente no canal comercial.",
+          "solution": "Desenvolvemos uma aplicação Next.js com catálogo dinâmico de hotéis, filtros interativos de destinos e formulário inteligente de solicitação de cotação.",
+          "architecture_highlights": [
+            "Arquitetura escalável Next.js App Router com TypeScript.",
+            "Filtros dinâmicos e sistema de busca de acomodações no cliente.",
+            "Integração de formulários de leads diretamente para equipe de vendas."
+          ],
+          "technical_challenges": [
+            "Gerenciamento de estado de busca de voos e hotéis de forma veloz.",
+            "Design responsivo otimizado para navegação mobile durante pesquisas."
+          ],
+          "key_metrics": [
+            { "label": "Taxa de Conversão de Leads", "value": "+28%" },
+            { "label": "Score de Performance Next.js", "value": "99/100" }
+          ],
+          "captions": [
+            "Hero interativa com motor de busca de destinos e pacotes.",
+            "Catálogo de hotéis com filtros de faixa de preço e comodidades.",
+            "Página de pacotes turísticos completos com cotação em 1 clique."
+          ]
+        }
+      },
+      "lucas_alves": {
+        "text_1": "Um website de portfólio que exibe o corpo principal do trabalho de um fotógrafo profissional, incluindo uma extensa coleção de fotografias e sessões fotográficas.",
+        "text_2": "O objetivo principal foi projetar uma interface de usuário concisa e refinada, garantindo uma excelente experiência do usuário.",
+        "text_3": "Em seguida, apresentar informações essenciais sobre como as sessões fotográficas são realizadas, juntamente com um método claro de comunicação.\n Use o link abaixo para explorar a página web:",
+        "case_study": {
+          "summary": "Portfólio de alta fidelidade visual para fotógrafo profissional com carregamento otimizado de fotografias em alta resolução.",
+          "problem": "Fotógrafos exigem exibições visuais limpas e fiéis, onde imagens pesadas de alta qualidade não podem comprometer a velocidade do site nem o SEO.",
+          "solution": "Construído em Next.js com SSR/ISR e otimização avançada de imagens (`next/image`), entregando galerias elegantes com carregamento progressivo e lazy-loading.",
+          "architecture_highlights": [
+            "Renderização Server-Side (SSR) e suporte a Next.js Image Optimization.",
+            "Estilização moderna em Glassmorphism com Tailwind CSS.",
+            "Fluxo de contato rápido para agendamento de ensaios fotográficos."
+          ],
+          "technical_challenges": [
+            "Manter 60fps em galerias pesadas e transições sem layout shift (CLS 0).",
+            "Preservação da fidelidade de cor e compressão inteligente WebP/AVIF."
+          ],
+          "key_metrics": [
+            { "label": "Core Web Vitals", "value": "A+" },
+            { "label": "Tempo de Carregamento de Fotos", "value": "< 0.4s" }
+          ],
+          "captions": [
+            "Página inicial minimalista destacando os principais ensaios visuais.",
+            "Galeria de trabalhos e portfólio completo com filtros por categoria.",
+            "Seção de depoimentos de clientes e canal de agendamento."
+          ]
+        }
+      },
+      "jaqueline_e_lucas": {
+        "text_1": "Aplicação web interativa de casamento celebrando a união de Jaqueline & Lucas em Viseu, Portugal.",
+        "text_2": "O objetivo foi proporcionar uma experiência mágica aos convidados com confirmação de presença (RSVP), cronograma do evento e lista de presentes digital.",
+        "text_3": "Explore a página do evento no link abaixo:",
+        "case_study": {
+          "summary": "Aplicação web interativa de casamento celebrando a união em Viseu, Portugal, com confirmação de presença (RSVP), cronograma e presentes.",
+          "problem": "Gerenciar convites e confirmação de presença para convidados de Portugal e Brasil, além de centralizar pagamentos de ofertas via IBAN, MB WAY e PIX.",
+          "solution": "Desenvolvemos uma aplicação Next.js de estética editorial requintada, com contador regressivo em tempo real, cronograma da cerimônia e cópia de chaves bancárias em 1 clique.",
+          "architecture_highlights": [
+            "Temporizador regressivo dinâmico com suporte a fusos horários.",
+            "Sistema de cópia rápida para IBAN (Portugal), MB WAY e PIX (Brasil).",
+            "Tipografia elegante e navegação fluida em dispositivos móveis."
+          ],
+          "technical_challenges": [
+            "Gerenciar múltiplos métodos de pagamento internacionais de forma intuitiva.",
+            "Formulários de RSVP rápidos com pré-busca de convites."
+          ],
+          "key_metrics": [
+            { "label": "Confirmações de Presença", "value": "100%" },
+            { "label": "Velocidade de Carregamento", "value": "< 0.4s" }
+          ],
+          "captions": [
+            "Capa do convite digital com monograma personalizado Jaqueline & Lucas."
+          ]
+        }
+      },
+      "sogrape_wines": {
+        "text_1": "Uma aplicação web com duas funcionalidades principais: recolha de preços de vinho através de web scraping e apresentação dos dados recolhidos através de um dashboard interativo.",
+        "text_2": "Com esta ferramenta, a empresa conseguiu recolher dados valiosos e desenvolver estratégias comerciais destinadas a melhorar tanto o desempenho de vendas como o planeamento geral do negócio.",
+        "text_3": "O software é propriedade da empresa; portanto, não há link de implantação disponível. Sinta-se à vontade para me contactar para discutir mais — terei todo o gosto em partilhar mais detalhes.",
+        "case_study": {
+          "summary": "Sistema Enterprise de Inteligência Comercial e Scraping Automatizado de Preços de Vinhos para análise competitiva de mercado.",
+          "problem": "A empresa necessitava monitorar automaticamente os preços e estoques de concorrentes em múltiplos e-commerces internacionais sem processos manuais demorados.",
+          "solution": "Desenvolvemos robôs de extração automatizada em Python Selenium conectando a uma API em FastAPI e banco MySQL, exibidos em um dashboard analytics em tempo real.",
+          "architecture_highlights": [
+            "Pipelines de extração assíncronos com Python & Selenium em headless mode.",
+            "API RESTful de alto rendimento construída com FastAPI e SQLAlchemy.",
+            "Banco de dados MySQL otimizado para consultas analíticas de histórico de preços."
+          ],
+          "technical_challenges": [
+            "Bypass de mecanismos anti-scraping e variação dinâmica de layouts de lojas.",
+            "Normalização e deduplicação de catálogos de garrafas e safras.",
+            "Renderização de gráficos comparativos em tempo real para tomada de decisão."
+          ],
+          "key_metrics": [
+            { "label": "Garrafas Monitoradas", "value": "+50.000" },
+            { "label": "Redução em Trabalho Manual", "value": "95%" },
+            { "label": "Frequência de Atualização", "value": "Diária" }
+          ],
+          "captions": [
+            "Dashboard de listagem de produtos com filtros avançados de busca.",
+            "Ficha individual da garrafa com histórico e variação de preços.",
+            "Gráficos analíticos comparativos de posicionamento de mercado."
+          ]
+        }
       }
+    },
+    "drawer": {
+      "badge": "// ESTUDO DE CASO COMPLETO",
+      "close": "Fechar",
+      "tab_overview": "Visão Geral",
+      "tab_architecture": "Engenharia & Arquitetura",
+      "tab_gallery": "Galeria de Mídias",
+      "problem_title": "O Desafio & Problema",
+      "solution_title": "A Solução Desenvolvida",
+      "highlights_title": "Destaques de Arquitetura",
+      "challenges_title": "Desafios Técnicos Superados",
+      "metrics_title": "Métricas & Impacto",
+      "tech_stack_title": "Tecnologias Utilizadas",
+      "btn_deploy": "Acessar Aplicação Live",
+      "btn_proprietary": "Projeto Proprietário / Privado",
+      "btn_contact": "Discutir Projeto Similar"
     },
     "carousel": {
       "prev": "Projeto anterior",

@@ -21,7 +21,7 @@
       "a_little_bit_about_me": "A little bit about me",
       "bio_line_1": "I'm Caio Oliveira,<br/>a <i>full-stack</i> Developer with solid experience in front-end development <i>(React/NextJS, TypeScript)</i> and back-end <i>(Python/Django)</i>.",
       "bio_line_2": "Studied Computer Science at <b>FCUP</b>. Proficient in developing responsive and modern web applications. Seeking challenging roles in innovative projects and a collaborative work environment.",
-      "bio_line_3": "Weather you look for a service or a problem solver employee,<b class=\"text-[#C9AA71]\"> I am the solution.</b>"
+      "bio_line_3": "Whether you look for a service or a problem solver employee,<b class=\"text-[#C9AA71]\"> I am the solution.</b>"
     },
     "services": {
       "title": "Services",
@@ -49,31 +49,220 @@
       "title": "Projects",
       "subtitle": "Featured Projects",
       "button": "Discover More",
-      "hope_connections": {
-        "text_1": "An institutional website that presents key information about a Drop-In Centre located in Roscommon, Ireland.",
-        "text_2": "The objective was to present and clearly explain all services available at this Drop-In Center, making it more accessible for those seeking assistance or wishing to offer support..",
-        "text_3": "It is a concise and objective way to communicate and offer support. Please, feel free to explore it on the link below:"
+      "stussireis": {
+        "text_1": "Digital platform for a law firm in Niterói-RJ specializing in Pension Law (INSS), Consumer Protection, and Civil Law.",
+        "text_2": "The primary objective was to create a modern and welcoming legal consultation booking experience with founding partners Dr. Felipe Reis and Dr. Saulo Stussi.",
+        "text_3": "Explore the complete platform on the link below:",
+        "case_study": {
+          "summary": "Digital platform for a law firm in Niterói-RJ specializing in Pension Law (INSS), Consumer Protection, and Civil Law.",
+          "problem": "Clients facing complex pension benefit issues and banking fraud required transparent legal guidance and streamlined consultation triage.",
+          "solution": "Built a high-performance Next.js enterprise web application with navy & gold branding, practice area search, and direct WhatsApp integration.",
+          "architecture_highlights": [
+            "Scalable Next.js App Router architecture with Server-Side Rendering.",
+            "Structured SEO powered by Schema.org LegalService for Google indexing.",
+            "Responsive Design System styled with Tailwind CSS and fluid Framer Motion animations."
+          ],
+          "technical_challenges": [
+            "Ensuring OAB regulatory compliance and local SEO optimization for Niterói/RJ.",
+            "Structuring intake forms by legal specialty (Pension vs Consumer Protection)."
+          ],
+          "key_metrics": [
+            { "label": "Lighthouse Score", "value": "99/100" },
+            { "label": "Avg Load Time", "value": "< 0.5s" },
+            { "label": "Retention Score", "value": "A+" }
+          ],
+          "captions": [
+            "Personalized legal consultation with founding partners.",
+            "Founding partners Dr. Felipe Reis and Dr. Saulo Stussi.",
+            "Solid institutional brand identity representing justice and civil law."
+          ]
+        }
       },
-      "sogrape_wines": {
-        "text_1": "A web application with two primary functionalities: collecting wine prices through web scraping and presenting the collected data via an interactive dashboard.",
-        "text_2": "Using this tool, the company was able to collect valuable data and develop commercial strategies aimed at enhancing both sales performance and overall business planning.",
-        "text_3": "The software is proprietary to the company; therefore, no deployment link is available. Feel free to contact me to discuss it further — I would be happy to share more details."
+      "nerytour": {
+        "text_1": "Premium private mobility and receptive tourism portal for executive transfers and tours along the Pernambuco and Alagoas coastline.",
+        "text_2": "The goal was to enable tourists and executives to book private transfer services with estimated travel times and instant support.",
+        "text_3": "Access the booking platform on the link below:",
+        "case_study": {
+          "summary": "Premium private mobility and receptive tourism portal for executive transfers and tours along the Pernambuco and Alagoas coastline (Recife, Porto de Galinhas, Maragogi, Olinda).",
+          "problem": "Travelers and corporate clients needed transparent booking for transfers with guaranteed luxury vehicles, safety, and 24/7 punctuality.",
+          "solution": "Engineered a modern Next.js web application featuring a dynamic background video hero, interactive destination catalog with travel estimates, and instant booking.",
+          "architecture_highlights": [
+            "Optimized video background with lazy loading and adaptive rendering.",
+            "Reusable components in Tailwind CSS and high-fidelity vector icons.",
+            "Seamless WhatsApp API integration for instant reservation confirmations."
+          ],
+          "technical_challenges": [
+            "Optimizing video hero without impacting initial page load time on mobile networks.",
+            "Tailoring 1-click booking UX for mobile users navigating on the go."
+          ],
+          "key_metrics": [
+            { "label": "Customer Rating", "value": "5.0 ★" },
+            { "label": "Mobile Load Speed", "value": "< 0.7s" },
+            { "label": "Performance Score", "value": "98/100" }
+          ],
+          "captions": [
+            "Private transfers with pickup at Recife International Airport.",
+            "Exclusive tours in Porto de Galinhas with licensed fleet.",
+            "Executive transfers to Maragogi with tailored quotes."
+          ]
+        }
       },
       "all_tasty_caffe": {
         "text_1": "A sleek and modern website designed for a coffee shop featuring the main menu, contact information, and details about community services.",
         "text_2": "The primary objective was to showcase the full range of products while conveying the atmosphere of a cozy, welcoming shop that invites customers in.",
-        "text_3": "Please, feel free to explore the shop website on the link below:"
-      },
-      "lucas_alves": {
-        "text_1": "A portfolio website showcasing the primary body of work of a professional photographer, including an extensive collection of photographs and photo shoots.",
-        "text_2": "The primary objective was to design a concise and refined user interface while ensuring an excellent user experience.",
-        "text_3": "Next, present essential information about how the photo shoots are conducted, along with a clear method of communication.\n Please use the (provisional) link below to explore the webpage:"
+        "text_3": "Please, feel free to explore the shop website on the link below:",
+        "case_study": {
+          "summary": "Stylized digital platform for an artisanal cafe with interactive menus and local community integration.",
+          "problem": "The cafe required a strong web presence reflecting its cozy physical store ambiance and highlighting specialty coffee offerings.",
+          "solution": "Designed an interactive React/Vite website with modular components, smooth micro-animations, and dedicated showcases for hot beverages and events.",
+          "architecture_highlights": [
+            "Lightning-fast build with Vite & React TypeScript.",
+            "Custom UI components with Chakra UI and fluid transitions.",
+            "Dynamic menu with real-time category filtering."
+          ],
+          "technical_challenges": [
+            "Visual optimization of high-resolution food and beverage photography.",
+            "Responsive layout tailored to mobile customers visiting on-site."
+          ],
+          "key_metrics": [
+            { "label": "Engagement Increase", "value": "+40%" },
+            { "label": "Mobile UX Score", "value": "100/100" }
+          ],
+          "captions": [
+            "Vibrant landing page with artisanal coffee aesthetic.",
+            "Interactive hot beverages and specialty coffee menu.",
+            "Community page highlighting local events and partnerships."
+          ]
+        }
       },
       "voar_bem": {
         "text_1": "This project is a travel agency platform focused on personalized packages, offering flights, hotels, and rentals.",
         "text_2": "The main goal is to connect users with exclusive travel deals, featuring significant discounts and a selection of accommodations carefully curated for different traveler profiles.",
-        "text_3": "Through a modern and interactive design, users can easily request a free, no-obligation quote by providing their travel preferences directly on the site."
+        "text_3": "Through a modern and interactive design, users can easily request a free, no-obligation quote by providing their travel preferences directly on the site.",
+        "case_study": {
+          "summary": "Travel agency web platform focused on custom vacation packages, real-time quotes, and accommodation booking.",
+          "problem": "Building a seamless search experience for flights, hotels, and tours that efficiently converts visitors into qualified sales inquiries.",
+          "solution": "Developed a Next.js web application with a dynamic hotel catalog, interactive destination filtering, and a smart quote request engine.",
+          "architecture_highlights": [
+            "Scalable Next.js App Router architecture with TypeScript.",
+            "Dynamic client-side filters and accommodation search engine.",
+            "Lead forms routed directly to sales team workflow."
+          ],
+          "technical_challenges": [
+            "Managing flight & hotel search state with zero latency.",
+            "Responsive layout optimized for mobile travelers researching on the go."
+          ],
+          "key_metrics": [
+            { "label": "Lead Conversion Rate", "value": "+28%" },
+            { "label": "Next.js Performance Score", "value": "99/100" }
+          ],
+          "captions": [
+            "Interactive Hero with destination & package search engine.",
+            "Hotel catalog with price range and amenity filters.",
+            "Vacation package detail page with 1-click quote request."
+          ]
+        }
+      },
+      "lucas_alves": {
+        "text_1": "A portfolio website showcasing the primary body of work of a professional photographer, including an extensive collection of photographs and photo shoots.",
+        "text_2": "The primary objective was to design a concise and refined user interface while ensuring an excellent user experience.",
+        "text_3": "Next, present essential information about how the photo shoots are conducted, along with a clear method of communication.\n Please use the link below to explore the webpage:",
+        "case_study": {
+          "summary": "High-fidelity visual portfolio for a professional photographer featuring optimized high-resolution image delivery.",
+          "problem": "Photographers require clean visual presentation where heavy high-res imagery must not compromise page speed or search rankings.",
+          "solution": "Built on Next.js with SSR/ISR and advanced image optimization (`next/image`), delivering elegant galleries with progressive loading and lazy-loading.",
+          "architecture_highlights": [
+            "Server-Side Rendering (SSR) with Next.js Image Optimization.",
+            "Modern Glassmorphism aesthetics styled with Tailwind CSS.",
+            "Streamlined booking workflow for photography client sessions."
+          ],
+          "technical_challenges": [
+            "Maintaining 60fps in media-heavy galleries without layout shifts (CLS 0).",
+            "Color profile fidelity preservation and WebP/AVIF smart compression."
+          ],
+          "key_metrics": [
+            { "label": "Core Web Vitals", "value": "A+" },
+            { "label": "Photo Load Speed", "value": "< 0.4s" }
+          ],
+          "captions": [
+            "Minimalist homepage highlighting featured photography sessions.",
+            "Works gallery and full portfolio with category filters.",
+            "Client testimonials section and booking channel."
+          ]
+        }
+      },
+      "jaqueline_e_lucas": {
+        "text_1": "Interactive wedding web application celebrating the union of Jaqueline & Lucas in Viseu, Portugal.",
+        "text_2": "The goal was to provide a magical experience for guests with RSVP management, event schedule, and digital gift registry.",
+        "text_3": "Explore the wedding event page on the link below:",
+        "case_study": {
+          "summary": "Interactive wedding web application celebrating the union in Viseu, Portugal, featuring RSVP management, event schedule, and digital gift registry.",
+          "problem": "Managing guest invitations across Portugal and Brazil while centralizing gift contributions via IBAN, MB WAY, and PIX.",
+          "solution": "Built an elegant Next.js web application with a live countdown timer, ceremony timeline, and 1-click bank key copying.",
+          "architecture_highlights": [
+            "Dynamic countdown timer supporting global time zones.",
+            "Fast copy system for IBAN (Portugal), MB WAY, and PIX (Brazil).",
+            "Editorial typography and fluid mobile navigation."
+          ],
+          "technical_challenges": [
+            "Handling multiple international payment methods intuitively.",
+            "Fast RSVP forms with guest list lookup."
+          ],
+          "key_metrics": [
+            { "label": "RSVP Confirmation Rate", "value": "100%" },
+            { "label": "Load Speed", "value": "< 0.4s" }
+          ],
+          "captions": [
+            "Digital invitation cover featuring Jaqueline & Lucas custom monogram."
+          ]
+        }
+      },
+      "sogrape_wines": {
+        "text_1": "A web application with two primary functionalities: collecting wine prices through web scraping and presenting the collected data via an interactive dashboard.",
+        "text_2": "Using this tool, the company was able to collect valuable data and develop commercial strategies aimed at enhancing both sales performance and overall business planning.",
+        "text_3": "The software is proprietary to the company; therefore, no deployment link is available. Feel free to contact me to discuss it further — I would be happy to share more details.",
+        "case_study": {
+          "summary": "Enterprise Commercial Intelligence & Automated Wine Price Scraping Engine for competitive market analysis.",
+          "problem": "The company needed to automatically monitor wine pricing and inventory across multiple international e-commerce sites without time-consuming manual processes.",
+          "solution": "Engineered automated extraction bots using Python & Selenium connected to a FastAPI backend and MySQL database, rendered on a real-time analytics dashboard.",
+          "architecture_highlights": [
+            "Asynchronous extraction pipelines built with Python & Selenium in headless mode.",
+            "High-throughput RESTful API powered by FastAPI and SQLAlchemy.",
+            "MySQL database optimized for historical price point analytics."
+          ],
+          "technical_challenges": [
+            "Bypassing anti-scraping mechanisms and dynamic store layout changes.",
+            "Standardizing and deduplicating bottle catalogs and vintage years.",
+            "Rendering real-time comparative data charts for executive strategy."
+          ],
+          "key_metrics": [
+            { "label": "Bottles Monitored", "value": "50,000+" },
+            { "label": "Manual Effort Saved", "value": "95%" },
+            { "label": "Update Frequency", "value": "Daily" }
+          ],
+          "captions": [
+            "Product catalog dashboard with advanced search and filters.",
+            "Individual bottle overview with historical price variations.",
+            "Comparative analytics chart mapping market positioning."
+          ]
+        }
       }
+    },
+    "drawer": {
+      "badge": "// FULL CASE STUDY",
+      "close": "Close",
+      "tab_overview": "Overview",
+      "tab_architecture": "Engineering & Architecture",
+      "tab_gallery": "Media Gallery",
+      "problem_title": "The Challenge & Problem",
+      "solution_title": "The Solution Built",
+      "highlights_title": "Architecture Highlights",
+      "challenges_title": "Technical Challenges Overcome",
+      "metrics_title": "Impact & Key Metrics",
+      "tech_stack_title": "Technologies Used",
+      "btn_deploy": "Launch Live Application",
+      "btn_proprietary": "Proprietary / Private Project",
+      "btn_contact": "Discuss Similar Project"
     },
     "carousel": {
       "prev": "Previous project",

@@ -2,28 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import PaginatedModalButton from './PaginatedModalButton';
-import TechStackChaser, { TechItem } from './TechStackChaser';
-
-export interface ProjectData {
-    id: string;
-    title: string;
-    category: string;
-    logoSrc: string;
-    previewImages: string[];
-    texts: string[];
-    deployLink?: string;
-    techs: TechItem[];
-}
+import { FiChevronLeft, FiChevronRight, FiArrowRight, FiFileText } from 'react-icons/fi';
+import TechStackChaser from './TechStackChaser';
+import ProjectCaseStudyDrawer from './ProjectCaseStudyDrawer';
+import { ExtendedProjectData, CaseStudyData } from '@/lib/projectsData';
 
 interface ProjectCarouselProps {
-    projects: ProjectData[];
+    projects: (ExtendedProjectData & { caseStudy: CaseStudyData })[];
     dictionary: any;
 }
 
 export default function ProjectCarousel({ projects, dictionary }: ProjectCarouselProps) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % projects.length);
@@ -33,8 +24,17 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
         setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
     };
 
+    const handleItemClick = (index: number) => {
+        if (index === activeIndex) {
+            setIsDrawerOpen(true);
+        } else {
+            setActiveIndex(index);
+        }
+    };
+
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
+            if (isDrawerOpen) return; // ignore carousel arrows when drawer is open
             if (e.key === 'ArrowRight') {
                 setActiveIndex((prev) => (prev + 1) % projects.length);
             }
@@ -44,36 +44,33 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [projects.length]);
+    }, [projects.length, isDrawerOpen]);
 
     const activeProject = projects[activeIndex];
 
     return (
         <div className="relative w-full flex flex-col items-center select-none py-2">
-            {/* 3D Fish-Eye Carousel Track with Extended Height & Visible Overflow for Shadows */}
+            {/* 3D Fish-Eye Carousel Track */}
             <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[460px] flex items-center justify-center perspective-[1200px] overflow-visible py-8">
                 {projects.map((project, index) => {
-                    // Compute circular offset relative to activeIndex
                     let offset = (index - activeIndex + projects.length) % projects.length;
                     if (offset > projects.length / 2) offset -= projects.length;
 
                     const isCenter = offset === 0;
                     const isAbsOne = Math.abs(offset) === 1;
 
-                    // Fish-eye transformations with dramatic scale contrast & subtle "U" parabola curve
                     const xOffset = offset * (typeof window !== 'undefined' && window.innerWidth < 640 ? 125 : 210);
-                    // Subtle "U" shape arc elevation: center is at y=0, adjacent items elevate upwards (-24px for ±1, -56px for ±2)
                     const yOffset = -Math.pow(Math.abs(offset), 1.3) * 24;
                     const scale = isCenter ? 1.35 : isAbsOne ? 0.72 : 0.48;
-                    const rotateY = offset * -26; // 3D lens curvature
+                    const rotateY = offset * -26;
                     const opacity = isCenter ? 1 : isAbsOne ? 0.55 : 0.2;
                     const zIndex = 40 - Math.abs(offset) * 10;
 
                     return (
                         <motion.div
                             key={project.id}
-                            onClick={() => setActiveIndex(index)}
-                            className="absolute cursor-pointer flex flex-col items-center justify-center"
+                            onClick={() => handleItemClick(index)}
+                            className="absolute cursor-pointer flex flex-col items-center justify-center group"
                             animate={{
                                 x: xOffset,
                                 y: yOffset,
@@ -92,15 +89,14 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                                 transformStyle: 'preserve-3d',
                             }}
                         >
-                            {/* Circular Photo Frame with Glowing Ambient Halo & Deep Depth Shadow */}
+                            {/* Circular Photo Frame */}
                             <div
                                 className={`relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full p-3 sm:p-4 transition-all duration-500 flex items-center justify-center backdrop-blur-2xl bg-white carousel-item-circle ${
                                     isCenter
-                                        ? 'border-4 border-[#646DD2] shadow-[0_0_60px_rgba(100,109,210,0.65)] ring-4 ring-[#646DD2]/30 scale-105'
-                                        : 'border-2 border-[#609BE3]/40 dark:border-[#609BE3]/50 hover:border-[#609BE3]/90 shadow-[0_14px_35px_rgba(96,155,227,0.35)] dark:shadow-[0_14px_35px_rgba(96,155,227,0.35)]'
+                                        ? 'border-4 border-[#646DD2] shadow-[0_0_60px_rgba(100,109,210,0.65)] ring-4 ring-[#646DD2]/30 scale-105 hover:border-[#609BE3]'
+                                        : 'border-2 border-[#609BE3]/40 dark:border-[#609BE3]/50 hover:border-[#609BE3]/90 shadow-[0_14px_35px_rgba(96,155,227,0.35)]'
                                 }`}
                             >
-                                {/* Inner Ambient Glow ring */}
                                 {isCenter && (
                                     <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#609BE3]/25 via-[#646DD2]/25 to-[#C9AA71]/25 blur-lg pointer-events-none" />
                                 )}
@@ -110,9 +106,18 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                                     alt={project.title}
                                     className="w-full h-full object-contain p-3 rounded-full drop-shadow-2xl relative z-10"
                                 />
+
+                                {/* Hover Prompt Badge for Center Item */}
+                                {isCenter && (
+                                    <div className="absolute inset-0 rounded-full bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center z-20 backdrop-blur-sm text-center p-2">
+                                        <FiFileText className="w-8 h-8 text-[#C9AA71] mb-1 animate-bounce" />
+                                        <span className="text-white text-xs font-mono font-bold uppercase tracking-wider">
+                                            {dictionary.page?.projects?.button || 'Ver Estudo de Caso'}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Label indicator for side items */}
                             {!isCenter && (
                                 <span className="mt-3 text-[11px] font-mono font-bold tracking-widest text-gray-400 uppercase opacity-75 hidden sm:block">
                                     {project.title}
@@ -158,7 +163,7 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                 </button>
             </div>
 
-            {/* Active Project Details Card Below: Compact & Discreet */}
+            {/* Active Project Card Below */}
             <div className="w-full max-w-md mt-6 z-30">
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -183,16 +188,25 @@ export default function ProjectCarousel({ projects, dictionary }: ProjectCarouse
                             activeProjectId={activeProject.id}
                         />
 
-                        {/* Action CTA with App Morphing Modal */}
-                        <PaginatedModalButton
-                            images={activeProject.previewImages}
-                            texts={activeProject.texts}
-                            deployLink={activeProject.deployLink}
-                            dictionary={dictionary}
-                        />
+                        {/* Primary Drawer Trigger CTA Button */}
+                        <button
+                            onClick={() => setIsDrawerOpen(true)}
+                            className="mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-[#609BE3] to-[#646DD2] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-[#646DD2]/30 hover:opacity-95 transition-all transform hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
+                        >
+                            <span>{dictionary.page?.projects?.button || 'Descubra Mais'}</span>
+                            <FiArrowRight className="w-4 h-4" />
+                        </button>
                     </motion.div>
                 </AnimatePresence>
             </div>
+
+            {/* Slide-Over Project Case Study Drawer */}
+            <ProjectCaseStudyDrawer
+                project={activeProject}
+                isOpen={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+                dictionary={dictionary}
+            />
         </div>
     );
 }
